@@ -1,0 +1,20 @@
+.checkContainer {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    max-width: 400px;
+}
+
+.check {
+    display: block;
+    width: 24px;
+    height: 24px;
+    border: none;
+}
+
+.label {
+    text-align: left;
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 300;
+}

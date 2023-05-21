@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+html {
+    --w1: #FBFDFF;
+    --w2: #EEF0F2;
+    --w4: #C4C5C7;
+    --w6: #88888A;
+    --w7: #696A6B;
+    --w8: #4B4C4D;
+    --w9: #2D2E2E;
+    --w10: #0F0F0F;
+
+    --b5: #406FA1;
+    --b6: #27517E;
+    --b7: #12355B;
+
+    --r4: #DB7B77;
+    --r5: #CE3D37;
+
+    --g5: #5EB6BC;
+    --g6: #479EA4;
+    --g7: #2D848A;
+    --g8: #217076;
+    --g9: #105458;
+    --g11: #002325;
+    --g12: #001213;
+
+    --fonte-texto: 'Poppins', sans-serif;
+    --fonte-destaque: 'Montserrat', sans-serif;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+img {
+    display: inline-block;
+}
+
+a,
+button {
+    text-decoration:  none;
+    color: inherit;
+    cursor: pointer;
+}
+
+ul {
+    list-style: none;
+}
+
+.App {
+    background-color: var(--w1);
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh + 420px);
+}
+
+main {
+    flex: 1;
+    display: block;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    background-color: transparent;
+}
+
+.container {
+    max-width: 1200px;
+    padding: 0px 16px;
+    margin: 0 auto;
+}
+
+.mb-20 {
+    margin-bottom: 20px;
+}
+
+.mb-24 {
+    margin-bottom: 24px;
+}
+
+.mb-28 {
+    margin-bottom: 28px;
+}
+
+.mb-32 {
+    margin-bottom: 32px;
+}
+
+.mb-36 {
+    margin-bottom: 36px;
+}
+
+.mb-40 {
+    margin-bottom: 40px;
+}
+
+.mb-44 {
+    margin-bottom: 44px;
+}
+
+nav a.active:after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: var(--r5);
+    border-radius: 1px;
+    position: absolute;
+}

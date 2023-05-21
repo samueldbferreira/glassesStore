@@ -1,0 +1,22 @@
+{
+    "feminino": {
+        "title": "Óculos feminino",
+        "description": "texto feminino"
+    },
+    "masculino": {
+        "title": "Óculos masculino",
+        "description": "texto masculino"
+    },
+    "grau": {
+        "title": "Óculos de grau",
+        "description": "texto de grau"
+    },
+    "sol": {
+        "title": "Óculos de sol",
+        "description": "texto de sol"
+    },
+    "antiluz": {
+        "title": "Óculos anti luz azul",
+        "description": "texto anti luz azul"
+    }
+}
