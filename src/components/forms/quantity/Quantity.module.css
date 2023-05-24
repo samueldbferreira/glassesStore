@@ -1,0 +1,35 @@
+.container {
+    display: flex;
+    align-items: stretch;
+    gap: 4px;
+}
+
+.box {
+    display: block;
+    width: 36px;
+    height: 36px;
+    border: 1px solid var(--w4);
+    border-radius: 4px;
+    background-color: transparent;
+    outline: none;
+}
+
+button.box:hover,
+button.box:focus {
+    background-color: var(--w2);
+}
+
+.input {
+    font-family: var(--fonte-texto);
+    font-size: 16px;
+    text-align: center;
+    color: var(--w8);
+}
+
+.add {
+    background: url('../../../assets/product/add.svg') no-repeat center center;
+}
+
+.remove {
+    background: url('../../../assets/product/remove.svg') no-repeat center center;
+}

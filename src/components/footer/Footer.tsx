@@ -40,14 +40,14 @@ const Footer = () => {
                 <div>
                     <h3>INFORMAÇÕES</h3>
                     <ul>
-                        <li><a href="">minha conta</a></li>
+                        <li><a href="/login">minha conta</a></li>
                         <li>
-                            <Link to="">
+                            <Link to="/perguntas">
                                 perguntas frequentes
                             </Link>
                         </li>
                         <li>
-                            <Link to="termos">
+                            <Link to="/termos">
                                 termos e condições
                             </Link>    
                         </li>
@@ -58,27 +58,27 @@ const Footer = () => {
                     <h3>PRODUTOS</h3>
                     <ul>
                         <li>
-                            <Link to={""} className={`${styles.linkMenu}`}>
+                            <Link to={'/products/feminino'} className={`${styles.linkMenu}`}>
                                 feminino
                             </Link>
                         </li>
                         <li>
-                            <Link to={""} className={`${styles.linkMenu}`}>
+                            <Link to={'/products/masculino'} className={`${styles.linkMenu}`}>
                                 masculino
                             </Link>
                         </li>
                         <li>
-                            <Link to={""} className={`${styles.linkMenu}`}>
+                            <Link to={'/products/grau'} className={`${styles.linkMenu}`}>
                                 óculos de grau
                             </Link>
                         </li>
                         <li>
-                            <Link to={""} className={`${styles.linkMenu}`}>
+                            <Link to={'/products/sol'} className={`${styles.linkMenu}`}>
                                 óculos de sol
                             </Link>
                         </li>
                         <li>
-                            <Link to={""} className={`${styles.linkMenu}`}>
+                            <Link to={'/products/antiluz'} className={`${styles.linkMenu}`}>
                                 óculos de anti luz azul
                             </Link>
                         </li>

@@ -17,6 +17,7 @@ html {
 
     --r4: #DB7B77;
     --r5: #CE3D37;
+    --r6: #9D1D17;
 
     --g5: #5EB6BC;
     --g6: #479EA4;
@@ -60,9 +61,8 @@ ul {
 
 main {
     flex: 1;
-    display: block;
-    width: 100%;
     display: flex;
+    width: 100%;
     flex-direction: column;
 }
 
@@ -74,6 +74,18 @@ input {
     max-width: 1200px;
     padding: 0px 16px;
     margin: 0 auto;
+}
+
+.mb-8 {
+    margin-bottom: 8px;
+}
+
+.mb-12 {
+    margin-bottom: 12px;
+}
+
+.mb-16 {
+    margin-bottom: 16px;
 }
 
 .mb-20 {
@@ -102,6 +114,14 @@ input {
 
 .mb-44 {
     margin-bottom: 44px;
+}
+
+.mb-52 {
+    margin-bottom: 52px;
+}
+
+.mb-72 {
+    margin-bottom: 72px;
 }
 
 nav a.active:after {

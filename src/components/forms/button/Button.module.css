@@ -34,3 +34,12 @@
     border-color: var(--b5);
     color: var(--b5);
 }
+
+.red {
+    background-color: var(--r5);
+}
+
+.red:hover,
+.red:focus {
+    background-color: var(--r6);
+}

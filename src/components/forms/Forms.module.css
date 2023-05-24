@@ -40,7 +40,7 @@
     display: grid;
     justify-items: center;
     justify-self: stretch;
-    gap: 28px;
+    gap: 20px;
 }
 
 .link {

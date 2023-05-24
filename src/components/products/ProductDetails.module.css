@@ -1,0 +1,89 @@
+.gridProduct {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 38px;
+    padding-top: 20px;
+}
+
+.gridProduct,
+.info {
+    font-family: var(--fonte-texto);
+}
+
+.titulo {
+    font-weight: 500;
+    font-size: 36px;
+    color: var(--w10);
+}
+
+.subtitulo {
+    font-size: 32px;
+    font-weight: 400;
+    color: var(--w10);
+}
+
+.texto,
+.lista {
+    max-width: 75ch;
+    font-size: 20px;
+    color: var(--w9);
+    line-height: 1.5;
+}
+
+.lista {
+    font-weight: 300;
+    line-height: 1.7;
+}
+
+.lista strong {
+    font-weight: 400;
+}
+
+.tipo {
+    font-weight: 300;
+    font-size: 16px;
+    color: var(--w9);
+}
+
+.separator {
+    display: block;
+    height: 1px;
+    background-color: var(--w2);
+    border: none;
+}
+
+.valores {
+    display: grid;
+    gap: 0px;
+    justify-content: start;
+}
+
+.total {
+    font-weight: 600;
+    font-size: 24px;
+    color: var(--r5);
+}
+
+.parcelamento {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.parcelas {
+    font-weight: 300;
+    color: var(--w8);
+    font-size: 20px;
+}
+
+.label {
+    font-weight: 400;
+    color: var(--w10);
+    font-size: 24px;
+}
+
+.colors {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}

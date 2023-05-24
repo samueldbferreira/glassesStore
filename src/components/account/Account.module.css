@@ -37,3 +37,24 @@
     padding: 48px 32px;
     min-height: 640px;
 }
+
+.titulo {
+    text-align: center;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.flexInputs {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 400px;
+}
+ 
+.grid button {
+    margin: 0 auto;
+}

@@ -7,7 +7,8 @@ import saveSVG from '../../assets/account/save.svg';
 import mailSVG from '../../assets/account/mail.svg';
 import lockSVG from '../../assets/account/lock.svg';
 
-import styles from './AccountData.module.css';
+import formStyles from '../forms/Forms.module.css';
+import styles from './Account.module.css';
 
 
 const AccountData = () => {
@@ -17,11 +18,11 @@ const AccountData = () => {
     const [email, setEmail] = React.useState('');
 
     return (
-        <div className={styles.gridData}>
+        <div className={styles.grid}>
             <form className={styles.containerData}>
-                <h1>Dados pessoais</h1>
+                <h1 className={`${styles.titulo} mb-28`}>Dados pessoais</h1>
 
-                <div className={styles.inputs}>
+                <div className={`${formStyles.inputs} mb-72`}>
                     <Input 
                         label="Primeiro nome"
                         type="text"
@@ -49,21 +50,21 @@ const AccountData = () => {
 
                 <Button value="SALVAR ALTERAÇÕES" icon={saveSVG} />
             </form>
-            
-            <span className={styles.separator}></span>
 
             <div className={styles.containerData}>
-                <h1>Dados de acesso</h1>
+                <h1 className={`${styles.titulo} mb-28`}>Dados de acesso</h1>
 
-                <Input
-                    label="Email atual"
-                    type="email"
-                    id="email"
-                    value={email}
-                    setValue={setEmail}
-                />
+                <div className={`${formStyles.inputs} mb-40`}>
+                    <Input
+                        label="Email atual"
+                        type="email"
+                        id="email"
+                        value={email}
+                        setValue={setEmail}
+                    />
+                </div>
 
-                <div className={styles.buttons}>
+                <div className={formStyles.inputs}>
                     <Button value="ALTERAR EMAIL" icon={mailSVG} style="transparent" />
                     <Button value="ALTERAR SENHA" icon={lockSVG} style="transparent" />
                 </div>

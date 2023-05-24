@@ -1,0 +1,23 @@
+.radio {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 8px 12px;
+    border: 1px solid var(--w4);
+    border-radius: 4px;
+    background-color: transparent;
+    color: var(--w8);
+    cursor: pointer;
+}
+
+.radio:hover,
+.active {
+    background-color: var(--w2);
+}
+
+.cor {
+    display: inline-block;
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+}
