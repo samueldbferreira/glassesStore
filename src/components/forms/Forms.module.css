@@ -69,3 +69,11 @@
     font-weight: 500;
     color: var(--g11);
 }
+
+.flexInputs {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 400px;
+}

@@ -45,14 +45,7 @@
 .grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-}
-
-.flexInputs {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    width: 100%;
-    max-width: 400px;
+    gap: 40px;
 }
  
 .grid button {

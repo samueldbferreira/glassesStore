@@ -1,0 +1,4 @@
+.addressesList {
+    display: grid;
+    gap: 24px;
+}

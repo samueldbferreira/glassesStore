@@ -1,0 +1,43 @@
+.address {
+    border: 1px solid var(--w4);
+    border-radius: 4px;
+    padding: 20px 16px;
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+.titulo {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--w10);
+}
+
+.info {
+    display: block;
+    color: var(--w8);
+    line-height: 24px;
+}
+
+.separator {
+    display: block;
+    height: 1px;
+    background-color: var(--w4);
+    border: none;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.change {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.change p {
+    color: var(--w8);
+    text-decoration: underline;
+}

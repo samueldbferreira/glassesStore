@@ -11,7 +11,9 @@ const Footer = () => {
     return (
         <footer className={`${styles.footer}`}>
             <div className={`container ${styles.footerGrid}`}>
-                <img src={logoSVG} alt="Logo Fozoco" />
+                <Link to='/'>
+                    <img src={logoSVG} alt="Logo Fozoco" />
+                </Link>
 
                 <div>
                     <h3>FALE CONOSCO</h3>
@@ -25,15 +27,15 @@ const Footer = () => {
                     </ul>
 
                     <ul className={styles.listIcons}>
-                        <li>
+                        <Link to='https://www.facebook.com/'>
                             <img src={faceSVG} alt="Logo Facebook" />
-                        </li>
-                        <li>
+                        </Link>
+                        <Link to='https://www.twitter.com/'>
                             <img src={twiSVG} alt="Logo Twitter" />
-                        </li>
-                        <li>
+                        </Link>
+                        <Link to='https://www.instagram.com/'>
                             <img src={instaSVG} alt="Logo Instagram" />
-                        </li>
+                        </Link>
                     </ul>
                 </div>
 
