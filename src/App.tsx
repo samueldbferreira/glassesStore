@@ -17,7 +17,7 @@ function App () {
   return (
     <div className='App'>
       <BrowserRouter>
-        <Header />
+        <Header admin={true} />
 
         <main className='container'>
           <Routes>
@@ -31,7 +31,7 @@ function App () {
           </Routes>
         </main>
 
-        <Footer />
+        <Footer admin={true} />
       </BrowserRouter>
     </div>
   )
