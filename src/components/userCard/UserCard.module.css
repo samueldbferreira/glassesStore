@@ -1,0 +1,11 @@
+.info {
+    display: grid;
+    gap: 12px;
+    color: var(--w9);
+}
+
+.infoItem {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}

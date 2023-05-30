@@ -5,6 +5,7 @@ import Products from './components/products/products/Products';
 import Product from './components/products/product/Product';
 import Login from './components/login/Login';
 import CustomerAccount from './components/account/customer/CustomerAccount';
+import AdminAccount from './components/account/admin/AdminAccount';
 import Footer from './components/footer/Footer';
 import './App.css';
 import Terms from './components/terms/Terms';
@@ -14,7 +15,7 @@ function App () {
     <div className='App'>
       <BrowserRouter>
         <Header
-          admin={false}
+          admin={true}
         />
 
         <main className='container'>
@@ -42,6 +43,11 @@ function App () {
             <Route
               path='/account/*'
               element={<CustomerAccount />}
+            /> 
+
+            <Route
+              path='/admin/*'
+              element={<AdminAccount />}
             />  
 
             <Route
@@ -52,7 +58,7 @@ function App () {
         </main>
 
         <Footer
-          admin={false}
+          admin={true}
         />
       </BrowserRouter>
     </div>

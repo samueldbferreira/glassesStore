@@ -1,0 +1,19 @@
+.users {
+    display: grid;
+    gap: 36px;
+}
+
+.user {
+    font-family: var(--fonte-texto);
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    border-bottom: 1px solid var(--w4);
+    padding-bottom: 32px;
+}
+
+.details {
+    text-decoration: underline;
+    color: var(--w8);
+    font-weight: 300;
+}

@@ -38,7 +38,7 @@
     border: none;
     background-color: transparent;
     margin-right: 8px;
-    background-image: url('../../assets/header/search.svg');
+    background-image: url('../../../assets/header/search.svg');
     background-position: center;
     background-repeat: no-repeat;
 }

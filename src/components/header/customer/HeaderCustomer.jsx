@@ -3,7 +3,6 @@ import { Link, NavLink } from 'react-router-dom';
 import logoSVG from '../../../assets/logo/logo.svg';
 import loginSVG from '../../../assets/header/login.svg';
 import bagSVG from '../../../assets/header/shopping_bag.svg';
-//import accountSVG from '../../assets/header/;account_circle_white.svg';
 
 import styles from './HeaderCustomer.module.css';
 
