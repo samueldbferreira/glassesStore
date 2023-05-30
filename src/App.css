@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
-html {
+:root {
     --w1: #FBFDFF;
     --w2: #EEF0F2;
     --w4: #C4C5C7;
@@ -38,47 +38,33 @@ html {
     box-sizing: border-box;
 }
 
-img {
-    display: inline-block;
-}
-
-a,
-button {
-    text-decoration:  none;
-    color: inherit;
-    cursor: pointer;
-}
-
 ul {
     list-style: none;
 }
 
-header {
-    margin-bottom: 44px;
+a,
+button {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
 }
 
 .App {
-    background-color: var(--w1);
     display: flex;
     flex-direction: column;
-    min-height: calc(100vh + 420px);
-}
-
-main {
-    flex: 1;
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-}
-
-input {
-    background-color: transparent;
+    height: calc(100vh + 420px);
 }
 
 .container {
-    max-width: 1200px;
-    padding: 0px 16px;
-    margin: 0 auto;
+  max-width: 1200px;
+  padding: 0px 16px;
+  margin: 0 auto;
+}
+
+main {
+    font-family: var(--fonte-texto);
+    flex: 1;
+    width: 100%;
 }
 
 .mb-8 {

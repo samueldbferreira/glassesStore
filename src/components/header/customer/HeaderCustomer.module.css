@@ -1,0 +1,93 @@
+.header {
+    font-family: var(--fonte-destaque);
+    margin-bottom: 44px;
+}
+
+.headerSupra {
+    display: flex;
+    align-items: center;
+    padding: 24px 0;
+    position: relative;
+}
+
+.searchBarContainer {
+    background-color: transparent;
+    border: 2px solid var(--w10);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 0px;
+}
+
+.searchBar {
+    color: var(--w9);
+    font-size: 16px;
+    display: block;
+    padding: 12px;
+    align-self: stretch;
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
+.searchBarIcon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: none;
+    background-color: transparent;
+    margin-right: 8px;
+    background-image: url('../../assets/header/search.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.logo {
+    margin: 0 auto;
+}
+
+.supraList {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    font-size: 20px;
+    font-weight: 400;
+    position: absolute;
+    right: 0px;
+}
+
+.supraList span {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.headerInfra {
+    background-color: var(--w10);
+    padding: 16px;
+}
+
+.infraList {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--w1);
+    gap: 28px;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.linkMenu {
+    position: relative;
+}
+
+.infraList .linkMenu:hover::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: var(--r5);
+    border-radius: 1px;
+    position: absolute;
+}
