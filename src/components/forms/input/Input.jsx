@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Input.module.css';
 
-const Input = ({ label, type, id, value, setValue }) => {
+const Input = ({ label, type, id, value, setValue, disabled }) => {
     const [lbl, setLbl] = React.useState(label);
 
     function hideLabel () {
@@ -20,9 +20,8 @@ const Input = ({ label, type, id, value, setValue }) => {
 
     return (
         <div className={styles.inputContainer} onFocus={hideLabel}>
-            <label className={styles.label} htmlFor={id}>{lbl}</label>
+            {!value && <label className={styles.label} htmlFor={id}>{lbl}</label>}
             <input 
-                placeholder=''
                 className={styles.input}
                 type={type}
                 name={id}
@@ -30,6 +29,7 @@ const Input = ({ label, type, id, value, setValue }) => {
                 value={value}
                 onChange={handleChange}
                 onBlur={handleBlur}
+                disabled={disabled}
             />
         </div>
     );

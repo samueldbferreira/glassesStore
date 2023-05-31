@@ -1,9 +1,21 @@
+import React from "react";
 import Button from "../../forms/button/Button";
 import Input from "../../forms/input/Input";
 import addressSVG from '../../../assets/account/address.svg';
 import formStyles from '../../forms/Forms.module.css';
 
-const AddressEdit = ({ values, setValues }) => {
+const AddressEdit = ({ values }) => {
+    //const [id, setId] = React.useState(values.id ? values.id : 0);
+    const [nome, setNome] = React.useState(values?.nome ? values.nome : '');
+    const [cep, setCep] = React.useState(values?.cep ? values.cep : '');
+    const [rua, setRua] = React.useState(values?.rua ? values.rua : '');
+    const [numero, setNumero] = React.useState(values?.numero ? values.numero : '');
+    const [complemento, setComplemento] = React.useState(values?.complemento ? values.complemento : '');
+    const [bairro, setBairro] = React.useState(values?.bairro ? values.bairro : '');
+    const [estado, setEstado] = React.useState(values?.estado ? values.estado : '');
+    const [cidade, setCidade] = React.useState(values?.cidade ? values.cidade : '');
+    const [referencia, setReferencia] = React.useState(values?.referencia ? values.referencia : '');
+
     return (
         <>
             <p className={formStyles.instruction}>Preencha os dados abaixo</p>
@@ -13,24 +25,24 @@ const AddressEdit = ({ values, setValues }) => {
                     label="Nome do endereço"
                     type="text"
                     id="nome"
-                    value={values.nome}
-                    setValue={setValues.setNome}
+                    value={nome}
+                    setValue={setNome}
                 />
 
                 <Input
                     label="CEP"
                     type="text"
                     id="cep"
-                    value={values.cep}
-                    setValue={setValues.setCep}
+                    value={cep}
+                    setValue={setCep}
                 />
 
                 <Input
                     label="Rua"
                     type="text"
                     id="rua"
-                    value={values.rua}
-                    setValue={setValues.setRua}
+                    value={rua}
+                    setValue={setRua}
                 />
 
                 <span className={formStyles.flexInputs}>
@@ -38,16 +50,16 @@ const AddressEdit = ({ values, setValues }) => {
                         label="Número"
                         type="text"
                         id="numero"
-                        value={values.numero}
-                        setValue={setValues.setNumero}
+                        value={numero}
+                        setValue={setNumero}
                     />
 
                     <Input
                         label="Complemento"
                         type="text"
                         id="complemento"
-                        value={values.complemento}
-                        setValue={setValues.setComplemento}
+                        value={complemento}
+                        setValue={setComplemento}
                     />
                 </span>
 
@@ -55,8 +67,8 @@ const AddressEdit = ({ values, setValues }) => {
                     label="Bairro"
                     type="text"
                     id="bairro"
-                    value={values.bairro}
-                    setValue={setValues.setBairro}
+                    value={bairro}
+                    setValue={setBairro}
                 />
 
                 <span className={formStyles.flexInputs}>
@@ -64,16 +76,16 @@ const AddressEdit = ({ values, setValues }) => {
                         label="Estado"
                         type="text"
                         id="estado"
-                        value={values.estado}
-                        setValue={setValues.setEstado}
+                        value={estado}
+                        setValue={setEstado}
                     />
 
                     <Input
                         label="Cidade"
                         type="text"
                         id="cidade"
-                        value={values.cidade}
-                        setValue={setValues.setCidade}
+                        value={cidade}
+                        setValue={setCidade}
                     />
                 </span>
 
@@ -81,8 +93,8 @@ const AddressEdit = ({ values, setValues }) => {
                     label="Ponto de referência"
                     type="text"
                     id="referencia"
-                    value={values.referencia}
-                    setValue={setValues.setReferencia}
+                    value={referencia}
+                    setValue={setReferencia}
                 />
             </div>
 

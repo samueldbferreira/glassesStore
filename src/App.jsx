@@ -6,16 +6,17 @@ import Product from './components/products/product/Product';
 import Login from './components/login/Login';
 import CustomerAccount from './components/account/customer/CustomerAccount';
 import AdminAccount from './components/account/admin/AdminAccount';
-import Footer from './components/footer/Footer';
-import './App.css';
 import Terms from './components/terms/Terms';
+import Footer from './components/footer/Footer';
+import Faq from './components/faq/Faq';
+import './App.css';
 
 function App () {
   return (
     <div className='App'>
       <BrowserRouter>
         <Header
-          admin={true}
+          admin={false}
         />
 
         <main className='container'>
@@ -54,11 +55,16 @@ function App () {
               path='/termos'
               element={<Terms />}
             />
+
+            <Route
+              path='/perguntas'
+              element={<Faq />}
+            />
           </Routes>
         </main>
 
         <Footer
-          admin={true}
+          admin={false}
         />
       </BrowserRouter>
     </div>

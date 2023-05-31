@@ -1,8 +1,8 @@
 import React from "react";
 import AddressCard from "../../../addresses/addressCard/AddressCard";
 import AddressEdit from "../../../addresses/addressEdit/AddressEdit";
+import ModalAddress from './ModalAddress.jsx';
 import styles from '../CustomerAccount.module.css';
-
 
 const addresses = [
   {
@@ -32,67 +32,45 @@ const addresses = [
 ] 
 
 const CustomerAddresses = () => {
-  const [id, setId] = React.useState(0);
-  const [nome, setNome] = React.useState('');
-  const [cep, setCep] = React.useState('');
-  const [rua, setRua] = React.useState('');
-  const [numero, setNumero] = React.useState('');
-  const [complemento, setComplemento] = React.useState('');
-  const [bairro, setBairro] = React.useState('');
-  const [estado, setEstado] = React.useState('');
-  const [cidade, setCidade] = React.useState('');
-  const [referencia, setReferencia] = React.useState('');
+  const [modalAddress, setModalAddress] = React.useState(null);
 
   return (
-    <div className={styles.grid}>
-      <div className={styles.containerData}>
-          <h1 className={`${styles.titulo} mb-28`}>Endereços</h1>
+    <>
+      <div className={styles.grid}>
+        <div className={styles.containerData}>
+            <h1 className={`${styles.titulo} mb-28`}>Endereços</h1>
 
-          <ul className={styles.addressesList}>
-            {
-              addresses.map((address) => {
-                return (
-                  <li key={address}>
-                    <AddressCard data={address} />
-                  </li>
-                )
-              })
-            }
-          </ul>
+            <ul className={styles.addressesList}>
+              {
+                addresses.map((address) => {
+                  return (
+                    <li key={address.nome}>
+                      <AddressCard 
+                        data={address}
+                        setModalAddress={setModalAddress}
+                      />
+                    </li>
+                  )
+                })
+              }
+            </ul>
+        </div>
+
+        <div className={styles.containerData}>
+          <h1 className={`${styles.titulo} mb-28`}>Adicionar endereço</h1>
+
+          <AddressEdit />
+        </div>
       </div>
 
-      <div className={styles.containerData}>
-        <h1 className={`${styles.titulo} mb-28`}>Adicionar endereço</h1>
-
-        <AddressEdit
-          values={{
-            id,
-            nome,
-            cep,
-            rua,
-            numero,
-            complemento,
-            bairro,
-            estado,
-            cidade,
-            referencia
-          }}
-
-          setValues={{
-            setId,
-            setNome,
-            setCep,
-            setRua,
-            setNumero,
-            setComplemento,
-            setBairro,
-            setEstado,
-            setCidade,
-            setReferencia
-          }}
-        />
-      </div>
-    </div>
+      {
+        modalAddress
+        &&
+        <ModalAddress 
+          addressData={modalAddress}
+          setModal={setModalAddress}
+        />}
+    </>
   );
 }
 

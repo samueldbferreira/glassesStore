@@ -1,6 +1,6 @@
 import styles from './TitleDescription.module.css';
 
-const Intro = ({ title, description, classname }) => {
+const TitleDescription = ({ title, description, classname }) => {
     return (
         <div className={`${styles.intro} ${classname}`}>
             <span className={styles.containerTitle}>
@@ -14,4 +14,4 @@ const Intro = ({ title, description, classname }) => {
     );   
 }
 
-export default Intro;
+export default TitleDescription;

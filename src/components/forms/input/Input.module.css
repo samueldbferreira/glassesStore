@@ -8,7 +8,6 @@
     line-height: 1;
     width: 100%;
     max-width: 400px;
-    background-color: var(--w1);
 }
 
 .label {
@@ -32,6 +31,11 @@
     font-size: inherit;
     cursor: text;
     width: 100%;
+    background-color: var(--w1);
+}
+
+.input:disabled {
+    background-color: var(--w3);
 }
 
 .input:active {

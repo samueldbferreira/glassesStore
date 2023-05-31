@@ -3,7 +3,7 @@ import editSVG from '../../../assets/account/edit_square.svg';
 import deleteSVG from '../../../assets/account/delete.svg';
 import styles from './AddressCard.module.css';
 
-const AddressCard = ({ data }) => {
+const AddressCard = ({ data, setModalAddress }) => {
   return (
     <div className={styles.address}>
         <h3 className={`${styles.titulo} mb-12`}>{data.nome}</h3>
@@ -18,10 +18,15 @@ const AddressCard = ({ data }) => {
         <hr className={`${styles.separator} mb-12`} />
         
         <span className={styles.controls}>
-            <Link className={styles.change} to=''>
+            <a 
+                className={styles.change}
+                onClick={() => {
+                    setModalAddress(data);
+                }}
+            >
                 <p>Alterar</p>
                 <img src={editSVG} />
-            </Link>
+            </a>
 
             <Link className={styles.change} to=''>
                 <p>Excluir</p>

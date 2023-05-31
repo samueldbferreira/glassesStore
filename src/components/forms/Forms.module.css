@@ -5,7 +5,6 @@
     margin: 0 auto;
 }
 
-
 .formTitle {
     padding: 24px 0;
     border: 1px solid var(--w4);
@@ -27,6 +26,7 @@
     padding: 36px 28px;
     display: grid;
     justify-items: center;
+    background-color: var(--w1);
 }
 
 .instruction {
