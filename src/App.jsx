@@ -1,3 +1,4 @@
+import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/header/Header';
 import Home from './components/home/Home';
@@ -10,13 +11,17 @@ import Terms from './components/terms/Terms';
 import Footer from './components/footer/Footer';
 import Faq from './components/faq/Faq';
 import './App.css';
+import ModalCart from './components/cart/modalCart/ModalCart';
 
 function App () {
+  const [cartModal, setCartModal] = React.useState(false);
+
   return (
     <div className='App'>
       <BrowserRouter>
         <Header
           admin={false}
+          setCartModal={setCartModal}
         />
 
         <main className='container'>
@@ -61,6 +66,14 @@ function App () {
               element={<Faq />}
             />
           </Routes>
+
+          { 
+            cartModal
+            &&
+            <ModalCart
+              setCartModal={setCartModal}
+            />
+          }
         </main>
 
         <Footer

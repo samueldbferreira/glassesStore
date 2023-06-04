@@ -33,3 +33,8 @@ button.box:focus {
 .remove {
     background: url('../../../assets/product/remove.svg') no-repeat center center;
 }
+
+.small .box {
+    width: 28px;
+    height: 28px;
+}

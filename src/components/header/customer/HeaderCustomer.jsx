@@ -7,7 +7,7 @@ import bagSVG from '../../../assets/header/shopping_bag.svg';
 import styles from './HeaderCustomer.module.css';
 
 
-const HeaderCustomer = () => {
+const HeaderCustomer = ({ setCartModal }) => {
   return (
     <header className={styles.header}>
         <div className={`container`}>
@@ -35,9 +35,14 @@ const HeaderCustomer = () => {
                     </span>
 
                     <span>
-                        <Link to={""} className={`${styles.linkMenu}`}>
+                        <a
+                            className={`${styles.linkMenu}`}
+                            onClick={() => {
+                                setCartModal(true);
+                            }}
+                        >
                             sacola
-                        </Link>
+                        </a>
                         <img src={bagSVG} />
                     </span>                
                 </nav>

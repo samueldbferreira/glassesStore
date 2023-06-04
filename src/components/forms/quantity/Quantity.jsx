@@ -12,9 +12,9 @@ function decrement (quantity, setQuantity) {
     }
 }
 
-const Quantity = ({ max, quantity, setQuantity }) => {
+const Quantity = ({ max, quantity, setQuantity, small }) => {
     return (
-        <div className={styles.container}>
+        <div className={`${styles.container} ${small && styles['small']}`}>
             <button 
                 className={`${styles.add} ${styles.box}`}
                 onClick={(e) => {
