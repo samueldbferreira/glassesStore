@@ -10,8 +10,9 @@ import AdminAccount from './components/account/admin/AdminAccount';
 import Terms from './components/terms/Terms';
 import Footer from './components/footer/Footer';
 import Faq from './components/faq/Faq';
-import './App.css';
 import ModalCart from './components/cart/modalCart/ModalCart';
+import Checkout from './components/checkout/Checkout';
+import './App.css';
 
 function App () {
   const [cartModal, setCartModal] = React.useState(false);
@@ -64,6 +65,11 @@ function App () {
             <Route
               path='/perguntas'
               element={<Faq />}
+            />
+
+            <Route
+              path='/checkout/*'
+              element={<Checkout />}
             />
           </Routes>
 

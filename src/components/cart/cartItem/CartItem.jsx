@@ -3,9 +3,9 @@ import Quantity from "../../forms/quantity/Quantity";
 import styles from './CartItem.module.css';
 import deleteSVG from '../../../assets/cart/delete_forever.svg';
 
-const CartItem = () => {
+const CartItem = ({ controls }) => {
   const [quantity, setQuantity] = React.useState(0);
-  const [stock, setStock] = React.useState(0);
+  const [stock, setStock] = React.useState(10);
   
   return (
     <div className={styles.item}>
@@ -19,17 +19,25 @@ const CartItem = () => {
         <p>R$ 199,99</p>
       </span>
 
-      <span className={styles.controls}>
-        <a className={styles.remove}>
-          <img src={deleteSVG} />
-        </a>
-        <Quantity
-          small={true}
-          quantity={quantity}
-          setQuantity={setQuantity}
-          max={stock}
-        />
-      </span>
+      {
+        controls
+        ?
+        <span className={styles.controls}>
+          <a className={styles.remove}>
+            <img src={deleteSVG} />
+          </a>
+          <Quantity
+            small={true}
+            quantity={quantity}
+            setQuantity={setQuantity}
+            max={stock}
+          />
+        </span>
+        :
+        <span className={styles.quantity}>
+          {quantity}
+        </span>
+      }
     </div>
   )
 }

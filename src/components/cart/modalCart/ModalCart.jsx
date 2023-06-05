@@ -1,9 +1,12 @@
-import styles from './ModalCart.module.css';
+import { useNavigate } from 'react-router-dom';
 import CartItem from '../cartItem/cartItem';
 import Button from '../../forms/button/Button';
 import rightSVG from '../../../assets/cart/arrow_forward_ios.svg';
+import styles from './ModalCart.module.css';
 
 const ModalCart = ({ setCartModal }) => {
+  const navigate = useNavigate();
+
   function closeModal () {
     setCartModal(false);
   }
@@ -25,15 +28,15 @@ const ModalCart = ({ setCartModal }) => {
 
         <ul className={styles.items}>
           <li className={styles.item}>
-            <CartItem />
+            <CartItem controls={true} />
           </li>
 
           <li className={styles.item}>
-            <CartItem />
+            <CartItem controls={true} />
           </li>
 
           <li className={styles.item}>
-            <CartItem />
+            <CartItem controls={true} />
           </li>
         </ul>
 
@@ -43,7 +46,15 @@ const ModalCart = ({ setCartModal }) => {
             <p><strong>R$ 599,99</strong></p>
           </div>
 
-          <Button value={'FINALIZAR COMPRA'} icon={rightSVG}></Button>
+          
+          <Button 
+            value={'FINALIZAR COMPRA'} 
+            icon={rightSVG}
+            onClick={() => {
+              navigate('/checkout/bag');
+              setCartModal(false);
+            }}
+          />
         </div>
       </div>
     </div>

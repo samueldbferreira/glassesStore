@@ -1,9 +1,7 @@
 .address {
     border: 1px solid var(--w4);
     border-radius: 4px;
-    padding: 20px 16px;
-    max-width: 480px;
-    margin: 0 auto;
+    padding: 16px;
 }
 
 .titulo {

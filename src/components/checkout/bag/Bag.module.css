@@ -1,0 +1,39 @@
+.container {
+  margin: 0 auto;
+  max-width: 1000px;
+}
+
+.gridBag {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 80px;
+}
+
+.center {
+  text-align: center;
+}
+
+.content {
+  border: 1px solid var(--w4);
+  border-radius: 4px;
+}
+
+.total {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+  padding: 20px;
+  
+  font-size: 24px;
+  font-weight: 300;
+  color: var(--w10);
+}
+
+.total strong {
+  font-weight: 500;
+}
+
+.item {
+  border-bottom: 1px solid var(--w2);
+}

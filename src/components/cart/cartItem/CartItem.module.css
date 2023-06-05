@@ -37,3 +37,16 @@
   display: block;
   margin-top: 6px;
 }
+
+.quantity {
+  display: block;
+  width: 28px;
+  height: 28px;
+  font-size: 16px;
+  text-align: center;
+  color: var(--w8);  
+  border: 1px solid var(--w4);
+  border-radius: 4px;
+  outline: none;
+  align-self: end;
+}

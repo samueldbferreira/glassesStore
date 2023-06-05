@@ -48,6 +48,7 @@ const CustomerAddresses = () => {
                       <AddressCard 
                         data={address}
                         setModalAddress={setModalAddress}
+                        controls={true}
                       />
                     </li>
                   )

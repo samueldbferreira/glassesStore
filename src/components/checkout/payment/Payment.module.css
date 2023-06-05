@@ -1,0 +1,48 @@
+.grid {
+  display: grid;
+  gap: 80px;
+  grid-template-columns: 1fr 1fr;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1000px;
+}
+
+.titleChange {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+}
+
+.title {
+  font-weight: 500;
+  font-size: 24px;
+  color: var(--w10);
+}
+
+.change {
+  font-weight: 300;
+  font-size: 16px;
+  text-decoration: underline;
+  color: var(--w10);
+}
+
+.content {
+  border: 1px solid var(--w4);
+  border-radius: 4px;
+}
+
+.payment button {
+  margin: 0 auto;
+}
+
+.item {
+  border-bottom: 1px solid var(--w2);
+}
+
+.center {
+  text-align: center;
+}
+
+
