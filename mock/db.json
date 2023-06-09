@@ -1,0 +1,130 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "nome": "Óculos Addis",
+      "preco": 199.99,
+      "parcelas": 3,
+      "imagem": "https://raw.githubusercontent.com/samueldbferreira/storeImages/main/uploads/addis.png"
+    },
+    {
+      "id": 2,
+      "nome": "Óculos Addis",
+      "preco": 199.99,
+      "parcelas": 3,
+      "imagem": "https://raw.githubusercontent.com/samueldbferreira/storeImages/main/uploads/addis.png"
+    },
+    {
+      "id": 3,
+      "nome": "Óculos Addis",
+      "preco": 199.99,
+      "parcelas": 3,
+      "imagem": "https://raw.githubusercontent.com/samueldbferreira/storeImages/main/uploads/addis.png"
+    },
+    {
+      "id": 4,
+      "nome": "Óculos Addis",
+      "preco": 199.99,
+      "parcelas": 3,
+      "imagem": "https://raw.githubusercontent.com/samueldbferreira/storeImages/main/uploads/addis.png"
+    },
+    {
+      "id": 5,
+      "nome": "Óculos Addis",
+      "preco": 199.99,
+      "parcelas": 3,
+      "imagem": "https://raw.githubusercontent.com/samueldbferreira/storeImages/main/uploads/addis.png"
+    },
+    {
+      "id": 6,
+      "nome": "Óculos Addis",
+      "preco": 199.99,
+      "parcelas": 3,
+      "imagem": "https://raw.githubusercontent.com/samueldbferreira/storeImages/main/uploads/addis.png"
+    },
+    {
+      "id": 7,
+      "nome": "Óculos Addis",
+      "preco": 199.99,
+      "parcelas": 3,
+      "imagem": "https://raw.githubusercontent.com/samueldbferreira/storeImages/main/uploads/addis.png"
+    },
+    {
+      "id": 8,
+      "nome": "Óculos Addis",
+      "preco": 199.99,
+      "parcelas": 3,
+      "imagem": "https://raw.githubusercontent.com/samueldbferreira/storeImages/main/uploads/addis.png"
+    },
+    {
+      "id": 9,
+      "nome": "Óculos Addis",
+      "preco": 199.99,
+      "parcelas": 3,
+      "imagem": "https://raw.githubusercontent.com/samueldbferreira/storeImages/main/uploads/addis.png"
+    },
+    {
+      "id": 10,
+      "nome": "Óculos Addis",
+      "preco": 199.99,
+      "parcelas": 3,
+      "imagem": "https://raw.githubusercontent.com/samueldbferreira/storeImages/main/uploads/addis.png"
+    },
+    {
+      "id": 11,
+      "nome": "Óculos Addis",
+      "preco": 199.99,
+      "parcelas": 3,
+      "imagem": "https://raw.githubusercontent.com/samueldbferreira/storeImages/main/uploads/addis.png"
+    },
+    {
+      "id": 12,
+      "nome": "Óculos Addis",
+      "preco": 199.99,
+      "parcelas": 3,
+      "imagem": "https://raw.githubusercontent.com/samueldbferreira/storeImages/main/uploads/addis.png"
+    }
+  ],
+  "accounts": [
+    {
+      "id": 1,
+      "email": "admin@admin.com",
+      "password": "admin",
+      "admin": true
+    },
+    {
+      "firstName": "test",
+      "lastName": "test",
+      "email": "test@test.com",
+      "password": "test",
+      "admin": false,
+      "id": 5
+    }
+  ],
+  "addresses": [
+    {
+      "id": 1,
+      "nome": "Endereço principal",
+      "cep": "00000-000",
+      "rua": "Rua vinte e dois",
+      "numero": "495",
+      "complemento": "teste",
+      "bairro": "Belém Capela",
+      "estado": "SP",
+      "cidade": "São Paulo",
+      "referencia": "perto do teste"
+    },
+    {
+      "id": 2,
+      "nome": "Trabalho",
+      "cep": "00123-000",
+      "rua": "Rua trinta e cinco",
+      "numero": "145",
+      "complemento": "teste 2",
+      "bairro": "Belém",
+      "estado": "RJ",
+      "cidade": "Rio de Janeiro",
+      "referencia": "perto do teste 2"
+    }
+  ]
+}

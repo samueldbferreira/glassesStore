@@ -11,15 +11,23 @@ const LoginForm = () => {
     const [email, setEmail] = React.useState('');
     const [password, setPassword] = React.useState('');
 
-    function handleSubmit (e) {
+
+    async function handleSubmit (e) {
         e.preventDefault();
+        //na etapa 3 trocamos isso por uma api de login?
 
-        if (email === 'admin@admin.com' && password === 'admin') {
+        let url = "http://localhost:3000/accounts?email="+email+"&password="+password
+        const response = await fetch(url);
+        const data = await response.json();
+        //console.log(data)
+
+        if (data[0].admin===true) {
             navigate('/admin');
-
-        } else {
+        } else if(data.length===1){
             navigate('/account');
-
+        }
+        else {
+            alert("conta não encontrada")
         }
     }
 

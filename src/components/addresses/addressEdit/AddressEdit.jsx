@@ -16,8 +16,33 @@ const AddressEdit = ({ values }) => {
     const [cidade, setCidade] = React.useState(values?.cidade ? values.cidade : '');
     const [referencia, setReferencia] = React.useState(values?.referencia ? values.referencia : '');
 
+    function handleSubmit() {
+        // e.preventDefault();
+
+        fetch("http://localhost:3000/addresses", {
+            method: "post",
+
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+
+            body: JSON.stringify({
+                nome: nome,
+                cep: cep,
+                rua: rua,
+                numero: numero,
+                complemento: complemento,
+                bairro: bairro,
+                estado: estado,
+                cidade: cidade,
+                referencia: referencia
+            })
+        })
+    }
+
     return (
-        <>
+        <form onSubmit={handleSubmit}>
             <p className={formStyles.instruction}>Preencha os dados abaixo</p>
 
             <div className={`${formStyles.inputs} mb-72`}>
@@ -99,7 +124,7 @@ const AddressEdit = ({ values }) => {
             </div>
 
             <Button value="SALVAR ENDEREÇO" icon={addressSVG} />
-        </>
+        </form>
     );
 }
 

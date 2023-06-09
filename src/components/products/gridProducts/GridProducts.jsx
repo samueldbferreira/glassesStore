@@ -14,7 +14,7 @@ const GridProducts = ({ category }) => {
     const [products, setProducts] = React.useState([]);
 
     React.useEffect(() => {
-        getProducts('http://localhost:5173/src/data/products.json', setProducts);
+        getProducts('http://localhost:3000/products', setProducts);
     }, [category]);
 
     return (

@@ -12,8 +12,29 @@ const SignUp = () => {
     const [password, setPassword] = React.useState('');
     const [terms, setTerms] = React.useState(false);
 
+    function signinSubmit() {
+
+        fetch("http://localhost:3000/accounts", {
+            method: "post",
+
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+
+            body: JSON.stringify({
+                firstName: firstName,
+                lastName: lastName,
+                email: email,
+                password: password,
+                admin: false
+        })
+        })
+        
+    }
+
     return (
-        <form className={formStyles.form}>
+        <form className={formStyles.form} onSubmit={signinSubmit}>
             <div className={formStyles.formTitle}>
                 <h1 className={formStyles.title}>Cadastro</h1>
             </div>
