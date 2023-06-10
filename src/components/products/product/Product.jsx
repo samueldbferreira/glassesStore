@@ -6,9 +6,42 @@ import Quantity from '../../forms/quantity/Quantity';
 import RadioColor from '../../forms/radioColor/RadioColor';
 import styles from './Product.module.css';
 
-const Product = ({ id }) => {
+
+async function getProduct (url, setProduct) {
+    const response = await fetch(url);
+    const data = await response.json();
+    console.log(data[0])
+    setProduct(data[0]);
+}
+
+//não sei como pegar o "id" do route, pfv substituir esse "1" pelo id se tiver tempo
+const Product = ({ id=1 }) => {
+    function addToCart(){
+
+        fetch("http://localhost:3000/cart", {
+            method: "post",
+
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+
+            body: JSON.stringify({
+                productid:id
+            })
+        })
+
+    }
+
     const [color, setColor] = React.useState('');
     const [quantity, setQuantity] = React.useState(1);
+    const [product, setProduct] = React.useState([]);
+
+    React.useEffect(() => {
+        getProduct('http://localhost:3000/products?id='+ id, setProduct);
+
+        // console.log(id)
+    }, []);
 
     return (
         <>
@@ -18,14 +51,14 @@ const Product = ({ id }) => {
 
                 <form className={styles.details}>
                     <div className="mb-24">
-                        <h1 className={`${styles.titulo} mb-16`}>Óculos Addis</h1>
+                        <h1 className={`${styles.titulo} mb-16`}>{product.nome}</h1>
                         <p className={`${styles.tipo}`}>anti luz azul</p>
                     </div>
 
                     <hr className={`${styles.separator} mb-28`} />
 
                     <div className={`${styles.valores} mb-44`}>
-                        <p className={styles.total}>R$ 199, 99</p>
+                        <p className={styles.total}>R$ {product.preco}</p>
                         <span className={styles.parcelamento}>
                             <img src={cardSVG} />
                             <p className={styles.parcelas}>3X de R$ 56, 66 sem juros</p>
@@ -69,7 +102,7 @@ const Product = ({ id }) => {
                         <Quantity max={10} quantity={quantity} setQuantity={setQuantity} />
                     </div>
 
-                    <Button value="ADICIONAR À SACOLA" icon={bagSVG} color='red' />
+                    <Button value="ADICIONAR À SACOLA" icon={bagSVG} color='red' onClick={addToCart}/>
                 </form>
             </section>
 

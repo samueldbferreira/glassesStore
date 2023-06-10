@@ -125,6 +125,28 @@
       "estado": "RJ",
       "cidade": "Rio de Janeiro",
       "referencia": "perto do teste 2"
+    },
+    {
+      "nome": "Endereço principal",
+      "cep": "00000-000",
+      "rua": "Rua vinte e dois",
+      "numero": "495",
+      "complemento": "teste",
+      "bairro": "Belém Capela",
+      "estado": "SP",
+      "cidade": "São Paulo",
+      "referencia": "perto do teste",
+      "id": 3
+    }
+  ],
+  "cart": [
+    {
+      "id": 1,
+      "productid": 1
+    },
+    {
+      "id": 2,
+      "productid": 3
     }
   ]
 }
