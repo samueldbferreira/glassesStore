@@ -26,7 +26,6 @@ const Products = () => {
       <TitleDescription
         title={title}
         description={description}
-        classname={'mb-40'}
       />
 
       <GridProducts

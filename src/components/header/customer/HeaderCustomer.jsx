@@ -1,92 +1,146 @@
-import { Link, NavLink } from 'react-router-dom';
-
-import logoSVG from '../../../assets/logo/logo.svg';
+import React from 'react';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import loginSVG from '../../../assets/header/login.svg';
-import bagSVG from '../../../assets/header/shopping_bag.svg';
-
 import styles from './HeaderCustomer.module.css';
+import MenuModal from '../menuModal/MenuModal';
+import ModalCart from '../../cart/modalCart/ModalCart';
 
 
-const HeaderCustomer = ({ setCartModal }) => {
+const HeaderCustomer = () => {
+  const navigate = useNavigate();
+  const [mobile, setMobile] = React.useState(false);
+	const [menuModal, setMenuModal] = React.useState(false);
+	const [cartModal, setCartModal] = React.useState(false);
+
+  React.useEffect(() => {
+    function checkResize () {
+        setMobile(window.matchMedia('(max-width: 840px)').matches);
+    }
+
+    window.addEventListener('resize', checkResize);
+
+    checkResize();
+
+    return (() => {
+        window.removeEventListener('resize', checkResize);
+    });
+    
+  }, [mobile]);
+
   return (
     <header className={styles.header}>
-        <div className={`container`}>
+        <div className={`container`}> 
             <div className={styles.headerSupra}>
-                <form className={`${styles.searchBarContainer}`}>
-                    <input
-                        type="text"
-                        className={`${styles.searchBar}`}
-                        placeholder='busca'
-                    />
+                {
+                    mobile
+                    ?
+                    <a
+                        onClick={() => {
+                            setMenuModal(true);
+                        }}
+                    >
+                        <i className={styles.menuIcon} />
+                    </a>
+                    :
+                    <form className={`${styles.searchBarContainer}`}>
+                        <input
+                            type="text"
+                            className={`${styles.searchBar}`}
+                            placeholder='busca'
+                        />
 
-                    <button type="submit" className={`${styles.searchBarIcon}`}></button>
-                </form>
+                        <button type="submit" className={`${styles.searchBarIcon}`}></button>
+                    </form>
+                }
 
-                <Link to='/' className={styles.logo}>
-                    <img src={logoSVG} alt="Logo da Loja" />
-                </Link>
+                <Link to='/' className={styles.logo} />
 
                 <nav className={styles.supraList}>
-                    <span>
-                        <Link to="/login" className={styles.linkMenu}>
-                            entrar
-                        </Link>
-                        <img src={loginSVG} />
-                    </span>
-
-                    <span>
+                    {
+                        !mobile
+                        &&
                         <a
-                            className={`${styles.linkMenu}`}
                             onClick={() => {
-                                setCartModal(true);
+                                navigate('/login')
                             }}
+                            className={styles.login}
                         >
-                            sacola
+                            <p className={styles.supraLabel}>entrar</p>
+                            <img src={loginSVG} />
                         </a>
-                        <img src={bagSVG} />
-                    </span>                
+                    }
+                    <a
+                        onClick={() => {
+                            setCartModal(true);
+                        }}
+                    >
+                        {
+                            !mobile
+                            &&
+                            <p className={styles.supraLabel}>sacola</p>
+                        }
+                        <i className={styles.bagIcon} />
+                    </a>                
                 </nav>
             </div>
         </div>
 
         <div className={`${styles.headerInfra}`}>
-            <nav className={`container ${styles.infraList}`}>
-                <NavLink 
-                    to={'/produtos/feminino'}
-                    className={styles.linkMenu}
-                >
-                    feminino
-                </NavLink>
+            {
+                mobile
+                ?
+                <form className={`${styles.searchBarContainer}`}>
+                        <input
+                            type="text"
+                            className={`${styles.searchBar}`}
+                            placeholder='busca'
+                        />
 
-                <NavLink
-                    to={'/produtos/masculino'}
-                    className={styles.linkMenu}
-                >
-                    masculino
-                </NavLink>
+                        <button type="submit" className={`${styles.searchBarIcon}`}></button>
+                    </form>
+                :
+                <nav className={`container ${styles.infraList}`}>
+                    <NavLink 
+                        to={'/produtos/feminino'}
+                        className={styles.linkMenu}
+                    >
+                        feminino
+                    </NavLink>
 
-                <NavLink 
-                    to={'/produtos/grau'}
-                    className={styles.linkMenu}
-                >
-                    óculos de grau
-                </NavLink>
+                    <NavLink
+                        to={'/produtos/masculino'}
+                        className={styles.linkMenu}
+                    >
+                        masculino
+                    </NavLink>
 
-                <NavLink
-                    to={'/produtos/sol'}
-                    className={styles.linkMenu}
-                >
-                    óculos de sol
-                </NavLink>
-                
-                <NavLink
-                    to={'/produtos/antiluz'}
-                    className={styles.linkMenu}
-                >
-                    óculos anti luz azul
-                </NavLink>
-            </nav>
+                    <NavLink 
+                        to={'/produtos/grau'}
+                        className={styles.linkMenu}
+                    >
+                        óculos de grau
+                    </NavLink>
+
+                    <NavLink
+                        to={'/produtos/sol'}
+                        className={styles.linkMenu}
+                    >
+                        óculos de sol
+                    </NavLink>
+                    
+                    <NavLink
+                        to={'/produtos/antiluz'}
+                        className={styles.linkMenu}
+                    >
+                        óculos anti luz azul
+                    </NavLink>
+                </nav>
+            }
         </div>
+
+        {cartModal && <ModalCart setCartModal={setCartModal} />}
+
+        {menuModal && <MenuModal setMenuModal={setMenuModal} />}
     </header>
   );
 }

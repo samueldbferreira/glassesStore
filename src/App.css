@@ -126,3 +126,38 @@ nav a.active:after {
     border-radius: 1px;
     position: absolute;
 }
+
+@media (max-width: 840px) {
+    .App {
+        height: calc(100vh + 680px);
+    }
+
+    nav a.active:after {
+        content: '';
+        display: block;
+        width: 28px;
+        height: 3px;
+        background-color: var(--r5);
+        border-radius: 2px;
+        position: absolute;
+    }
+}
+
+@media (max-width: 540px) {
+    .App {
+        height: calc(100vh + 440px);
+    }
+
+    body {
+        padding-top: 108px;
+    }
+
+    .container {
+        padding: 0px 8px;
+    }
+
+    nav a.active:after {
+        width: 20px;
+        height: 2px;
+    }
+}

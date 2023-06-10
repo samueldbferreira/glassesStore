@@ -36,7 +36,7 @@ const CustomerAddresses = () => {
 
   return (
     <>
-      <div className={styles.grid}>
+      <div className={`${styles.grid} ${styles.addresses}`}>
         <div className={styles.containerData}>
             <h1 className={`${styles.titulo} mb-28`}>Endereços</h1>
 

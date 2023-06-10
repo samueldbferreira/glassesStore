@@ -1,7 +1,7 @@
 import { Link, useParams } from 'react-router-dom';
 import TitleID from '../../../sectionTitle/id/TitleID';
 import UserCard from '../../../userCard/UserCard';
-import Order from "../../../orders/order/Order";
+import Order from '../../../order/Order';
 import removeSVG from '../../../../assets/admin/person_remove.svg';
 
 import styles from './AdminUser.module.css';

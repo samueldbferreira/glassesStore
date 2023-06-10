@@ -1,0 +1,43 @@
+
+
+
+import { Link } from "react-router-dom";
+
+import editSVG from '../../assets/account/edit_square.svg';
+import deleteSVG from '../../assets/account/delete.svg';
+
+import { IAddress } from './Address.interfaces';
+
+import styles from './Address.module.css';
+
+
+const Address = ({ data }: { data: IAddress } ) => {
+    return (
+        <div className={styles.address}>
+            <h3 className={`${styles.titulo} mb-12`}>{data.nome}</h3>
+            
+            <span className={`${styles.info} mb-12`}>
+                <p>{data.rua}, {data.numero}{data.complemento && `, ${data.complemento}`}</p>
+                <p>{data.bairro} - {data.cidade} - {data.estado}</p>
+                <p>CEP: {data.cep}</p>
+                {data.complemento && <p>{data.complemento}</p>}
+            </span>
+
+            <hr className={`${styles.separator} mb-12`} />
+            
+            <span className={styles.controls}>
+                <Link className={styles.change} to=''>
+                    <p>Alterar</p>
+                    <img src={editSVG} />
+                </Link>
+
+                <Link className={styles.change} to=''>
+                    <p>Excluir</p>
+                    <img src={deleteSVG} />
+                </Link>
+            </span>
+        </div>
+    );
+}
+
+export default Address;

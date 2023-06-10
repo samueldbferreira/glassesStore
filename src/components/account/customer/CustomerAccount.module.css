@@ -1,4 +1,3 @@
-
 .nav {
     background-color: var(--w2);
     border: 1px solid var(--w4);
@@ -57,4 +56,29 @@
 .addressesList {
     display: grid;
     gap: 24px;
+}
+
+@media (max-width: 540px) {
+    .nav {
+        border-radius: 4px 4px 0 0;
+        padding: 16px 12px;
+        gap: 24px;
+    }
+
+    .link {
+        font-size: 16px;
+    }
+
+    .containerContent {
+        padding: 20px 12px;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+    }
+
+    .titulo {
+        font-size: 20px;
+    }
 }

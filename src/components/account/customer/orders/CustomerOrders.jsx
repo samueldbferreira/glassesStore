@@ -1,4 +1,4 @@
-import Order from '../../../orders/order/Order';
+import Order from '../../../order/Order';
 import styles from '../CustomerAccount.module.css';
 
 const ordersData = [

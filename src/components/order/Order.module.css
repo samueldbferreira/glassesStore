@@ -38,3 +38,27 @@
     color: var(--w10);
 }
 
+@media (max-width: 540px) {
+    .order {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        border-color: var(--w4);
+    }
+
+    .details {
+        grid-row: 1;
+    }
+
+    .details h2 {
+        font-size: 20px;
+    }
+
+    .text p {
+        font-size: 14px;
+    }
+
+    .items {
+        grid-row: 2;
+        gap: 12px;
+    }
+}

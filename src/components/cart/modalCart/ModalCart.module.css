@@ -47,6 +47,7 @@
 .items {
   flex: 1;
   border-bottom: 2px solid var(--w2);
+  overflow: scroll;
 }
 
 .item {
@@ -77,4 +78,34 @@
 
 .subtotal strong {
   font-weight: 500;
+}
+
+@media (max-width: 540px) {
+  .content {
+    width: 80vw;
+    padding-right: 0px;
+  }
+
+  .header {
+    padding: 12px 8px;
+    border-bottom: 1px solid var(--w4);
+  }
+
+  .title {
+    font-size: 16px;
+  }
+
+  .closeIcon {
+    height: 20px;
+    width: 20px;
+    background: url('../../../assets/header/close-small.svg');
+  }
+
+  .buy {
+    padding: 16px 8px 24px 8px;
+  }
+
+  .subtotal {
+    font-size: 16px;
+  }
 }

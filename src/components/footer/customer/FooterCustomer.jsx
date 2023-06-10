@@ -1,8 +1,4 @@
 import { Link } from 'react-router-dom';
-import logoSVG from '../../../assets/logo/logo-w.svg';
-import faceSVG from '../../../assets/social/facebook-w.svg';
-import twiSVG from '../../../assets/social/twitter-w.svg';
-import instaSVG from '../../../assets/social/instagram-w.svg';
 import styles from './FooterCustomer.module.css'
 
 const FooterCustomer = () => {
@@ -10,7 +6,7 @@ const FooterCustomer = () => {
         <footer className={`${styles.footer}`}>
             <div className={`container ${styles.footerGrid}`}>
                 <Link to='/'>
-                    <img src={logoSVG} alt="Logo Fozoco" />
+                    <i className={styles.logo} />
                 </Link>
 
                 <div>
@@ -26,13 +22,13 @@ const FooterCustomer = () => {
 
                     <ul className={styles.listIcons}>
                         <Link to='https://www.facebook.com/'>
-                            <img src={faceSVG} alt="Logo Facebook" />
+                            <i className={styles.facebookIcon} />
                         </Link>
                         <Link to='https://www.twitter.com/'>
-                            <img src={twiSVG} alt="Logo Twitter" />
+                            <i className={styles.twitterIcon} />
                         </Link>
                         <Link to='https://www.instagram.com/'>
-                            <img src={instaSVG} alt="Logo Instagram" />
+                            <i className={styles.instagramIcon} />
                         </Link>
                     </ul>
                 </div>

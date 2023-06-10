@@ -1,4 +1,3 @@
-import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/header/Header';
 import Home from './components/home/Home';
@@ -10,19 +9,15 @@ import AdminAccount from './components/account/admin/AdminAccount';
 import Terms from './components/terms/Terms';
 import Footer from './components/footer/Footer';
 import Faq from './components/faq/Faq';
-import ModalCart from './components/cart/modalCart/ModalCart';
 import Checkout from './components/checkout/Checkout';
 import './App.css';
 
 function App () {
-  const [cartModal, setCartModal] = React.useState(false);
-
   return (
     <div className='App'>
       <BrowserRouter>
         <Header
           admin={false}
-          setCartModal={setCartModal}
         />
 
         <main className='container'>
@@ -72,14 +67,6 @@ function App () {
               element={<Checkout />}
             />
           </Routes>
-
-          { 
-            cartModal
-            &&
-            <ModalCart
-              setCartModal={setCartModal}
-            />
-          }
         </main>
 
         <Footer

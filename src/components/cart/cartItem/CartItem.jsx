@@ -10,7 +10,6 @@ const CartItem = ({ controls }) => {
   return (
     <div className={styles.item}>
       <div className={styles.image}>
-
       </div>
 
       <span className={styles.info}>

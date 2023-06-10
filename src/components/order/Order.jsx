@@ -1,4 +1,4 @@
-import OrderCard from '../orderCard/OrderCard';
+import CartItem from '../cart/cartItem/CartItem';
 import styles from './Order.module.css';
 
 const Order = ({ data }) => {
@@ -9,7 +9,7 @@ const Order = ({ data }) => {
                     data.items.map((item) => {
                         return (
                             <li key={item.nome}>
-                                <OrderCard data={item} />
+                                <CartItem controls={false} />
                             </li>
                         );
                     })

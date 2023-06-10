@@ -2,3 +2,9 @@
     display: grid;
     gap: 32px;
 }
+
+@media (max-width: 540px) {
+    .questions {
+        gap: 12px;
+    }
+}

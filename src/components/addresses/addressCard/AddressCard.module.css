@@ -13,7 +13,7 @@
 .info {
     display: block;
     color: var(--w8);
-    line-height: 24px;
+    line-height: 1.5;
 }
 
 .separator {
@@ -38,4 +38,22 @@
 .change p {
     color: var(--w8);
     text-decoration: underline;
+}
+
+@media (max-width: 540px) {
+    .address {
+        padding: 12px;
+    }
+    
+    .titulo {
+        font-size: 16px;
+    }
+
+    .info {
+        font-size: 12px;
+    }
+
+    .change {
+        font-size: 12px;
+    }
 }

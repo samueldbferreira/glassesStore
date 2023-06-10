@@ -45,3 +45,73 @@
     font-weight: 300;
     color: var(--w8);
 }
+
+@media (max-width: 1052px) {
+    .imageContainer {
+        height: 280px;
+    }
+
+    .details {
+        padding: 12px;
+        height: 88px;
+    }
+}
+
+@media (max-width: 840px) {
+    .imageContainer {
+        height: 380px;
+    }
+}
+
+@media (max-width: 720px) {
+    .imageContainer {
+        height: 320px;
+    }
+}
+
+@media (max-width: 640px) {
+    .imageContainer {
+        height: 280px;
+    }
+
+    .details {
+        padding: 8px 0px;
+        height: 72px;
+    }
+    
+    .nome {
+        font-size: 20px;
+    }
+    
+    .valores {
+        gap: 8px;
+    }
+}
+
+@media (max-width: 540px) {
+    .imageContainer {
+        height: 200px;
+    }
+
+    .details {
+        padding: 8px 0px;
+        height: 72px;
+    }
+    
+    .nome {
+        font-size: 14px;
+    }
+    
+    .valores {
+        flex-direction: column;
+        gap: 0px;
+    }
+
+    .preco {
+        font-size: 12px;
+    }
+
+    .parcelamento {
+        font-size: 10px;
+    }
+}

@@ -43,3 +43,11 @@
 .red:focus {
     background-color: var(--r6);
 }
+
+@media (max-width: 540px) {
+    .button {
+        font-size: 16px;
+        padding: 12px;
+        gap: 8px;
+    }
+}

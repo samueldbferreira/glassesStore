@@ -20,8 +20,9 @@
 
 .info {
   flex: 1;
-  display: grid;
-  gap: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   font-weight: 300;
   font-size: 20px;
 }
@@ -49,4 +50,25 @@
   border-radius: 4px;
   outline: none;
   align-self: end;
+}
+
+@media (max-width: 540px) {
+  .item {
+    gap: 8px;
+    padding: 12px 8px;
+  }
+
+  .image {
+    width: 64px;
+    height: 80px;
+  }
+
+  .info {
+    gap: 4px;
+    font-size: 14px;
+  }
+
+  .title {
+    font-size: 16px;
+  }
 }

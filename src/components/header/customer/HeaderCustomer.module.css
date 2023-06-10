@@ -5,30 +5,30 @@
 
 .headerSupra {
     display: flex;
+    justify-content: space-between;
     align-items: center;
     padding: 24px 0;
-    position: relative;
 }
 
 .searchBarContainer {
-    background-color: transparent;
     border: 2px solid var(--w10);
     border-radius: 4px;
     display: flex;
     align-items: center;
-    position: absolute;
-    left: 0px;
+    width: 280px;
+    overflow: hidden;
 }
 
 .searchBar {
     color: var(--w9);
     font-size: 16px;
     display: block;
+    height: 100%;
     padding: 12px;
     align-self: stretch;
     border: none;
     outline: none;
-    background-color: transparent;
+    flex: 1;
 }
 
 .searchBarIcon {
@@ -44,23 +44,33 @@
 }
 
 .logo {
-    margin: 0 auto;
+    display: block;
+    width: 93px;
+    height: 37px;
+    background: url('../../../assets/logo/logo.svg') no-repeat center center;
 }
 
 .supraList {
     display: flex;
     align-items: center;
+    justify-content: end;
     gap: 24px;
     font-size: 20px;
     font-weight: 400;
-    position: absolute;
-    right: 0px;
+    width: 280px;
 }
 
-.supraList span {
+.supraList a {
     display: flex;
     align-items: center;
     gap: 4px;
+}
+
+.bagIcon {
+    display: block;
+    width: 32px;
+    height: 32px;
+    background: url('../../../assets/header/shopping_bag.svg') no-repeat center center;
 }
 
 .headerInfra {
@@ -90,4 +100,86 @@
     background-color: var(--r5);
     border-radius: 1px;
     position: absolute;
+}
+
+@media (max-width: 1052px) {
+    .header {
+        margin-bottom: 36px;
+    }
+}
+
+@media (max-width: 840px) {
+    .headerSupra {
+        padding: 16px 0;
+    }
+
+    .supraList {
+        width: 40px;
+    }
+
+    .headerInfra {
+        padding: 12px 16px;
+    }
+
+    .searchBarContainer {
+        background-color: var(--w1);
+        width: 100%;
+        border: none;
+    }
+}
+
+@media (max-width: 540px) {
+    .header {
+        margin-bottom: 16px;
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        width: 100vw;
+        height: 92px;
+        background-color: var(--w1);
+        z-index: 1000;
+        box-shadow: 0px 2px 6px rgba(0, 0, 0, .4);
+    }
+    
+    .headerSupra {
+        padding: 10px 0px;
+    }
+
+    .supraList {
+        width: 24px;
+    }
+
+    .menuIcon {
+        display: block;
+        width: 24px;
+        height: 24px;
+        background: url('../../../assets/header/menu-small.svg') no-repeat center center;
+    }
+
+    .logo {
+        display: block;
+        width: 50px;
+        height: 20px;
+        background: url('../../../assets/logo/logo-b-small.svg') no-repeat center center;
+    }
+
+    .bagIcon {
+        display: block;
+        width: 24px;
+        height: 24px;
+        background: url('../../../assets/header/bag-small.svg') no-repeat center center;
+    }
+
+    .headerInfra {
+        padding: 8px;
+    }
+
+    .searchBarContainer {
+        height: 32px;
+        border-radius: 2px;
+    }
+
+    .searchBar {
+        font-size: 12px;
+    }
 }

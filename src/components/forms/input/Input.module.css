@@ -42,3 +42,19 @@
     outline: none;
     border: none
 }
+
+@media (max-width: 540px) {
+    .inputContainer {
+        border: 2px solid var(--w10);
+        border-radius: 4px;
+        font-size: 12px;
+    }
+
+    .label {
+        padding: 8px;
+    }
+
+    .input {
+        padding: 12px 8px;
+    }
+}

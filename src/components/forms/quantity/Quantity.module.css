@@ -38,3 +38,14 @@ button.box:focus {
     width: 28px;
     height: 28px;
 }
+
+@media (max-width: 540px) {
+    .small .box {
+        width: 20px;
+        height: 20px;
+    }
+
+    .input {
+        font-size: 12px;
+    }
+}

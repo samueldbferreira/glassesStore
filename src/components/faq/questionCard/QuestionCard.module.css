@@ -43,3 +43,26 @@
 .active .answer {
     display: block;
 }
+
+@media (max-width: 540px) {
+    .question {
+        padding: 12px 8px;
+        font-size: 14px;
+    }
+
+    .answer {
+        padding: 8px;
+        font-size: 12px;
+    }
+
+    .dropIcon {
+        display: block;
+        height: 24px;
+        width: 24px;
+        background: url('../../../assets/faq/down-small.svg') no-repeat center center;
+    }
+
+    .active .dropIcon {
+        background-image: url('../../../assets/faq/up-small.svg');
+    }
+}

@@ -22,8 +22,9 @@ const ModalCart = ({ setCartModal }) => {
       <div className={styles.content}>
         <div className={styles.header}>
           <h1 className={styles.title}>SACOLA</h1>
-          <span className={styles.closeIcon} onClick={closeModal}>
-          </span>
+          <a onClick={closeModal}>
+            <i className={styles.closeIcon} />
+          </a>
         </div>
 
         <ul className={styles.items}>
