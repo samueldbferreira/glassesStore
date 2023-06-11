@@ -13,8 +13,8 @@ const ProductCard = ({ data }) => {
                 <h2 className={styles.nome}>{data.nome}</h2>
 
                 <span className={styles.valores}>
-                    <p className={styles.preco}>R$ 199,99</p>
-                    <span className={styles.parcelamento}>3x de R$ 66,66</span>
+                    <p className={styles.preco}>R$ {data.preco.toFixed(2)}</p>
+                    <span className={styles.parcelamento}>3x de R$ {(data.preco/2.8).toFixed(2)}</span>
                 </span>
             </div>
         </Link>

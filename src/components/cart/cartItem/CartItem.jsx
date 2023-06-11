@@ -7,8 +7,9 @@ async function getProduct(item, setProduct) {
     const response = await fetch('http://localhost:3000/products?id=' + item.productid);
     const data = await response.json();
     setProduct(data[0]);
-
 }
+
+
 
 const CartItem = ({item}) => {
   const [quantity, setQuantity] = React.useState(0);
@@ -19,7 +20,17 @@ const CartItem = ({item}) => {
         getProduct(item, setProduct);
     }, [], );
 
-  
+
+
+    async function removeItem() {
+        await fetch(`http://localhost:3000/cart/${item.id}`, {
+            method: "DELETE"
+
+        })
+        //fazer com que o ModalCart tenha update caso essa função execute.
+
+    }
+
   return (
     <div className={styles.item}>
       <div className={styles.image}>
@@ -33,7 +44,7 @@ const CartItem = ({item}) => {
       </span>
 
       <span className={styles.controls}>
-        <a className={styles.remove}>
+        <a className={styles.remove} onClick={removeItem}>
           <img src={deleteSVG} />
         </a>
         <Quantity

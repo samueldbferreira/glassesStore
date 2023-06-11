@@ -10,7 +10,6 @@ import styles from './Product.module.css';
 async function getProduct (url, setProduct) {
     const response = await fetch(url);
     const data = await response.json();
-    console.log(data[0])
     setProduct(data[0]);
 }
 
