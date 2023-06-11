@@ -3,6 +3,32 @@
     grid-template-columns: 1fr 1fr;
     gap: 38px;
     padding-top: 20px;
+    margin-bottom:  52px;
+}
+
+.photos {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.imgPrincipal {
+    background-color: var(--w2);
+    height: 460px;
+    border-radius: 4px;
+    flex: 1;
+}
+
+.secundarias {
+    display: flex;
+    gap: 16px;
+}
+
+.imgsec {
+    height: 124px;
+    width: 100%;
+    background-color: var(--w2);
+    border-radius: 4px;
 }
 
 .gridProduct,
@@ -14,12 +40,28 @@
     font-weight: 500;
     font-size: 36px;
     color: var(--w10);
+    margin-bottom: 16px;
+}
+
+.tipo {
+    font-weight: 300;
+    font-size: 16px;
+    color: var(--w9);
+}
+
+.header {
+    margin-bottom: 24px;
 }
 
 .subtitulo {
     font-size: 32px;
     font-weight: 400;
     color: var(--w10);
+    margin-bottom: 16px;
+}
+
+.texto {
+    margin-bottom: 44px;
 }
 
 .texto,
@@ -39,23 +81,19 @@
     font-weight: 400;
 }
 
-.tipo {
-    font-weight: 300;
-    font-size: 16px;
-    color: var(--w9);
-}
-
 .separator {
     display: block;
     height: 1px;
     background-color: var(--w2);
     border: none;
+    margin-bottom: 28px;
 }
 
 .valores {
     display: grid;
     gap: 0px;
     justify-content: start;
+    margin-bottom: 44px;
 }
 
 .total {
@@ -70,6 +108,13 @@
     gap: 4px;
 }
 
+.cardIcon {
+    display: block;
+    width: 32px;
+    height: 32px;
+    background: url('../../../assets/product/credit_card.svg') no-repeat center center;
+}
+
 .parcelas {
     font-weight: 300;
     color: var(--w8);
@@ -80,10 +125,118 @@
     font-weight: 400;
     color: var(--w10);
     font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.colorsContainer {
+    margin-bottom: 36px;
+}
+
+.quantityContainer {
+    margin-bottom: 72px;
 }
 
 .colors {
     display: flex;
     gap: 8px;
     flex-wrap: wrap;
+}
+
+@media (max-width: 540px) {
+    .gridProduct {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        padding: 0px;
+        margin-bottom: 44px;
+    }
+
+    .photos {
+        display: block;
+    }
+
+    .imgPrincipal {
+        height: 320px;
+    }
+
+    .secundarias {
+        display: none;
+    }
+
+    .header {
+        text-align: center;
+        margin-bottom: 12px;
+    }
+
+    .titulo {
+        font-size: 24px;
+        margin-bottom: 0px;
+    }
+
+    .tipo {
+        font-size: 14px;
+    }
+
+    .separator {
+        margin-bottom: 12px;
+    }
+
+    .valores {
+        text-align: center;
+        justify-content: stretch;
+        margin-bottom: 16px;
+    }
+
+    .total {
+        font-size: 16px;
+    }
+
+    .parcelamento {
+        justify-content: center;
+    }
+
+    .cardIcon {
+        display: none;
+    }
+
+    .parcelas {
+        font-size: 14px;
+    }
+
+    .form {
+        border: 1px solid var(--w2);
+        border-radius: 4px;
+        padding: 8px 8px 16px 8px;
+        margin-bottom: 32px;
+    }
+
+    .label {
+        font-size: 16px;
+        margin-bottom: 4px;
+    }
+
+    .colorsContainer {
+        margin-bottom: 20px;
+    }
+
+    .colors {
+        gap: 4px;
+    }
+
+    .quantityContainer {
+        margin-bottom: 0px;
+    }
+
+    .subtitulo {
+        font-size: 20px;
+        margin-bottom: 12px;
+    }
+
+    .texto,
+    .lista {
+        font-size: 12px;
+    }
+
+    .texto {
+        margin-bottom: 24px;
+    }
 }

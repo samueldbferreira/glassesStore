@@ -10,7 +10,7 @@ const Bag = () => {
   return (
     <section className={`${styles.gridBag} ${styles.container}`}>
       <div>
-        <h2 className={`mb-28`}>SACOLA DE COMPRAS</h2>
+        <h2 className={styles.titleBag}>SACOLA DE COMPRAS</h2>
 
         <ul className={`${styles.items} ${styles.content}`}>
           <li className={styles.item}>
@@ -28,9 +28,9 @@ const Bag = () => {
       </div>
 
       <div>
-        <h2 className={`${styles.center} mb-28`}>RESUMO DA COMPRA</h2>
+        <h2 className={`${styles.titleResumo}`}>RESUMO DA COMPRA</h2>
 
-        <div className={`${styles.content} ${styles.total} mb-44`}>
+        <div className={`${styles.content} ${styles.total}`}>
           <p>SUBTOTAL:</p>
           <p><strong>R$ 599,99</strong></p>
         </div>

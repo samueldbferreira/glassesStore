@@ -9,8 +9,8 @@
   gap: 80px;
 }
 
-.center {
-  text-align: center;
+.titleBag {
+  margin-bottom: 28px;
 }
 
 .content {
@@ -18,16 +18,20 @@
   border-radius: 4px;
 }
 
+.titleResumo {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
 .total {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  
   padding: 20px;
-  
   font-size: 24px;
   font-weight: 300;
   color: var(--w10);
+  margin-bottom: 44px;
 }
 
 .total strong {
@@ -36,4 +40,24 @@
 
 .item {
   border-bottom: 1px solid var(--w2);
+}
+
+@media (max-width: 540px) {
+  .gridBag {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .titleBag,
+  .titleResumo {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 12px;
+  }
+
+  .total {
+    padding: 8px;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
 }

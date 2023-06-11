@@ -21,3 +21,16 @@
     width: 24px;
     border-radius: 50%;
 }
+
+@media (max-width: 540px) {
+    .radio {
+        gap: 10px;
+        padding: 8px 6px;
+        font-size: 12px;
+    }
+
+    .cor {
+        height: 16px;
+        width: 16px;
+    }
+}

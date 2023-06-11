@@ -113,7 +113,8 @@
         font-size: 12px;
     }
 
-    .inputs {
-        gap: 12px;
+    .inputs,
+    .flexInputs {
+        gap: 8px;
     }
 }

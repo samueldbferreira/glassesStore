@@ -29,8 +29,8 @@ const Payment = () => {
   return (
     <section className={`${styles.grid} ${styles.container}`}>
       <div>
-        <div className='mb-52'>
-          <span className={`${styles.titleChange} mb-24`}>
+        <div className={styles.address}>
+          <span className={`${styles.titleChange}`}>
             <h2 className={styles.title}>ENDEREÇO</h2>
             <a className={styles.change}>alterar</a>
           </span>
@@ -42,7 +42,7 @@ const Payment = () => {
         </div>
 
         <div>
-          <span className={`${styles.titleChange} mb-24`}>
+          <span className={`${styles.titleChange}`}>
             <h2 className={styles.title}>SACOLA DE COMPRAS</h2>
             <a className={styles.change}>alterar</a>
           </span>
@@ -60,9 +60,9 @@ const Payment = () => {
       </div>
 
       <div className={`${styles.payment}`}>
-        <h2 className={`${styles.center} mb-24`}>FORMA DE PAGAMENTO</h2>
+        <h2 className={`${styles.title} ${styles.titlePayment}`}>FORMA DE PAGAMENTO</h2>
 
-        <div className={`${formStyles.inputs} mb-52`}>
+        <div className={`${formStyles.inputs} ${styles.inputsPayment}`}>
           <Input
             label='Número do cartão'
             id='numero'

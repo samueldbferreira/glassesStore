@@ -114,7 +114,7 @@
     }
 
     .supraList {
-        width: 40px;
+        width: 32px;
     }
 
     .headerInfra {
@@ -125,6 +125,13 @@
         background-color: var(--w1);
         width: 100%;
         border: none;
+    }
+
+    .menuIcon {
+        display: block;
+        width: 32px;
+        height: 32px;
+        background: url('../../../assets/header/menu.svg') no-repeat center center;
     }
 }
 

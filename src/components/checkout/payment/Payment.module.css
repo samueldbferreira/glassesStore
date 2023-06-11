@@ -9,16 +9,26 @@
   max-width: 1000px;
 }
 
+.address {
+  margin-bottom: 36px;
+}
+
 .titleChange {
   display: flex;
   align-items: end;
   justify-content: space-between;
+  margin-bottom: 24px;
 }
 
 .title {
   font-weight: 500;
   font-size: 24px;
   color: var(--w10);
+}
+
+.titlePayment {
+  text-align: center;
+  margin-bottom: 24px;
 }
 
 .change {
@@ -37,6 +47,10 @@
   margin: 0 auto;
 }
 
+.inputsPayment {
+  margin-bottom: 52px;
+}
+
 .item {
   border-bottom: 1px solid var(--w2);
 }
@@ -45,4 +59,33 @@
   text-align: center;
 }
 
+@media (max-width: 540px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
 
+  .address {
+    margin-bottom: 28px;
+  }
+
+  .titleChange {
+    margin-bottom: 12px;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+
+  .change {
+    font-size: 14px;
+  }
+
+  .titlePayment {
+    margin-bottom: 12px;
+  }
+
+  .inputsPayment {
+    margin-bottom: 32px;
+  }
+}
