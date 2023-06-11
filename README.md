@@ -114,5 +114,5 @@ Open the HTML files, including the files in the 'OculosDeSol' folder. 'OculosDeS
 Problems: List any major problems you had.
 Using Figma for creating HTML5 files was challenging as it may not be the most suitable tool for this purpose. However, it was still useful in establishing a project foundation and served its intended purpose well.
 
-Comments
+## Comments
 N/A
