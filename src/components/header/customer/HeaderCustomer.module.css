@@ -138,14 +138,8 @@
 @media (max-width: 540px) {
     .header {
         margin-bottom: 16px;
-        position: fixed;
-        top: 0px;
-        left: 0px;
-        width: 100vw;
-        height: 92px;
         background-color: var(--w1);
-        z-index: 1000;
-        box-shadow: 0px 2px 6px rgba(0, 0, 0, .4);
+        box-shadow: 0px 1px 2px rgba(0, 0, 0, .4);
     }
     
     .headerSupra {

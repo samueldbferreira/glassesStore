@@ -17,7 +17,7 @@ function App () {
     <div className='App'>
       <BrowserRouter>
         <Header
-          admin={false}
+          admin={true}
         />
 
         <main className='container'>
@@ -70,7 +70,7 @@ function App () {
         </main>
 
         <Footer
-          admin={false}
+          admin={true}
         />
       </BrowserRouter>
     </div>

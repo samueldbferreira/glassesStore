@@ -39,7 +39,6 @@ const AdminUsers = () => {
                 type={'text'}
                 value={query}
                 setValue={setQuery}
-                classname='mb-40'
             />
         
             <ul className={styles.users}>

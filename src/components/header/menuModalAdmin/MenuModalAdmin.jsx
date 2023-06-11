@@ -1,7 +1,7 @@
 import { Link, NavLink } from 'react-router-dom';
-import styles from './MenuModal.module.css';
+import styles from './MenuModalAdmin.module.css';
 
-const MenuModal = ({ setMenuModal }) => {
+const MenuModalAdmin = ({ setMenuModal }) => {
   function closeModal () {
     setMenuModal(false);
   }
@@ -17,7 +17,7 @@ const MenuModal = ({ setMenuModal }) => {
       <div className={styles.content}>
         <div className={styles.header}>
           <Link to='/login'>
-            <h1 className={styles.title} onClick={closeModal}>Entrar</h1>
+            <h1 className={styles.title} onClick={closeModal}>Minha Conta</h1>
           </Link>
           <a onClick={closeModal}>
             <i className={styles.closeIcon}/>
@@ -28,51 +28,31 @@ const MenuModal = ({ setMenuModal }) => {
           <ul>
             <li className={styles.item}>
               <NavLink 
-                to={'/produtos/feminino'}
+                to={'/admin/'}
                 className={styles.linkMenu}
                 onClick={closeModal}
               >
-                feminino
-              </NavLink>
-            </li>
-
-            <li className={styles.item}>
-              <NavLink
-                to={'/produtos/masculino'}
-                className={styles.linkMenu}
-                onClick={closeModal}
-              >
-                masculino
+                produtos
               </NavLink>
             </li>
 
             <li className={styles.item}>
               <NavLink 
-                to={'/produtos/grau'}
+                to={'/admin/novo'}
                 className={styles.linkMenu}
                 onClick={closeModal}
               >
-                óculos de grau
+                novo produto
               </NavLink>
             </li>
 
             <li className={styles.item}>
-              <NavLink
-                to={'/produtos/sol'}
+              <NavLink 
+                to={'/admin/usuarios/'}
                 className={styles.linkMenu}
                 onClick={closeModal}
               >
-                óculos de sol
-              </NavLink>
-            </li>
-
-            <li className={styles.item}>
-              <NavLink
-                to={'/produtos/antiluz'}
-                className={styles.linkMenu}
-                onClick={closeModal}
-              >
-                  óculos anti luz azul
+                usuários
               </NavLink>
             </li>
           </ul>
@@ -82,4 +62,4 @@ const MenuModal = ({ setMenuModal }) => {
   )
 }
 
-export default MenuModal;
+export default MenuModalAdmin;

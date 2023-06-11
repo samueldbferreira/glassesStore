@@ -1,8 +1,8 @@
 import styles from './TitleSearch.module.css';
 
-const TitleSearch = ({ title, label, id, type, value, setValue, classname }) => {
+const TitleSearch = ({ title, label, id, type, value, setValue }) => {
     return (
-        <div className={`${styles.titleSearch} ${classname}`}>
+        <div className={`${styles.titleSearch}`}>
             <h1 className={styles.title}>{title}</h1>
     
             <form className={`${styles.searchBarContainer}`}>

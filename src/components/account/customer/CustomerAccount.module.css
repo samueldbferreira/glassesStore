@@ -58,6 +58,13 @@
     gap: 24px;
 }
 
+@media (max-width: 840px) {
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 56px;
+    }
+}
+
 @media (max-width: 540px) {
     .nav {
         border-radius: 4px 4px 0 0;
@@ -74,7 +81,6 @@
     }
 
     .grid {
-        grid-template-columns: 1fr;
         gap: 36px;
     }
 

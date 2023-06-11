@@ -20,3 +20,18 @@
     font-weight: 300;
     color: var(--g9);
 }
+
+@media (max-width: 540px) {
+    .titleId {
+        padding: 12px;
+    }
+
+    .title {
+        font-size: 28px;
+    }
+
+    .id {
+        font-size: 16px;
+    }
+}
+

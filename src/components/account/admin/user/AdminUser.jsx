@@ -2,8 +2,6 @@ import { Link, useParams } from 'react-router-dom';
 import TitleID from '../../../sectionTitle/id/TitleID';
 import UserCard from '../../../userCard/UserCard';
 import Order from '../../../order/Order';
-import removeSVG from '../../../../assets/admin/person_remove.svg';
-
 import styles from './AdminUser.module.css';
 
 const ordersData = [
@@ -63,9 +61,9 @@ const AdminUser = () => {
             />
 
             <div className={styles.content}>
-                <div className={`mb-52 ${styles.info}`}>
+                <div className={`${styles.info}`}>
                     <div>
-                        <h2 className={`${styles.subtitle} mb-20`}>Dados Pessoais</h2>
+                        <h2 className={`${styles.subtitle}`}>Dados Pessoais</h2>
 
                         <UserCard data={data} />
                     </div>
@@ -75,12 +73,12 @@ const AdminUser = () => {
                         className={styles.remove}
                     >
                         <p>REMOVER</p>
-                        <img src={removeSVG} />
+                        <i className={styles.removeIcon} />
                     </Link>
                 </div>
 
                 <div>
-                    <h2 className={`${styles.subtitle} mb-20`}>Pedidos</h2>
+                    <h2 className={`${styles.subtitle}`}>Pedidos</h2>
 
                     <ul className={styles.orders}>
                         {

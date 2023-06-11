@@ -1,23 +1,20 @@
-import nameSVG from '../../assets/admin/badge.svg';
-import emailSVG from '../../assets/admin/mail.svg';
-import idSVG from '../../assets/admin/fingerprint.svg';
 import styles from './UserCard.module.css';
 
 const userCard = ({ data }) => {
     return (
         <ul className={styles.info}>
             <li className={styles.infoItem}>
-                <img src={nameSVG}/>
+                <i className={styles.nameIcon} />
                 <p>{data.nome}</p>
             </li>
 
             <li className={styles.infoItem}>
-                <img src={emailSVG}/>
+                <i className={styles.mailIcon} />
                 <p>{data.email}</p>
             </li>
 
             <li className={styles.infoItem}>
-                <img src={idSVG}/>
+            <i className={styles.idIcon} />
                 <p>{data.id}</p>
             </li>
         </ul>

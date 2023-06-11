@@ -21,6 +21,20 @@
     line-height: 1.5;
 }
 
+@media (max-width: 840px) {
+    .content {
+        gap: 32px;
+    }
+
+    .text h2 {
+        margin-bottom: 24px;
+    }
+
+    .text p {
+        margin-bottom: 16px;
+    }
+}
+
 @media (max-width: 540px) {
     .content {
         gap: 16px;

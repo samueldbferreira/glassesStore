@@ -17,3 +17,17 @@
     color: var(--w8);
     font-weight: 300;
 }
+
+@media (max-width: 540px) {
+    .users {
+        gap: 28px;
+    }
+
+    .user {
+        padding-bottom: 20px;
+    }
+    
+    .details {
+        font-size: 12px;
+    }
+}

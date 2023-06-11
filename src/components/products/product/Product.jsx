@@ -83,7 +83,9 @@ const Product = ({ id }) => {
                         </div>
                     </div>
 
-                    <Button value="ADICIONAR À SACOLA" icon={bagSVG} color='red' />
+                    <span className={styles.btn}>
+                        <Button value="ADICIONAR À SACOLA" icon={bagSVG} color='red' />
+                    </span>
                 </form>
             </section>
 

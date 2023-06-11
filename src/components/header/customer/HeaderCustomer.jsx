@@ -7,8 +7,9 @@ import ModalCart from '../../cart/modalCart/ModalCart';
 
 
 const HeaderCustomer = () => {
-  const navigate = useNavigate();
-  const [mobile, setMobile] = React.useState(false);
+	const navigate = useNavigate();
+	
+	const [mobile, setMobile] = React.useState(false);
 	const [menuModal, setMenuModal] = React.useState(false);
 	const [cartModal, setCartModal] = React.useState(false);
 
