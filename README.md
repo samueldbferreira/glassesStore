@@ -89,7 +89,10 @@ https://miro.com/app/board/uXjVMLKnbQs=/?share_link_id=761055462924
 
 
 ## Comments About the Code
-N/A
+* We had some issues cause part of the group use windows and the other linux;
+* Was hard to make the code responsive to the server
+* Too much pages to do and low time;
+* Difficulty using react.
 
 
 
