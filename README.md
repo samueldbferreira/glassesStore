@@ -12,5 +12,7 @@ Gabriel dos Santos Brito        Nº USP: 10284250
 ##how to run the code:
 
 npm install to install
+
 npm mock to start json server
+
 npm dev to run the react app script
