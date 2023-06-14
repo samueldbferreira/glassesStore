@@ -13,6 +13,8 @@ Gabriel dos Santos Brito        Nº USP: 10284250
 
 "npm install" to install
 
+"npm run mock" and "npm run dev" simultaneously
+
 "npm run mock" to start json server
 
 "npm run dev" to run the react app script
