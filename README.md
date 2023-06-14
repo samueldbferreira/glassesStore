@@ -9,7 +9,7 @@ Samuel de Assunção Ferreira	Nº USP: 12543565
 Gabriel dos Santos Brito        Nº USP: 10284250
 
 
-## how to run the code:
+## How to Run the Code:
 
 "npm install" to install
 
