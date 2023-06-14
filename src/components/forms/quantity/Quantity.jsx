@@ -7,7 +7,7 @@ function increment (max, quantity, setQuantity) {
 }
 
 function decrement (quantity, setQuantity) {
-    if (quantity > 0) {
+    if (quantity > 1) {
         setQuantity(quantity - 1);
     }
 }
@@ -24,12 +24,9 @@ const Quantity = ({ max, quantity, setQuantity, small }) => {
             >
             </button>
 
-            <input 
-                type="text"
-                className={`${styles.input} ${styles.box}`}
-                value={quantity}
-                //ainda não dá pra add manual
-            />
+            <div className={`${styles.input} ${styles.box}`}>
+                <p>{quantity}</p>
+            </div>
             
             <button 
                 className={`${styles.remove} ${styles.box}`}

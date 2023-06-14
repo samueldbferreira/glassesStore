@@ -1,12 +1,13 @@
 import React from 'react';
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { UserContext } from '../../UserContext';
 import Input from "../../forms/input/Input";
 import Button from "../../forms/button/Button";
 import entrarSVG from '../../../assets/header/login-w.svg';
 import formStyles from '../../forms/Forms.module.css';
 
 const LoginForm = () => {
-    const navigate = useNavigate();
+    const context = React.useContext(UserContext);
 
     const [email, setEmail] = React.useState('');
     const [password, setPassword] = React.useState('');
@@ -14,13 +15,9 @@ const LoginForm = () => {
     function handleSubmit (e) {
         e.preventDefault();
 
-        if (email === 'admin@admin.com' && password === 'admin') {
-            navigate('/admin');
+        if (!email || !password) return;
 
-        } else {
-            navigate('/account');
-
-        }
+        context.userLogin(email, password);
     }
 
     return (

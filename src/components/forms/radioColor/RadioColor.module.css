@@ -15,6 +15,14 @@
     background-color: var(--w2);
 }
 
+.simple {
+    cursor: initial;
+}
+
+.simple:hover {
+    background-color: transparent;
+}
+
 .cor {
     display: inline-block;
     height: 24px;

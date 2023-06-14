@@ -44,11 +44,7 @@ const HeaderAdmin = () => {
         {
           mobile
           &&
-          <a
-            onClick={() => {
-                setMenuModal(true);
-            }}
-          >
+          <a>
             <i className={styles.accountIcon} />
           </a>
         }

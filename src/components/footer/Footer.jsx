@@ -1,8 +1,12 @@
+import React from "react";
+import { UserContext } from "../UserContext";
 import FooterAdmin from "./admin/FooterAdmin";
 import FooterCustomer from "./customer/FooterCustomer";
 
-const Footer = ({ admin }) => {
-  return admin ? <FooterAdmin /> : <FooterCustomer />;
+const Footer = () => {
+  const { login, userData } = React.useContext(UserContext);
+
+  return (login && userData.admin) ? <FooterAdmin /> : <FooterCustomer />;
 }
 
 export default Footer;

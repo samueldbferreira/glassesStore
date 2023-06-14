@@ -42,15 +42,6 @@ const ordersData = [
 const CustomerOrders = () => {
     return (
         <ul className={styles.orders}>
-            {
-                ordersData.map((order) => {
-                    return (
-                        <li key={order}>
-                            <Order data={order} />
-                        </li>
-                    )
-                })
-            }
         </ul>
     );
 }

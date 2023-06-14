@@ -1,3 +1,5 @@
+import React from 'react';
+import { UserContext } from '../../UserContext';
 import { useNavigate } from 'react-router-dom';
 import CartItem from '../cartItem/cartItem';
 import Button from '../../forms/button/Button';
@@ -5,7 +7,12 @@ import rightSVG from '../../../assets/cart/arrow_forward_ios.svg';
 import styles from './ModalCart.module.css';
 
 const ModalCart = ({ setCartModal }) => {
+  const { cartItems, setCartItems, storeCart, subtotal } = React.useContext(UserContext);
   const navigate = useNavigate();
+  
+  React.useEffect(() => {
+    storeCart(cartItems);
+  });
 
   function closeModal () {
     setCartModal(false);
@@ -28,26 +35,29 @@ const ModalCart = ({ setCartModal }) => {
         </div>
 
         <ul className={styles.items}>
-          <li className={styles.item}>
-            <CartItem controls={true} />
-          </li>
-
-          <li className={styles.item}>
-            <CartItem controls={true} />
-          </li>
-
-          <li className={styles.item}>
-            <CartItem controls={true} />
-          </li>
+        {
+          Object.values(cartItems).map((item) => {
+            return (
+              <li key={`${item.id},${item.color}`}>
+                <CartItem
+                  changeQuantity={false}
+                  remove={true}
+                  data={item}
+                  cart={cartItems}
+                  setCart={setCartItems}
+                />
+              </li>
+            );
+          })
+        }
         </ul>
 
         <div className={styles.buy}>
           <div className={styles.subtotal}>
             <p>SUBTOTAL:</p>
-            <p><strong>R$ 599,99</strong></p>
+            <p><strong>R$ {subtotal()}</strong></p>
           </div>
 
-          
           <Button 
             value={'FINALIZAR COMPRA'} 
             icon={rightSVG}

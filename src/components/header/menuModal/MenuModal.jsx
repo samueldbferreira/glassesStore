@@ -1,7 +1,11 @@
+import React from 'react';
+import { UserContext } from '../../UserContext';
 import { Link, NavLink } from 'react-router-dom';
 import styles from './MenuModal.module.css';
 
 const MenuModal = ({ setMenuModal }) => {
+  const { login } = React.useContext(UserContext);
+
   function closeModal () {
     setMenuModal(false);
   }
@@ -16,9 +20,20 @@ const MenuModal = ({ setMenuModal }) => {
     <div className={styles.modal} onClick={outsideClick}>
       <div className={styles.content}>
         <div className={styles.header}>
-          <Link to='/login'>
-            <h1 className={styles.title} onClick={closeModal}>Entrar</h1>
-          </Link>
+          {
+            login
+            ?
+            <Link to='/account'>
+              <h1 className={styles.title} onClick={closeModal}>Conta</h1>
+            </Link>
+            :
+            <Link to='/login'>
+              <h1 className={styles.title} onClick={closeModal}>Entrar</h1>
+            </Link>
+          }
+
+          
+
           <a onClick={closeModal}>
             <i className={styles.closeIcon}/>
           </a>

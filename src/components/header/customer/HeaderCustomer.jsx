@@ -1,14 +1,17 @@
 import React from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
+import { UserContext } from '../../UserContext';
 import loginSVG from '../../../assets/header/login.svg';
+import accountSVG from '../../../assets/header/account_circle.svg';
 import styles from './HeaderCustomer.module.css';
 import MenuModal from '../menuModal/MenuModal';
 import ModalCart from '../../cart/modalCart/ModalCart';
 
-
 const HeaderCustomer = () => {
+	const { login } = React.useContext(UserContext);
+
 	const navigate = useNavigate();
-	
+
 	const [mobile, setMobile] = React.useState(false);
 	const [menuModal, setMenuModal] = React.useState(false);
 	const [cartModal, setCartModal] = React.useState(false);
@@ -58,8 +61,22 @@ const HeaderCustomer = () => {
 
                 <nav className={styles.supraList}>
                     {
-                        !mobile
-                        &&
+                        mobile
+                        ?
+                        null
+                        :
+                        login
+                        ?
+                        <a
+                            onClick={() => {
+                                navigate('/account')
+                            }}
+                            className={styles.login}
+                        >
+                            <p className={styles.supraLabel}>conta</p>
+                            <img src={accountSVG} />
+                        </a>
+                        :
                         <a
                             onClick={() => {
                                 navigate('/login')

@@ -3,14 +3,6 @@ import { useParams } from "react-router-dom";
 import GridProducts from '../gridProducts/GridProducts';
 import TitleDescription from '../../sectionTitle/description/TitleDescription';
 
-async function getTitleDescription (category, setTitle, setDescription) {
-  const response = await fetch('http://localhost:5173/src/data/titles.json');
-  const data = await response.json();
-
-  setTitle(data[category].title);
-  setDescription(data[category].description);
-}
-
 const Products = () => {
   const { category } = useParams();
 
@@ -18,7 +10,14 @@ const Products = () => {
   const [description, setDescription] = React.useState('');
 
   React.useEffect(() => {
-    getTitleDescription(category, setTitle, setDescription);
+    async function fetchTitleDescription () {
+      const response = await fetch(` http://localhost:3000/titleDescription/${category}`);
+      const data = await response.json();
+      setTitle(data.title);
+      setDescription(data.description);
+    }
+    fetchTitleDescription();
+
   }, [category]);
 
   return (

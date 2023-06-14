@@ -1,11 +1,14 @@
 import React from 'react';
+import { UserContext } from '../../../../UserContext'; 
 import Input from '../../../../forms/input/Input';
 import Button from '../../../../forms/button/Button';
 import checkSVG from '../../../../../assets/account/check.svg';
 import formStyles from '../../../../forms/Forms.module.css';
 import styles from './ModalEmail.module.css';
 
-const ModalEmail = ({ email, setModal }) => {
+const ModalEmail = ({ setModal }) => {
+    const { userData } = React.useContext(UserContext);
+
     const [newEmail, setNewEmail] = React.useState('');
     const [confirmEmail, setConfirmEmail] = React.useState('');
 
@@ -31,7 +34,7 @@ const ModalEmail = ({ email, setModal }) => {
                                 label="Email atual"
                                 type="email"
                                 id="email"
-                                value={email}
+                                value={userData.email}
                                 disabled={true}
                                 setValue={() => {}}
                             />

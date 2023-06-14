@@ -1,6 +1,5 @@
 import React from 'react';
 import AddressCard from '../../addresses/addressCard/AddressCard';
-import CartItem from '../../cart/cartItem/cartItem';
 import Input from '../../forms/input/Input';
 import Button from '../../forms/button/Button';
 import formStyles from '../../forms/Forms.module.css';
@@ -48,13 +47,6 @@ const Payment = () => {
           </span>
 
           <ul className={styles.content}>
-            <li className={styles.item}>
-              <CartItem controls={false} />
-            </li>
-            
-            <li className={styles.item}>
-              <CartItem controls={false} />
-            </li>
           </ul>
         </div>
       </div>

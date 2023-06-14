@@ -3,6 +3,7 @@ import TitleID from '../../../sectionTitle/id/TitleID';
 import UserCard from '../../../userCard/UserCard';
 import Order from '../../../order/Order';
 import styles from './AdminUser.module.css';
+import React from 'react';
 
 const ordersData = [
     {
@@ -42,22 +43,27 @@ const ordersData = [
     }
 ];
 
-const data = {
-    nome: 'Andreas Nikolaus Lauda',
-    email: 'niki.lauda@usp.br',
-    id: 12543565
-}
-
 const AdminUser = () => {
     const { id } = useParams();
 
-    if (!id) return null;
+    const [userData, setUserData] = React.useState(null);
+    //const [orders, setOrders] = React.useState([]);
+
+    React.useEffect(() => {
+        async function fetchData () {
+            const response = await fetch(`http://localhost:3000/accounts/${id}`);
+            const data = await response.json();
+            setUserData(data);
+        }
+        fetchData();
+    }, [id]);
 
     return (
+        userData
+        &&
         <section>
             <TitleID
                 title='Usuário'
-                id={id}
             />
 
             <div className={styles.content}>
@@ -65,7 +71,7 @@ const AdminUser = () => {
                     <div>
                         <h2 className={`${styles.subtitle}`}>Dados Pessoais</h2>
 
-                        <UserCard data={data} />
+                        <UserCard data={userData} />
                     </div>
 
                     <Link
@@ -80,16 +86,7 @@ const AdminUser = () => {
                 <div>
                     <h2 className={`${styles.subtitle}`}>Pedidos</h2>
 
-                    <ul className={styles.orders}>
-                        {
-                            ordersData.map((order) => {
-                                return (
-                                    <li key={order.numPedido}>
-                                        <Order data={order} />
-                                    </li>
-                                )
-                            })
-                        }
+                    <ul className={styles.orders}>                    
                     </ul>
                 </div>
             </div>

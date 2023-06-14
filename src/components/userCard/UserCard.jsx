@@ -5,7 +5,7 @@ const userCard = ({ data }) => {
         <ul className={styles.info}>
             <li className={styles.infoItem}>
                 <i className={styles.nameIcon} />
-                <p>{data.nome}</p>
+                <p>{`${data.firstName} ${data.lastName}`}</p>
             </li>
 
             <li className={styles.infoItem}>

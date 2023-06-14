@@ -1,11 +1,14 @@
 import React from 'react';
+import { UserContext } from '../../../../UserContext';
 import Input from '../../../../forms/input/Input';
 import Button from '../../../../forms/button/Button';
 import checkSVG from '../../../../../assets/account/check.svg';
 import formStyles from '../../../../forms/Forms.module.css';
 import styles from './ModalPassword.module.css';
 
-const ModalPassword = ({ password, setModal }) => {
+const ModalPassword = ({ setModal }) => {
+    const { userData } = React.useContext(UserContext);
+
     const [currentPassword, setCurrentPassword] = React.useState('');
     const [newPassword, setNewPassword] = React.useState('');
     const [confirmPassword, setConfirmPassword] = React.useState('');

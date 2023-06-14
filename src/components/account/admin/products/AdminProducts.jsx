@@ -17,9 +17,7 @@ const AdminProducts = () => {
                 classname={`mb-40`}
             />
 
-            <GridProducts
-                category={'all'}
-            />
+            <GridProducts />
         </section>
     );
 }

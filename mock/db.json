@@ -1,0 +1,451 @@
+{
+  "titleDescription": [
+    {
+      "id": "feminino",
+      "title": "Óculos feminino",
+      "description": "texto feminino"
+    },
+    {
+      "id": "masculino",
+      "title": "Óculos masculino",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
+    },
+    {
+      "id": "grau",
+      "title": "Óculos de grau",
+      "description": "texto de grau"
+    },
+    {
+      "id": "sol",
+      "title": "Óculos de sol",
+      "description": "texto de sol"
+    },
+    {
+      "id": "antiluz",
+      "title": "Óculos anti luz azul",
+      "description": "texto anti luz azul"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "category": "feminino",
+      "nome": "Óculos Addis",
+      "preco": 199.99,
+      "colors": [
+        {
+          "nome": "preto",
+          "hexa": "#000"
+        }
+      ],
+      "parcelas": 3,
+      "stock": 10,
+      "description": "Exclusiva, a Camisa Personalizável Listrada Marinho permite a personalização com as suas iniciais, localizado no punho direito. O modelo foi desenvolvido em tecido tricoline que é super respirável e ideal para usar nos dias mais quentes, além transitar muito bem pelas estações. A camisa conta com a modelagem Slim, ajusta ao corpo de forma confortável, valorizando sua silhueta.",
+      "comprimento": 136,
+      "altura": 53,
+      "haste": 140,
+      "espacoNariz": 16,
+      "material": "LIGA",
+      "images": [
+        "https://raw.githubusercontent.com/samueldbferreira/storeImages/main/uploads/addis.png",
+        "https://raw.githubusercontent.com/samueldbferreira/storeImages/main/uploads/addis.png",
+        "https://raw.githubusercontent.com/samueldbferreira/storeImages/main/uploads/addis.png",
+        "https://raw.githubusercontent.com/samueldbferreira/storeImages/main/uploads/addis.png"
+      ]
+    },
+    {
+      "id": 2,
+      "category": "feminino",
+      "nome": "Óculos 2",
+      "preco": 139.99,
+      "colors": [
+        {
+          "nome": "preto",
+          "hexa": "#000"
+        }
+      ],
+      "parcelas": 3,
+      "stock": 10,
+      "description": "",
+      "comprimento": 0,
+      "altura": 0,
+      "haste": 0,
+      "espacoNariz": 0,
+      "material": "",
+      "images": [
+        "https://raw.githubusercontent.com/samueldbferreira/storeImages/main/uploads/addis.png",
+        "https://raw.githubusercontent.com/samueldbferreira/storeImages/main/uploads/addis.png",
+        "https://raw.githubusercontent.com/samueldbferreira/storeImages/main/uploads/addis.png",
+        "https://raw.githubusercontent.com/samueldbferreira/storeImages/main/uploads/addis.png"
+      ]
+    },
+    {
+      "id": 3,
+      "category": "feminino",
+      "nome": "Óculos 3",
+      "preco": 99.99,
+      "colors": [
+        {
+          "nome": "preto",
+          "hexa": "#000"
+        }
+      ],
+      "parcelas": 3,
+      "stock": 10,
+      "description": "",
+      "comprimento": 0,
+      "altura": 0,
+      "haste": 0,
+      "espacoNariz": 0,
+      "material": "",
+      "images": [
+        "https://raw.githubusercontent.com/samueldbferreira/storeImages/main/uploads/addis.png",
+        "https://raw.githubusercontent.com/samueldbferreira/storeImages/main/uploads/addis.png",
+        "https://raw.githubusercontent.com/samueldbferreira/storeImages/main/uploads/addis.png",
+        "https://raw.githubusercontent.com/samueldbferreira/storeImages/main/uploads/addis.png"
+      ]
+    },
+    {
+      "id": 4,
+      "category": "feminino",
+      "nome": "Óculos 4",
+      "preco": 102,
+      "colors": [
+        {
+          "nome": "preto",
+          "hexa": "#000"
+        }
+      ],
+      "parcelas": 3,
+      "stock": 10,
+      "description": "",
+      "comprimento": 0,
+      "altura": 0,
+      "haste": 0,
+      "espacoNariz": 0,
+      "material": "",
+      "images": [
+        "https://raw.githubusercontent.com/samueldbferreira/storeImages/main/uploads/addis.png",
+        "https://raw.githubusercontent.com/samueldbferreira/storeImages/main/uploads/addis.png",
+        "https://raw.githubusercontent.com/samueldbferreira/storeImages/main/uploads/addis.png",
+        "https://raw.githubusercontent.com/samueldbferreira/storeImages/main/uploads/addis.png"
+      ]
+    },
+    {
+      "id": 5,
+      "category": "feminino",
+      "nome": "Óculos 5",
+      "preco": 82,
+      "colors": [
+        {
+          "nome": "preto",
+          "hexa": "#000"
+        }
+      ],
+      "parcelas": 3,
+      "stock": 10,
+      "description": "",
+      "comprimento": 0,
+      "altura": 0,
+      "haste": 0,
+      "espacoNariz": 0,
+      "material": "",
+      "images": [
+        "https://raw.githubusercontent.com/samueldbferreira/storeImages/main/uploads/addis.png",
+        "https://raw.githubusercontent.com/samueldbferreira/storeImages/main/uploads/addis.png",
+        "https://raw.githubusercontent.com/samueldbferreira/storeImages/main/uploads/addis.png",
+        "https://raw.githubusercontent.com/samueldbferreira/storeImages/main/uploads/addis.png"
+      ]
+    },
+    {
+      "id": 6,
+      "category": "feminino",
+      "nome": "Óculos 6",
+      "preco": 503,
+      "colors": [
+        {
+          "nome": "preto",
+          "hexa": "#000"
+        }
+      ],
+      "parcelas": 3,
+      "stock": 10,
+      "description": "",
+      "comprimento": 0,
+      "altura": 0,
+      "haste": 0,
+      "espacoNariz": 0,
+      "material": "",
+      "images": [
+        "https://raw.githubusercontent.com/samueldbferreira/storeImages/main/uploads/addis.png",
+        "https://raw.githubusercontent.com/samueldbferreira/storeImages/main/uploads/addis.png",
+        "https://raw.githubusercontent.com/samueldbferreira/storeImages/main/uploads/addis.png",
+        "https://raw.githubusercontent.com/samueldbferreira/storeImages/main/uploads/addis.png"
+      ]
+    },
+    {
+      "id": 7,
+      "category": "masculino",
+      "nome": "Óculos 7",
+      "preco": 159.99,
+      "colors": [
+        {
+          "nome": "preto",
+          "hexa": "#2E3034"
+        },
+        {
+          "nome": "vermelho",
+          "hexa": "#D94A4A"
+        },
+        {
+          "nome": "azul",
+          "hexa": "#3C69AC"
+        },
+        {
+          "nome": "amarelo",
+          "hexa": "#E3E725"
+        }
+      ],
+      "parcelas": 3,
+      "stock": 10,
+      "description": "Exclusiva, a Camisa Personalizável Listrada Marinho permite a personalização com as suas iniciais, localizado no punho direito. O modelo foi desenvolvido em tecido tricoline que é super respirável e ideal para usar nos dias mais quentes, além transitar muito bem pelas estações. A camisa conta com a modelagem Slim, ajusta ao corpo de forma confortável, valorizando sua silhueta.",
+      "comprimento": 136,
+      "altura": 53,
+      "haste": 140,
+      "espacoNariz": 16,
+      "material": "LIGA",
+      "images": [
+        "https://raw.githubusercontent.com/samueldbferreira/storeImages/main/uploads/addis.png",
+        "https://raw.githubusercontent.com/samueldbferreira/storeImages/main/uploads/2023-05-02%20(3).png",
+        "https://raw.githubusercontent.com/samueldbferreira/storeImages/main/uploads/addis.png",
+        "https://raw.githubusercontent.com/samueldbferreira/storeImages/main/uploads/2023-05-02%20(3).png"
+      ]
+    },
+    {
+      "id": 8,
+      "category": "grau",
+      "nome": "Óculos Addis",
+      "preco": 199.99,
+      "colors": [
+        {
+          "nome": "preto",
+          "hexa": "#000"
+        }
+      ],
+      "parcelas": 3,
+      "stock": 10,
+      "description": "",
+      "comprimento": 0,
+      "altura": 0,
+      "haste": 0,
+      "espacoNariz": 0,
+      "material": "",
+      "images": [
+        "https://raw.githubusercontent.com/samueldbferreira/storeImages/main/uploads/addis.png",
+        "https://raw.githubusercontent.com/samueldbferreira/storeImages/main/uploads/addis.png",
+        "https://raw.githubusercontent.com/samueldbferreira/storeImages/main/uploads/addis.png",
+        "https://raw.githubusercontent.com/samueldbferreira/storeImages/main/uploads/addis.png"
+      ]
+    },
+    {
+      "id": 9,
+      "category": "sol",
+      "nome": "Óculos Addis",
+      "preco": 199.99,
+      "colors": [
+        {
+          "nome": "preto",
+          "hexa": "#000"
+        }
+      ],
+      "parcelas": 3,
+      "stock": 10,
+      "description": "",
+      "comprimento": 0,
+      "altura": 0,
+      "haste": 0,
+      "espacoNariz": 0,
+      "material": "",
+      "images": [
+        "https://raw.githubusercontent.com/samueldbferreira/storeImages/main/uploads/addis.png",
+        "https://raw.githubusercontent.com/samueldbferreira/storeImages/main/uploads/addis.png",
+        "https://raw.githubusercontent.com/samueldbferreira/storeImages/main/uploads/addis.png",
+        "https://raw.githubusercontent.com/samueldbferreira/storeImages/main/uploads/addis.png"
+      ]
+    },
+    {
+      "id": 10,
+      "category": "antiluz",
+      "nome": "Óculos Addis",
+      "preco": 199.99,
+      "colors": [
+        {
+          "nome": "preto",
+          "hexa": "#000"
+        }
+      ],
+      "parcelas": 3,
+      "stock": 10,
+      "description": "",
+      "comprimento": 0,
+      "altura": 0,
+      "haste": 0,
+      "espacoNariz": 0,
+      "material": "",
+      "images": [
+        "https://raw.githubusercontent.com/samueldbferreira/storeImages/main/uploads/addis.png",
+        "https://raw.githubusercontent.com/samueldbferreira/storeImages/main/uploads/addis.png",
+        "https://raw.githubusercontent.com/samueldbferreira/storeImages/main/uploads/addis.png",
+        "https://raw.githubusercontent.com/samueldbferreira/storeImages/main/uploads/addis.png"
+      ]
+    },
+    {
+      "id": 11,
+      "category": "antiluz",
+      "nome": "Óculos Addis",
+      "preco": 199.99,
+      "colors": [
+        {
+          "nome": "preto",
+          "hexa": "#000"
+        }
+      ],
+      "parcelas": 3,
+      "stock": 10,
+      "description": "",
+      "comprimento": 0,
+      "altura": 0,
+      "haste": 0,
+      "espacoNariz": 0,
+      "material": "",
+      "images": [
+        "https://raw.githubusercontent.com/samueldbferreira/storeImages/main/uploads/addis.png",
+        "https://raw.githubusercontent.com/samueldbferreira/storeImages/main/uploads/addis.png",
+        "https://raw.githubusercontent.com/samueldbferreira/storeImages/main/uploads/addis.png",
+        "https://raw.githubusercontent.com/samueldbferreira/storeImages/main/uploads/addis.png"
+      ]
+    },
+    {
+      "id": 12,
+      "category": "masculino",
+      "nome": "Óculos Addis",
+      "preco": 199.99,
+      "colors": [
+        {
+          "nome": "preto",
+          "hexa": "#000"
+        }
+      ],
+      "parcelas": 3,
+      "stock": 10,
+      "description": "",
+      "comprimento": 0,
+      "altura": 0,
+      "haste": 0,
+      "espacoNariz": 0,
+      "material": "",
+      "images": [
+        "https://raw.githubusercontent.com/samueldbferreira/storeImages/main/uploads/addis.png",
+        "https://raw.githubusercontent.com/samueldbferreira/storeImages/main/uploads/addis.png",
+        "https://raw.githubusercontent.com/samueldbferreira/storeImages/main/uploads/addis.png",
+        "https://raw.githubusercontent.com/samueldbferreira/storeImages/main/uploads/addis.png"
+      ]
+    }
+  ],
+  "accounts": [
+    {
+      "id": 1,
+      "firstName": "admin",
+      "lastName": "admins",
+      "email": "admin@admin.com",
+      "password": "admin",
+      "admin": true
+    },
+    {
+      "id": 5,
+      "firstName": "test",
+      "lastName": "tests",
+      "phone": "11960164962",
+      "email": "test@test.com",
+      "password": "test",
+      "admin": false
+    },
+    {
+      "id": 7,
+      "firstName": "test",
+      "lastName": "tests",
+      "phone": "",
+      "email": "test@test.com",
+      "password": "test1",
+      "admin": false
+    },
+    {
+      "firstName": "samuel",
+      "lastName": "ferreira",
+      "phone": "",
+      "email": "samueldbferreira@gmail.com",
+      "password": "1234",
+      "admin": false,
+      "id": 8
+    },
+    {
+      "firstName": "al",
+      "lastName": "pacino",
+      "phone": "",
+      "email": "alpacino@gmail.com",
+      "password": "1234",
+      "admin": false,
+      "id": 9
+    },
+    {
+      "firstName": "cadastro",
+      "lastName": "teste",
+      "phone": "",
+      "email": "tst@tst.com",
+      "password": "tst",
+      "admin": false,
+      "id": 10
+    }
+  ],
+  "addresses": [
+    {
+      "id": 1,
+      "idCustomer": 5,
+      "nome": "Endereço princi",
+      "cep": "00000-000",
+      "rua": "Rua duzentos",
+      "numero": "495",
+      "complemento": "teste",
+      "bairro": "Belém Capela2",
+      "estado": "rj",
+      "cidade": "São Paulo",
+      "referencia": "perto do teste"
+    },
+    {
+      "id": 2,
+      "idCustomer": 5,
+      "nome": "Trabalho",
+      "cep": "00123-000",
+      "rua": "Rua trinta e cinco",
+      "numero": "145",
+      "complemento": "teste 2",
+      "bairro": "Belém",
+      "estado": "RJ",
+      "cidade": "Rio de Janeiro",
+      "referencia": "perto do teste 2"
+    },
+    {
+      "id": 3,
+      "idCustomer": 7,
+      "nome": "Endereço principal",
+      "cep": "00000-000",
+      "rua": "Rua vinte e dois",
+      "numero": "495",
+      "complemento": "teste",
+      "bairro": "Belém Capela",
+      "estado": "SP",
+      "cidade": "São Paulo",
+      "referencia": "perto do teste"
+    }
+  ]
+}

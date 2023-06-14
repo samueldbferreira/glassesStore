@@ -1,10 +1,14 @@
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { UserContext } from '../../UserContext';
 import CartItem from '../../cart/cartItem/cartItem';
 import Button from '../../forms/button/Button';
 import rightSVG from '../../../assets/cart/arrow_forward_ios.svg';
 import styles from './Bag.module.css';
 
 const Bag = () => {
+  const { cartItems, setCartItems, subtotal } = React.useContext(UserContext);
+
   const navigate = useNavigate();
 
   return (
@@ -13,17 +17,21 @@ const Bag = () => {
         <h2 className={styles.titleBag}>SACOLA DE COMPRAS</h2>
 
         <ul className={`${styles.items} ${styles.content}`}>
-          <li className={styles.item}>
-            <CartItem controls={true} />
-          </li>
-
-          <li className={styles.item}>
-            <CartItem controls={true} />
-          </li>
-
-          <li className={styles.item}>
-            <CartItem controls={true} />
-          </li>
+          {
+            Object.values(cartItems).map((item) => {
+              return (
+                <li key={`${item.id},${item.color}`} className={styles.item}>
+                  <CartItem
+                    changeQuantity={true}
+                    remove={true}
+                    data={item}
+                    cart={cartItems}
+                    setCart={setCartItems}
+                  />
+                </li>
+              );
+            })
+          }
         </ul>
       </div>
 
@@ -32,7 +40,7 @@ const Bag = () => {
 
         <div className={`${styles.content} ${styles.total}`}>
           <p>SUBTOTAL:</p>
-          <p><strong>R$ 599,99</strong></p>
+          <p><strong>R$ {subtotal()}</strong></p>
         </div>
 
         <Button

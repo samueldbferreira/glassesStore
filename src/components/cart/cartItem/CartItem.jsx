@@ -3,40 +3,57 @@ import Quantity from "../../forms/quantity/Quantity";
 import styles from './CartItem.module.css';
 import deleteSVG from '../../../assets/cart/delete_forever.svg';
 
-const CartItem = ({ controls }) => {
-  const [quantity, setQuantity] = React.useState(0);
-  const [stock, setStock] = React.useState(10);
+const CartItem = ({ remove, changeQuantity, data, cart, setCart }) => {
+  const [quantity, setQuantity] = React.useState(data.quantity);
+
+  function removeItem () {
+    let newCart = {...cart};
+    delete newCart[`${data.id},${data.color}`];
+    setCart(newCart);
+  }
+
+  React.useEffect(() => {
+    let newCart = {...cart};
+    newCart[`${data.id},${data.color}`].quantity = quantity;
+    setCart(newCart);
   
+  }, [quantity]);
+
   return (
     <div className={styles.item}>
       <div className={styles.image}>
+        <img src={data.imgSrc} />
       </div>
 
       <span className={styles.info}>
-        <h2 className={styles.title}>Óculos Addis</h2>
-        <p>amarelo</p>
-        <p>R$ 199,99</p>
+        <h2 className={styles.title}>{data.name}</h2>
+        <p>{data.color}</p>
+        <p>R$ {data.price}</p>
       </span>
 
-      {
-        controls
-        ?
-        <span className={styles.controls}>
-          <a className={styles.remove}>
+      <span className={styles.controls}>
+        {
+          remove
+          &&
+          <a className={styles.remove} onClick={removeItem}>
             <img src={deleteSVG} />
           </a>
+        }
+        {
+          changeQuantity
+          ?
           <Quantity
             small={true}
             quantity={quantity}
             setQuantity={setQuantity}
-            max={stock}
+            max={data.stock}
           />
-        </span>
-        :
-        <span className={styles.quantity}>
-          {quantity}
-        </span>
-      }
+          :
+          <span className={styles.quantity}>
+            {data.quantity}
+          </span>
+        }
+      </span>
     </div>
   )
 }

@@ -1,4 +1,5 @@
 import React from "react";
+import { UserContext } from '../../../UserContext';
 import Button from "../../../forms/button/Button";
 import Input from "../../../forms/input/Input";
 import saveSVG from '../../../../assets/account/save.svg';
@@ -10,13 +11,15 @@ import ModalPassword from "./modalPassword/ModalPassword";
 import styles from '../CustomerAccount.module.css';
 
 const CustomerInfo = () => {
-    const [firstName, setFirstName] = React.useState('');
-    const [lastName, setLastName] = React.useState('');
-    const [phone, setPhone] = React.useState('');
-    const [email, setEmail] = React.useState('samueldbferreira@gmail.com');
-    const [password, setPassword] = React.useState('12543565');
-    const [modalEmail, setModalEmail] = React.useState(null);
-    const [modalPassword, setModalPassword] = React.useState(null);
+    const { userData } = React.useContext(UserContext);
+
+    const [firstName, setFirstName] = React.useState(userData.firstName);
+    const [lastName, setLastName] = React.useState(userData.lastName);
+    const [phone, setPhone] = React.useState(userData.phone);
+    const [email, setEmail] = React.useState(userData.email);
+
+    const [modalEmail, setModalEmail] = React.useState(false);
+    const [modalPassword, setModalPassword] = React.useState(false);
 
     return (
         <>
@@ -63,6 +66,7 @@ const CustomerInfo = () => {
                             id="email"
                             value={email}
                             setValue={setEmail}
+                            disabled={true}
                         />
                     </div>
 
@@ -72,7 +76,7 @@ const CustomerInfo = () => {
                             icon={mailSVG}
                             style="transparent"
                             onClick={() => {
-                                setModalEmail(email);
+                                setModalEmail(true);
                             }}
                         />
                         
@@ -81,15 +85,15 @@ const CustomerInfo = () => {
                             icon={lockSVG}
                             style="transparent"
                             onClick={() => {
-                                setModalPassword(password);
+                                setModalPassword(true);
                             }}
                         />
                     </div>
                 </div>
 
-                {modalEmail && <ModalEmail email={email} setModal={setModalEmail} />}
+                {modalEmail && <ModalEmail setModal={setModalEmail} />}
 
-                {modalPassword && <ModalPassword password={password} setModal={setModalPassword} />}
+                {modalPassword && <ModalPassword setModal={setModalPassword} />}
             </div>
         </>
     );

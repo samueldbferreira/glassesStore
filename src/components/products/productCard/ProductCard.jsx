@@ -6,7 +6,7 @@ const ProductCard = ({ data }) => {
     return (
         <Link className={styles.product} to={`/produto/${data.id}`}>
             <div className={styles.imageContainer}>
-                <img src={data.imagem} alt="" />
+                <img src={data.images[0]} alt="" />
             </div>
 
             <div className={styles.details}>

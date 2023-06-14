@@ -1,20 +1,23 @@
 import React from 'react';
-
 import styles from './GridProducts.module.css';
 import ProductCard from '../productCard/ProductCard';
-
-async function getProducts (url, setProducts) {
-    const response = await fetch(url);
-    const data = await response.json();
-
-    setProducts(data);
-}
 
 const GridProducts = ({ category }) => {
     const [products, setProducts] = React.useState([]);
 
     React.useEffect(() => {
-        getProducts('http://localhost:5173/src/data/products.json', setProducts);
+        async function fetchProducts () {
+            const urlBase = `http://localhost:3000/products`;
+
+            const url = category ? `${urlBase}?category=${category}` : urlBase;
+
+            const response = await fetch(url);
+            const data = await response.json();
+            
+            setProducts(data);
+        }
+        fetchProducts();
+
     }, [category]);
 
     return (
