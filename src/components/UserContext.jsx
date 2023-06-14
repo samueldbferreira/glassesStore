@@ -12,7 +12,9 @@ export const UserStorage = ({ children }) => {
 
   function loadCart () {
     const savedCart = window.localStorage.getItem('cart');
-    setCartItems(JSON.parse(savedCart));
+    if (savedCart) {
+      setCartItems(JSON.parse(savedCart));
+    }
   }
 
   function storeCart (cart) {
