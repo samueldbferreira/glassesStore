@@ -1,0 +1,107 @@
+.filterBar {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 32px;
+}
+
+.quantity {
+	font-weight: 300;
+	text-align: center;
+	color: var(--w8);
+}
+
+.quantity,
+.filter,
+.sort {
+	width: 134px;
+}
+
+.filter,
+.sort {
+	display: flex;
+	align-items: center;
+	gap: 4px;
+	color: var(--w9);
+}
+
+.filter p,
+.sort p {
+	position: relative;
+}
+
+.sort p {
+	flex: 1;
+	text-align: right;
+}
+
+.filterIcon,
+.sortIcon {
+	display: block;
+	width: 24px;
+	height: 24px;
+}
+
+.filterIcon {
+	background: url("../../assets/filter/tune.svg") no-repeat center center;
+}
+
+.sortIcon {
+	background: url("../../assets/filter/keyboard_arrow_down.svg") no-repeat
+		center center;
+}
+
+.filterModal,
+.sortModal {
+	position: absolute;
+	margin-top: 44px;
+}
+
+.sortModal {
+	margin-left: -86px;
+}
+
+@media (max-width: 840px) {
+	.filterBar {
+		margin-bottom: 28px;
+	}
+}
+
+@media (max-width: 540px) {
+	.filterBar {
+		font-size: 14px;
+		margin-bottom: 12px;
+	}
+
+	.quantity {
+		width: 108px;
+	}
+
+	.filter,
+	.sort {
+		width: 118px;
+	}
+
+	.filterIcon,
+	.sortIcon {
+		display: block;
+		width: 16px;
+		height: 16px;
+	}
+
+	.filterModal,
+	.sortModal {
+		margin-top: 28px;
+	}
+
+	.sortModal {
+		margin-left: -42px;
+	}
+
+	.filterIcon {
+		background-image: url("../../assets/filter/tune-small.svg");
+	}
+
+	.sortIcon {
+		background-image: url("../../assets/filter/down-small.svg");
+	}
+}

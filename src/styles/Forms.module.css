@@ -1,0 +1,120 @@
+.formContainer {
+  font-family: var(--fonte-texto);
+  max-width: 480px;
+  min-width: 440px;
+  margin: 0 auto;
+}
+
+.formTitle {
+  padding: 24px 0;
+  border: 1px solid var(--w4);
+  border-radius: 4px 4px 0 0;
+  background-color: var(--w2);
+  text-align: center;
+}
+
+.title {
+  font-size: 36px;
+  font-weight: 500;
+  color: var(--g12);
+}
+
+.formContent {
+  border: 1px solid var(--w4);
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+  padding: 36px 28px;
+  display: grid;
+  justify-items: center;
+  background-color: var(--w1);
+}
+
+.instruction {
+  font-size: 20px;
+  color: var(--w9);
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.inputs {
+  display: grid;
+  justify-items: center;
+  justify-self: stretch;
+  gap: 20px;
+}
+
+.link {
+  display: block;
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--w9);
+  text-decoration: underline;
+}
+
+.redirect {
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--w9);
+  text-align: center;
+}
+
+.redirectUnderline {
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--w8);
+  text-decoration: underline;
+}
+
+.highlight {
+  font-weight: 500;
+  color: var(--g11);
+}
+
+.flexInputs {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 400px;
+}
+
+@media (max-width: 540px) {
+  .formContainer {
+    min-width: 100%;
+  }
+
+  .formTitle {
+    padding: 12px 0;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+
+  .formContent {
+    border-radius: 0 0 2px 2px;
+    padding: 16px 8px;
+  }
+
+  .instruction {
+    font-size: 14px;
+    margin-bottom: 16px;
+  }
+
+  .link {
+    font-size: 12px;
+  }
+
+  .redirect {
+    font-size: 12px;
+  }
+
+  .redirectUnderline {
+    font-size: 12px;
+  }
+
+  .inputs,
+  .flexInputs {
+    gap: 8px;
+  }
+}

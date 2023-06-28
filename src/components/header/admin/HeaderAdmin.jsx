@@ -1,99 +1,76 @@
-import React from 'react';
-import { Link, NavLink } from 'react-router-dom';
-import styles from './HeaderAdmin.module.css';
-import MenuModalAdmin from '../menuModalAdmin/MenuModalAdmin';
+import React from "react";
+import { Link, NavLink } from "react-router-dom";
+import styles from "./HeaderAdmin.module.css";
+import AdminMenuModal from "./adminMenuModal/AdminMenuModal";
 
 const HeaderAdmin = () => {
-	const [mobile, setMobile] = React.useState(false);
-	const [menuModal, setMenuModal] = React.useState(false);
+  const [mobile, setMobile] = React.useState(false);
+  const [menuModal, setMenuModal] = React.useState(false);
 
   React.useEffect(() => {
-    function checkResize () {
-      setMobile(window.matchMedia('(max-width: 840px)').matches);
+    function checkResize() {
+      setMobile(window.matchMedia("(max-width: 840px)").matches);
     }
 
-    window.addEventListener('resize', checkResize);
+    window.addEventListener("resize", checkResize);
 
     checkResize();
 
-    return (() => {
-        window.removeEventListener('resize', checkResize);
-    });
-    
+    return () => {
+      window.removeEventListener("resize", checkResize);
+    };
   }, [mobile]);
 
   return (
     <header className={styles.header}>
       <div className={`${styles.headerSupra}`}>
-        {
-          mobile
-          &&
+        {mobile && (
           <a
             onClick={() => {
-                setMenuModal(true);
+              setMenuModal(true);
             }}
           >
             <i className={styles.menuIcon} />
           </a>
-        }
+        )}
 
-        <Link to="/admin">
+        <Link to="/produtos">
           <i className={styles.logo} />
         </Link>
 
-        {
-          mobile
-          &&
-          <a>
-            <i className={styles.accountIcon} />
-          </a>
-        }
+        {mobile && <Link to="/account" className={styles.accountIcon} />}
       </div>
-      
-      {
-        !mobile
-        &&
+
+      {!mobile && (
         <div className={styles.headerInfra}>
           <nav className={`container ${styles.infraNav}`}>
             <span className={styles.infraList}>
-                <NavLink 
-                  to={'/admin/'}
-                  className={styles.linkMenu}
-                >
-                  produtos
-                </NavLink>
+              <NavLink to={"/produtos"} className={styles.linkMenu}>
+                produtos
+              </NavLink>
 
-                <NavLink 
-                  to={'/admin/novo'}
-                  className={styles.linkMenu}
-                >
-                  novo produto
-                </NavLink>
+              <NavLink to={"/novo-produto"} className={styles.linkMenu}>
+                novo produto
+              </NavLink>
 
-                <NavLink 
-                  to={'/admin/usuarios/'}
-                  className={styles.linkMenu}
-                >
-                  usuários
-                </NavLink>
+              <NavLink to={"/usuarios/"} className={styles.linkMenu}>
+                usuários
+              </NavLink>
             </span>
 
             <span className={styles.account}>
-              <Link 
-                to="/login"
-                className={styles.linkMenu}
-              >
-                entrar
+              <Link to="/conta" className={styles.linkMenu}>
+                conta
               </Link>
               <i className={styles.accountIcon} />
             </span>
           </nav>
         </div>
-      }
+      )}
 
-      {menuModal && <MenuModalAdmin setMenuModal={setMenuModal} />}
+      {mobile && menuModal && <AdminMenuModal setMenuModal={setMenuModal} />}
     </header>
-  )
-}
+  );
+};
 
 export default HeaderAdmin;

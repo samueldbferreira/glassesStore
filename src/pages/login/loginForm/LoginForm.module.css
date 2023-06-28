@@ -1,0 +1,25 @@
+.inputs {
+  margin-bottom: 20px;
+}
+
+.link {
+  margin-bottom: 24px;
+}
+
+.redirect {
+  margin-top: 28px;
+}
+
+@media (max-width: 540px) {
+  .inputs {
+    margin-bottom: 12px;
+  }
+
+  .link {
+    margin-bottom: 16px;
+  }
+
+  .redirect {
+    margin-top: 20px;
+  }
+}

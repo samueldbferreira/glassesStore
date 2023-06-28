@@ -1,31 +1,4 @@
 {
-  "titleDescription": [
-    {
-      "id": "feminino",
-      "title": "Óculos feminino",
-      "description": "texto feminino"
-    },
-    {
-      "id": "masculino",
-      "title": "Óculos masculino",
-      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
-    },
-    {
-      "id": "grau",
-      "title": "Óculos de grau",
-      "description": "texto de grau"
-    },
-    {
-      "id": "sol",
-      "title": "Óculos de sol",
-      "description": "texto de sol"
-    },
-    {
-      "id": "antiluz",
-      "title": "Óculos anti luz azul",
-      "description": "texto anti luz azul"
-    }
-  ],
   "products": [
     {
       "id": 1,
@@ -38,7 +11,7 @@
           "hexa": "#000"
         }
       ],
-      "parcelas": 3,
+      "parcelas": 0,
       "stock": 10,
       "description": "Exclusiva, a Camisa Personalizável Listrada Marinho permite a personalização com as suas iniciais, localizado no punho direito. O modelo foi desenvolvido em tecido tricoline que é super respirável e ideal para usar nos dias mais quentes, além transitar muito bem pelas estações. A camisa conta com a modelagem Slim, ajusta ao corpo de forma confortável, valorizando sua silhueta.",
       "comprimento": 136,
@@ -223,7 +196,7 @@
     },
     {
       "id": 8,
-      "category": "grau",
+      "category": "oculos-de-grau",
       "nome": "Óculos Addis",
       "preco": 199.99,
       "colors": [
@@ -249,7 +222,7 @@
     },
     {
       "id": 9,
-      "category": "sol",
+      "category": "oculos-de-sol",
       "nome": "Óculos Addis",
       "preco": 199.99,
       "colors": [
@@ -275,7 +248,7 @@
     },
     {
       "id": 10,
-      "category": "antiluz",
+      "category": "anti-luz-azul",
       "nome": "Óculos Addis",
       "preco": 199.99,
       "colors": [
@@ -301,7 +274,7 @@
     },
     {
       "id": 11,
-      "category": "antiluz",
+      "category": "anti-luz-azul",
       "nome": "Óculos Addis",
       "preco": 199.99,
       "colors": [
@@ -352,7 +325,7 @@
       ]
     }
   ],
-  "accounts": [
+  "users": [
     {
       "id": 1,
       "firstName": "admin",

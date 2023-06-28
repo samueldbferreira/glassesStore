@@ -1,0 +1,36 @@
+.titleId {
+  font-family: var(--fonte-texto);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--w2);
+  border: 1px solid var(--w4);
+  border-radius: 4px 4px 0 0;
+  padding: 24px 32px;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 500;
+  color: var(--g12);
+}
+
+.id {
+  font-size: 32px;
+  font-weight: 300;
+  color: var(--g9);
+}
+
+@media (max-width: 540px) {
+  .titleId {
+    padding: 12px;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+  .id {
+    font-size: 16px;
+  }
+}

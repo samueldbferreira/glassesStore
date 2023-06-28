@@ -1,159 +1,110 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
 
 :root {
-    --w1: #FBFDFF;
-    --w2: #EEF0F2;
-    --w3: #E2E4E5;
-    --w4: #C4C5C7;
-    --w6: #88888A;
-    --w7: #696A6B;
-    --w8: #4B4C4D;
-    --w9: #2D2E2E;
-    --w10: #0F0F0F;
+	--w1: #fbfdff;
+	--w2: #eef0f2;
+	--w3: #e2e4e5;
+	--w4: #c4c5c7;
+	--w6: #88888a;
+	--w7: #696a6b;
+	--w8: #4b4c4d;
+	--w9: #2d2e2e;
+	--w10: #0f0f0f;
 
-    --b5: #406FA1;
-    --b6: #27517E;
-    --b7: #12355B;
+	--b5: #406fa1;
+	--b6: #27517e;
+	--b7: #12355b;
 
-    --r4: #DB7B77;
-    --r5: #CE3D37;
-    --r6: #9D1D17;
-    --r7: #7A100B;
+	--r4: #db7b77;
+	--r5: #ce3d37;
+	--r6: #9d1d17;
+	--r7: #7a100b;
 
-    --g5: #5EB6BC;
-    --g6: #479EA4;
-    --g7: #2D848A;
-    --g8: #217076;
-    --g9: #105458;
-    --g10: #073E42;
-    --g11: #002325;
-    --g12: #001213;
+	--g5: #5eb6bc;
+	--g6: #479ea4;
+	--g7: #2d848a;
+	--g8: #217076;
+	--g9: #105458;
+	--g10: #073e42;
+	--g11: #002325;
+	--g12: #001213;
 
-    --fonte-texto: 'Poppins', sans-serif;
-    --fonte-destaque: 'Montserrat', sans-serif;
+	--fonte-texto: "Poppins", sans-serif;
+	--fonte-destaque: "Montserrat", sans-serif;
 }
 
 * {
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
 }
 
 ul {
-    list-style: none;
+	list-style: none;
 }
 
 a,
 button {
-    text-decoration: none;
-    color: inherit;
-    cursor: pointer;
+	text-decoration: none;
+	color: inherit;
+	cursor: pointer;
+}
+
+body {
+	font-family: var(--fonte-texto);
+	background-color: var(--w1);
 }
 
 .App {
-    display: flex;
-    flex-direction: column;
-    height: calc(100vh + 420px);
-}
-
-.container {
-  max-width: 1200px;
-  padding: 0px 16px;
-  margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	height: calc(100vh + 400px);
 }
 
 main {
-    font-family: var(--fonte-texto);
-    flex: 1;
-    width: 100%;
+	flex: 1;
+	width: 100%;
 }
 
-.mb-8 {
-    margin-bottom: 8px;
-}
-
-.mb-12 {
-    margin-bottom: 12px;
-}
-
-.mb-16 {
-    margin-bottom: 16px;
-}
-
-.mb-20 {
-    margin-bottom: 20px;
-}
-
-.mb-24 {
-    margin-bottom: 24px;
-}
-
-.mb-28 {
-    margin-bottom: 28px;
-}
-
-.mb-32 {
-    margin-bottom: 32px;
-}
-
-.mb-36 {
-    margin-bottom: 36px;
-}
-
-.mb-40 {
-    margin-bottom: 40px;
-}
-
-.mb-44 {
-    margin-bottom: 44px;
-}
-
-.mb-52 {
-    margin-bottom: 52px;
-}
-
-.mb-72 {
-    margin-bottom: 72px;
+.container {
+	max-width: 1200px;
+	padding: 0px 16px;
+	margin: 0 auto;
 }
 
 nav a.active:after {
-    content: '';
-    display: block;
-    width: 100%;
-    height: 2px;
-    background-color: var(--r5);
-    border-radius: 1px;
-    position: absolute;
+	content: "";
+	display: block;
+	width: 100%;
+	height: 2px;
+	background-color: var(--r5);
+	border-radius: 1px;
+	position: absolute;
 }
 
 @media (max-width: 840px) {
-    .App {
-        height: calc(100vh + 680px);
-    }
+	.App {
+		height: calc(100vh + 620px);
+	}
 
-    nav a.active:after {
-        content: '';
-        display: block;
-        width: 28px;
-        height: 3px;
-        background-color: var(--r5);
-        border-radius: 2px;
-        position: absolute;
-    }
+	nav a.active:after {
+		content: "";
+		display: block;
+		width: 28px;
+		height: 3px;
+		background-color: var(--r5);
+		border-radius: 2px;
+		position: absolute;
+	}
 }
 
 @media (max-width: 540px) {
-    .App {
-        height: calc(100vh + 440px);
-    }
+	.App {
+		height: calc(100vh + 420px);
+	}
 
-    .container {
-        padding: 0px 8px;
-    }
-
-    nav a.active:after {
-        width: 20px;
-        height: 2px;
-    }
+	.container {
+		padding: 0px 8px;
+	}
 }

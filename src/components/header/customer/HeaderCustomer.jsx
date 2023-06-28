@@ -1,11 +1,10 @@
-import React from 'react';
-import { Link, NavLink, useNavigate } from 'react-router-dom';
-import { UserContext } from '../../UserContext';
-import loginSVG from '../../../assets/header/login.svg';
-import accountSVG from '../../../assets/header/account_circle.svg';
-import styles from './HeaderCustomer.module.css';
-import MenuModal from '../menuModal/MenuModal';
-import ModalCart from '../../cart/modalCart/ModalCart';
+import React from "react";
+import { useNavigate, Link, NavLink } from "react-router-dom";
+import { UserContext } from "../../../context/UserContext";
+import SearchBar from "../../searchBar/SearchBar";
+import MenuModal from "./menuModal/MenuModal";
+import CartModal from "./cartModal/CartModal";
+import styles from "./HeaderCustomer.module.css";
 
 const HeaderCustomer = () => {
 	const { login } = React.useContext(UserContext);
@@ -16,151 +15,101 @@ const HeaderCustomer = () => {
 	const [menuModal, setMenuModal] = React.useState(false);
 	const [cartModal, setCartModal] = React.useState(false);
 
-  React.useEffect(() => {
-    function checkResize () {
-        setMobile(window.matchMedia('(max-width: 840px)').matches);
-    }
+	React.useEffect(() => {
+		function checkResize() {
+			setMobile(window.matchMedia("(max-width: 840px)").matches);
+		}
 
-    window.addEventListener('resize', checkResize);
+		window.addEventListener("resize", checkResize);
 
-    checkResize();
+		checkResize();
 
-    return (() => {
-        window.removeEventListener('resize', checkResize);
-    });
-    
-  }, [mobile]);
+		return () => {
+			window.removeEventListener("resize", checkResize);
+		};
+	}, [mobile]);
 
-  return (
-    <header className={styles.header}>
-        <div className={`container`}> 
-            <div className={styles.headerSupra}>
-                {
-                    mobile
-                    ?
-                    <a
-                        onClick={() => {
-                            setMenuModal(true);
-                        }}
-                    >
-                        <i className={styles.menuIcon} />
-                    </a>
-                    :
-                    <form className={`${styles.searchBarContainer}`}>
-                        <input
-                            type="text"
-                            className={`${styles.searchBar}`}
-                            placeholder='busca'
-                        />
+	return (
+		<header className={styles.header}>
+			<div className={`container`}>
+				<div className={styles.headerSupra}>
+					{mobile ? (
+						<a onClick={() => setMenuModal(true)}>
+							<i className={styles.menuIcon} />
+						</a>
+					) : (
+						<SearchBar />
+					)}
 
-                        <button type="submit" className={`${styles.searchBarIcon}`}></button>
-                    </form>
-                }
+					<Link to={"/"} className={styles.logo} />
 
-                <Link to='/' className={styles.logo} />
+					<nav className={styles.supraList}>
+						{mobile ? null : login ? (
+							<a
+								onClick={() => {
+									navigate("/account");
+								}}
+								className={styles.login}
+							>
+								<p className={styles.supraLabel}>conta</p>
+								<i className={styles.accountIcon} />
+							</a>
+						) : (
+							<a
+								onClick={() => {
+									navigate("/login");
+								}}
+								className={styles.login}
+							>
+								<p className={styles.supraLabel}>entrar</p>
+								<i className={styles.loginIcon} />
+							</a>
+						)}
+						<a
+							onClick={() => {
+								setCartModal(true);
+							}}
+						>
+							{!mobile && <p className={styles.supraLabel}>sacola</p>}
+							<i className={styles.bagIcon} />
+						</a>
+					</nav>
+				</div>
+			</div>
 
-                <nav className={styles.supraList}>
-                    {
-                        mobile
-                        ?
-                        null
-                        :
-                        login
-                        ?
-                        <a
-                            onClick={() => {
-                                navigate('/account')
-                            }}
-                            className={styles.login}
-                        >
-                            <p className={styles.supraLabel}>conta</p>
-                            <img src={accountSVG} />
-                        </a>
-                        :
-                        <a
-                            onClick={() => {
-                                navigate('/login')
-                            }}
-                            className={styles.login}
-                        >
-                            <p className={styles.supraLabel}>entrar</p>
-                            <img src={loginSVG} />
-                        </a>
-                    }
-                    <a
-                        onClick={() => {
-                            setCartModal(true);
-                        }}
-                    >
-                        {
-                            !mobile
-                            &&
-                            <p className={styles.supraLabel}>sacola</p>
-                        }
-                        <i className={styles.bagIcon} />
-                    </a>                
-                </nav>
-            </div>
-        </div>
+			<div className={`${styles.headerInfra}`}>
+				{mobile ? (
+					<SearchBar />
+				) : (
+					<nav className={`container ${styles.infraList}`}>
+						<NavLink to={"/feminino"} className={styles.linkMenu}>
+							feminino
+						</NavLink>
 
-        <div className={`${styles.headerInfra}`}>
-            {
-                mobile
-                ?
-                <form className={`${styles.searchBarContainer}`}>
-                        <input
-                            type="text"
-                            className={`${styles.searchBar}`}
-                            placeholder='busca'
-                        />
+						<NavLink to={"/masculino"} className={styles.linkMenu}>
+							masculino
+						</NavLink>
 
-                        <button type="submit" className={`${styles.searchBarIcon}`}></button>
-                    </form>
-                :
-                <nav className={`container ${styles.infraList}`}>
-                    <NavLink 
-                        to={'/produtos/feminino'}
-                        className={styles.linkMenu}
-                    >
-                        feminino
-                    </NavLink>
+						<NavLink to={"/oculos-de-grau"} className={styles.linkMenu}>
+							óculos de grau
+						</NavLink>
 
-                    <NavLink
-                        to={'/produtos/masculino'}
-                        className={styles.linkMenu}
-                    >
-                        masculino
-                    </NavLink>
+						<NavLink to={"/oculos-de-sol"} className={styles.linkMenu}>
+							óculos de sol
+						</NavLink>
 
-                    <NavLink 
-                        to={'/produtos/grau'}
-                        className={styles.linkMenu}
-                    >
-                        óculos de grau
-                    </NavLink>
+						<NavLink to={"/oculos-anti-luz-azul"} className={styles.linkMenu}>
+							óculos anti luz azul
+						</NavLink>
+					</nav>
+				)}
+			</div>
 
-                    <NavLink
-                        to={'/produtos/sol'}
-                        className={styles.linkMenu}
-                    >
-                        óculos de sol
-                    </NavLink>
-                    
-                    <NavLink
-                        to={'/produtos/antiluz'}
-                        className={styles.linkMenu}
-                    >
-                        óculos anti luz azul
-                    </NavLink>
-                </nav>
-            }
-        </div>
+			{mobile && menuModal && <MenuModal setMenuModal={setMenuModal} />}
 
-        {cartModal && <ModalCart setCartModal={setCartModal} />}
-
-        {menuModal && <MenuModal setMenuModal={setMenuModal} />}
-    </header>
-  );
-}
+			{cartModal && <CartModal setCartModal={setCartModal} />}
+		</header>
+	);
+};
 
 export default HeaderCustomer;

@@ -1,61 +1,61 @@
 .nameIcon {
-    display: block;
-    width: 24px;
-    height: 24px;
-    background: url('../../assets/admin/badge.svg') no-repeat center center;
+  display: block;
+  width: 24px;
+  height: 24px;
+  background: url("../../assets/admin/badge.svg") no-repeat center center;
 }
 
 .idIcon {
-    display: block;
-    width: 24px;
-    height: 24px;
-    background: url('../../assets/admin/fingerprint.svg') no-repeat center center;
+  display: block;
+  width: 24px;
+  height: 24px;
+  background: url("../../assets/admin/fingerprint.svg") no-repeat center center;
 }
 
 .mailIcon {
-    display: block;
-    width: 24px;
-    height: 24px;
-    background: url('../../assets/admin/mail.svg') no-repeat center center;
+  display: block;
+  width: 24px;
+  height: 24px;
+  background: url("../../assets/admin/mail.svg") no-repeat center center;
 }
 
 .info {
-    display: grid;
-    gap: 12px;
-    color: var(--w9);
+  display: grid;
+  gap: 12px;
+  color: var(--w9);
 }
 
 .infoItem {
-    display: flex;
-    align-items: center;
-    gap: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 @media (max-width: 540px) {
-    .nameIcon {
-        width: 16px;
-        height: 16px;
-        background-image: url('../../assets/admin/badge-s.svg');
-    }
+  .nameIcon {
+    width: 16px;
+    height: 16px;
+    background-image: url("../../assets/admin/badge-s.svg");
+  }
 
-    .mailIcon {
-        width: 16px;
-        height: 16px;
-        background-image: url('../../assets/admin/mail-s.svg');
-    }
+  .mailIcon {
+    width: 16px;
+    height: 16px;
+    background-image: url("../../assets/admin/mail-s.svg");
+  }
 
-    .idIcon {
-        width: 16px;
-        height: 16px;
-        background-image: url('../../assets/admin/fingerprint-s.svg');
-    }    
+  .idIcon {
+    width: 16px;
+    height: 16px;
+    background-image: url("../../assets/admin/fingerprint-s.svg");
+  }
 
-    .info {
-        font-size: 14px;
-        gap: 4px;
-    }
+  .info {
+    font-size: 14px;
+    gap: 4px;
+  }
 
-    .infoItem {
-        gap: 8px;
-    }
+  .infoItem {
+    gap: 8px;
+  }
 }

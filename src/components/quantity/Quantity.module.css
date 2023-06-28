@@ -1,0 +1,52 @@
+.container {
+  display: flex;
+  align-items: stretch;
+  gap: 4px;
+}
+
+.box {
+  display: block;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--w4);
+  border-radius: 4px;
+  background-color: transparent;
+  outline: none;
+}
+
+button.box:hover {
+  background-color: var(--w2);
+}
+
+.input {
+  display: grid;
+  place-content: center;
+  font-family: var(--fonte-texto);
+  font-size: 16px;
+  text-align: center;
+  color: var(--w8);
+}
+
+.add {
+  background: url("../../assets/product/add.svg") no-repeat center center;
+}
+
+.remove {
+  background: url("../../assets/product/remove.svg") no-repeat center center;
+}
+
+.small .box {
+  width: 28px;
+  height: 28px;
+}
+
+@media (max-width: 540px) {
+  .small .box {
+    width: 20px;
+    height: 20px;
+  }
+
+  .input {
+    font-size: 12px;
+  }
+}
