@@ -1,39 +1,171 @@
 export const API_URL = "http://localhost:3000";
-
-export function GET_USER(email, password) {
-  return {
-    url: `${API_URL}/users?email=${email}&password=${password}`,
-    options: {
-      method: "GET",
-    },
-  };
-}
+export const URL_BASE = "http://localhost:3333";
 
 export function GET_CUSTOMERS() {
-  return {
-    url: `${API_URL}/users?admin=false`,
-    options: {
-      method: "GET",
-    },
-  };
+	return {
+		url: `${API_URL}/users?admin=false`,
+		options: {
+			method: "GET",
+		},
+	};
 }
 
 export function GET_PRODUCTS(category) {
-  return {
-    url: category
-      ? `${API_URL}/products?category=${category}`
-      : `${API_URL}/products`,
-    options: {
-      method: "GET",
-    },
-  };
+	return {
+		url: category
+			? `${API_URL}/products?category=${category}`
+			: `${API_URL}/products`,
+		options: {
+			method: "GET",
+		},
+	};
 }
 
 export function GET_PRODUCT(id) {
-  return {
-    url: `${API_URL}/products?id=${id}`,
-    options: {
-      method: "GET",
-    },
-  };
+	return {
+		url: `${API_URL}/products?id=${id}`,
+		options: {
+			method: "GET",
+		},
+	};
+}
+
+export function POST_LOGIN(body) {
+	return {
+		url: `${URL_BASE}/auth/entrar`,
+		options: {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify(body),
+		},
+	};
+}
+
+export function GET_ME(token) {
+	return {
+		url: `${URL_BASE}/me`,
+		options: {
+			method: "GET",
+			headers: {
+				Authorization: `Bearer ${token}`,
+			},
+		},
+	};
+}
+
+export function PATCH_ME(body) {
+	return {
+		url: `${URL_BASE}/me`,
+		options: {
+			method: "PATCH",
+			headers: {
+				Authorization: `Bearer ${window.localStorage.getItem("token")}`,
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify(body),
+		},
+	};
+}
+
+export function DELETE_USER(id) {
+	return {
+		url: `${URL_BASE}/usuarios/${id}`,
+		options: {
+			method: "DELETE",
+			headers: {
+				Authorization: `Bearer ${window.localStorage.getItem("token")}`,
+			},
+		},
+	};
+}
+
+export function GET_USER(id) {
+	return {
+		url: `${URL_BASE}/usuarios/${id}`,
+		options: {
+			method: "GET",
+			headers: {
+				Authorization: `Bearer ${window.localStorage.getItem("token")}`,
+			},
+		},
+	};
+}
+
+export function GET_USERS() {
+	return {
+		url: `${URL_BASE}/usuarios`,
+		options: {
+			method: "GET",
+			headers: {
+				Authorization: `Bearer ${window.localStorage.getItem("token")}`,
+			},
+		},
+	};
+}
+
+export function POST_USER(body) {
+	return {
+		url: `${URL_BASE}/auth/cadastro`,
+		options: {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify(body),
+		},
+	};
+}
+
+export function DELETE_ADDRESS(id) {
+	return {
+		url: `${URL_BASE}/enderecos/${id}`,
+		options: {
+			method: "DELETE",
+			headers: {
+				Authorization: `Bearer ${window.localStorage.getItem("token")}`,
+			},
+		},
+	};
+}
+
+export function PATCH_ADDRESS(id, body) {
+	return {
+		url: `${URL_BASE}/enderecos/${id}`,
+		options: {
+			method: "PATCH",
+			headers: {
+				Authorization: `Bearer ${window.localStorage.getItem("token")}`,
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify(body),
+		},
+	};
+}
+
+export function POST_ADDRESS(body) {
+	return {
+		url: `${URL_BASE}/enderecos`,
+		options: {
+			method: "POST",
+			headers: {
+				Authorization: `Bearer ${window.localStorage.getItem("token")}`,
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify(body),
+		},
+	};
+}
+
+export function GET_ADDRESSES() {
+	return {
+		url: `${URL_BASE}/enderecos`,
+		options: {
+			method: "GET",
+			headers: {
+				Authorization: `Bearer ${window.localStorage.getItem("token")}`,
+			},
+		},
+	};
 }

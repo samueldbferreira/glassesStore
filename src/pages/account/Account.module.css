@@ -1,4 +1,62 @@
-.account {
-  display: grid;
-  grid-template-columns: max-content 1fr;
+.containerContent {
+	border: 1px solid var(--w4);
+	border-top: none;
+	border-radius: 0 0 4px 4px;
+	background-color: transparent;
+	padding: 48px 32px;
+	min-height: 640px;
+}
+
+.titulo {
+	text-align: center;
+	margin-bottom: 28px;
+}
+
+.inputs {
+	margin-bottom: 72px;
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 40px;
+}
+
+.grid button {
+	margin: 0 auto;
+}
+
+.orders {
+	display: grid;
+	gap: 36px;
+}
+
+.addressesList {
+	display: grid;
+	gap: 24px;
+}
+
+@media (max-width: 840px) {
+	.grid {
+		grid-template-columns: 1fr;
+		gap: 56px;
+	}
+}
+
+@media (max-width: 540px) {
+	.link {
+		font-size: 16px;
+	}
+
+	.containerContent {
+		padding: 20px 12px;
+	}
+
+	.grid {
+		gap: 36px;
+	}
+
+	.titulo {
+		font-size: 20px;
+	}
 }

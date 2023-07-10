@@ -15,7 +15,7 @@ const userCard = ({ data }) => {
 
       <li className={styles.infoItem}>
         <i className={styles.idIcon} />
-        <p>{data.id}</p>
+        <p>{data._id}</p>
       </li>
     </ul>
   );

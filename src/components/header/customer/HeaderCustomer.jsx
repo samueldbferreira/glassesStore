@@ -47,7 +47,7 @@ const HeaderCustomer = () => {
 						{mobile ? null : login ? (
 							<a
 								onClick={() => {
-									navigate("/account");
+									navigate("/conta/");
 								}}
 								className={styles.login}
 							>

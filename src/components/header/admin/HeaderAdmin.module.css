@@ -1,130 +1,132 @@
 .header {
-  font-family: var(--fonte-destaque);
-  margin-bottom: 44px;
+	font-family: var(--fonte-destaque);
+	margin-bottom: 44px;
 }
 
 .headerSupra {
-  display: flex;
-  justify-content: center;
-  padding: 20px 16px;
+	display: flex;
+	justify-content: center;
+	padding: 20px 16px;
 }
 
 .logo {
-  display: block;
-  width: 93px;
-  height: 37px;
-  background: url("../../../assets/logo/logo.svg") no-repeat center center;
+	display: block;
+	width: 188px;
+	height: 35px;
+	background: url("../../../assets/logo/logo.svg") no-repeat center center;
 }
 
 .headerInfra {
-  background-color: var(--w10);
-  padding: 16px 0px;
+	background-color: var(--w10);
+	padding: 16px 0px;
 }
 
 .infraNav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  color: var(--w1);
-  font-size: 16px;
-  font-weight: 400;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	color: var(--w1);
+	font-size: 16px;
+	font-weight: 400;
 }
 
 .infraList {
-  display: flex;
-  align-items: center;
-  gap: 36px;
+	display: flex;
+	align-items: center;
+	gap: 36px;
 }
 
 .account {
-  display: flex;
-  align-items: center;
-  gap: 4px;
+	display: flex;
+	align-items: center;
+	gap: 4px;
 }
 
 .accountIcon {
-  display: block;
-  width: 28px;
-  height: 28px;
-  background: url("../../../assets/header/account_circle_white.svg") no-repeat
-    center center;
+	display: block;
+	width: 28px;
+	height: 28px;
+	background: url("../../../assets/header/account_circle_white.svg") no-repeat
+		center center;
 }
 
 .linkMenu,
 .account a {
-  position: relative;
+	position: relative;
 }
 
 .infraList .linkMenu:hover::after,
 .account a:hover::after {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 2px;
-  background-color: var(--r5);
-  border-radius: 1px;
-  position: absolute;
+	content: "";
+	display: block;
+	width: 100%;
+	height: 2px;
+	background-color: var(--r5);
+	border-radius: 1px;
+	position: absolute;
 }
 
 @media (max-width: 840px) {
-  .header {
-    background-color: var(--w10);
-    padding-right: 12px;
-    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.4);
-    margin-bottom: 32px;
-  }
+	.header {
+		background-color: var(--w10);
+		padding-right: 12px;
+		box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.4);
+		margin-bottom: 32px;
+	}
 
-  .headerSupra {
-    width: 100vw;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
+	.headerSupra {
+		width: 100vw;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
 
-  .menuIcon {
-    display: block;
-    width: 32px;
-    height: 32px;
-    background: url("../../../assets/header/menu-w.svg") no-repeat center center;
-  }
+	.menuIcon {
+		display: block;
+		width: 32px;
+		height: 32px;
+		background: url("../../../assets/header/menu-w.svg") no-repeat center center;
+	}
 
-  .logo {
-    background-image: url("../../../assets/logo/logo-w.svg");
-  }
+	.logo {
+		width: 141px;
+		height: 27px;
+		background-image: url("../../../assets/logo/logo-m-w.svg");
+	}
 
-  .accountIcon {
-    width: 32px;
-    height: 32px;
-    background-image: url("../../../assets/header/account_circle_white_g.svg");
-  }
+	.accountIcon {
+		width: 32px;
+		height: 32px;
+		background-image: url("../../../assets/header/account_circle_white_g.svg");
+	}
 }
 
 @media (max-width: 540px) {
-  .header {
-    padding-right: 0px;
-    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.4);
-    margin-bottom: 16px;
-  }
+	.header {
+		padding-right: 0px;
+		box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.4);
+		margin-bottom: 16px;
+	}
 
-  .headerSupra {
-    padding: 10px 8px;
-  }
+	.headerSupra {
+		padding: 10px 8px;
+	}
 
-  .menuIcon {
-    width: 24px;
-    height: 24px;
-    background-image: url("../../../assets/header/menu-small-w.svg");
-  }
+	.menuIcon {
+		width: 24px;
+		height: 24px;
+		background-image: url("../../../assets/header/menu-small-w.svg");
+	}
 
-  .logo {
-    width: 50px;
-    height: 20px;
-    background-image: url("../../../assets/logo/logo-w-small-s.svg");
-  }
+	.logo {
+		width: 126px;
+		height: 24px;
+		background-image: url("../../../assets/logo/logo-s-w.svg");
+	}
 
-  .accountIcon {
-    width: 24px;
-    height: 24px;
-    background-image: url("../../../assets/header/account_circle_small_w.svg");
-  }
+	.accountIcon {
+		width: 24px;
+		height: 24px;
+		background-image: url("../../../assets/header/account_circle_small_w.svg");
+	}
 }

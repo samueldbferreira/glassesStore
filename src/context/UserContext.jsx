@@ -1,90 +1,78 @@
 import React from "react";
-import { GET_USER } from "../services/Api";
+import { GET_ME, POST_LOGIN, POST_USER } from "../services/Api";
 import { useNavigate } from "react-router-dom";
 
 export const UserContext = React.createContext();
 
 export const UserStorage = ({ children }) => {
-  const navigate = useNavigate();
+	const navigate = useNavigate();
 
-  const [login, setLogin] = React.useState(false);
-  const [userData, setUserData] = React.useState(null);
-  const [cartItems, setCartItems] = React.useState({});
+	const [login, setLogin] = React.useState(false);
+	const [userData, setUserData] = React.useState(null);
 
-  function loadCart() {
-    const savedCart = window.localStorage.getItem("cart");
-    if (savedCart) {
-      setCartItems(JSON.parse(savedCart));
-    }
-  }
+	async function getUser(token) {
+		const { url, options } = GET_ME(token);
 
-  function storeCart(cart) {
-    window.localStorage.setItem("cart", JSON.stringify(cart));
-  }
+		const response = await fetch(url, options);
 
-  function subtotal() {
-    const total = Object.values(cartItems).reduce((sum, item) => {
-      return sum + item.price * item.quantity;
-    }, 0);
+		const json = await response.json();
 
-    return total.toFixed(2);
-  }
+		setUserData(json);
+		setLogin(true);
+	}
 
-  function userLogin(email, password) {
-    async function fetchUser() {
-      const { url, options } = GET_USER(email, password);
+	async function userLogin(email, password) {
+		const { url, options } = POST_LOGIN({ email, password });
 
-      const response = await fetch(url, options);
+		const response = await fetch(url, options);
+		const json = await response.json();
 
-      if (!response.ok) return;
+		if (response.ok) {
+			window.localStorage.setItem("token", json.token);
+			await getUser(json.token);
+			navigate("/");
+		}
+	}
 
-      const data = await response.json();
+	async function userPost(body) {
+		const { url, options } = POST_USER(body);
 
-      if (data) {
-        setUserData(data[0]);
-        setLogin(true);
+		const response = await fetch(url, options);
 
-        if (data[0].admin) {
-          setCartItems([]);
-          navigate("/produtos");
-        } else {
-          navigate("/");
-        }
-      } else {
-        setUserData(null);
-        setLogin(false);
-      }
-    }
-    fetchUser();
-  }
+		if (response.ok) {
+			userLogin(body.email, body.password);
+		}
+	}
 
-  function logout() {
-    if (!login) return;
+	function logout() {
+		if (!login) return;
 
-    setLogin(false);
-    setUserData(null);
+		setLogin(false);
+		setUserData(null);
+		window.localStorage.removeItem("token");
 
-    navigate("/");
-  }
+		navigate("/");
+	}
 
-  React.useEffect(() => {
-    loadCart();
-  }, []);
+	React.useEffect(() => {
+		const savedToken = window.localStorage.getItem("token");
+		if (savedToken) {
+			getUser(savedToken);
+		}
+	}, []);
 
-  return (
-    <UserContext.Provider
-      value={{
-        login,
-        userData,
-        cartItems,
-        setCartItems,
-        storeCart,
-        subtotal,
-        userLogin,
-        logout,
-      }}
-    >
-      {children}
-    </UserContext.Provider>
-  );
+	return (
+		<UserContext.Provider
+			value={{
+				login,
+				userData,
+				setUserData,
+				userPost,
+				userLogin,
+				logout,
+			}}
+		>
+			{children}
+		</UserContext.Provider>
+	);
 };

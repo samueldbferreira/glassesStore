@@ -1,21 +1,24 @@
 import { Routes, Route } from "react-router-dom";
-import AccountNav from "../../components/accountNav/AccountNav";
-import styles from './Account.module.css';
+import AccountNav from "./accountNav/AccountNav";
+import Info from "./info/Info";
+import Addresses from "./addresses/Addresses";
+import Orders from "./orders/Orders";
+import styles from "./Account.module.css";
 
 const Account = () => {
-  return (
-    <div className={styles.account}>
-      <AccountNav />
+	return (
+		<div className={styles.account}>
+			<AccountNav />
 
-      <div>
-        <Routes>
-          <Route path="/" element={null} />
-          <Route path="/enderecos" element={null} />
-          <Route path="/pedidos" element={null} />
-        </Routes>
-      </div>
-    </div>
-  );
+			<div className={styles.containerContent}>
+				<Routes>
+					<Route path="/" element={<Info />} />
+					<Route path="/enderecos" element={<Addresses />} />
+					<Route path="/pedidos" element={<Orders />} />
+				</Routes>
+			</div>
+		</div>
+	);
 };
 
 export default Account;
