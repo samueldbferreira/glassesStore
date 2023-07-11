@@ -2,13 +2,17 @@ import CartItem from "../cartItem/CartItem";
 import styles from "./Order.module.css";
 
 const Order = ({ data }) => {
+	const date = new Date(data.date);
+
+	console.log();
+
 	return (
 		data && (
 			<div className={styles.order}>
 				<ul className={styles.items}>
 					{data.items.map((item) => {
 						return (
-							<li key={item.nome}>
+							<li key={item.id}>
 								<CartItem
 									data={item}
 									remove={false}
@@ -27,13 +31,12 @@ const Order = ({ data }) => {
 
 					<span className={styles.text}>
 						<p>
-							pedido: <strong>{data.numPedido}</strong>
+							pedido: <strong>{data._id}</strong>
 						</p>
 						<p>
 							data do pedido:{" "}
 							<strong>
-								{data.data.getDay()}/{data.data.getMonth()}/
-								{data.data.getFullYear()}
+								{date.getDay()}/{date.getMonth()}/{date.getFullYear()}
 							</strong>
 						</p>
 						<p>

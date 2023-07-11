@@ -1,47 +1,36 @@
+import React from "react";
 import Order from "../../../components/order/Order";
 import styles from "../Account.module.css";
-
-const ordersData = [
-	{
-		id: 110526500,
-		data: new Date("05/05/2023"),
-		total: 599.97,
-		items: [
-			{
-				id: 1,
-				name: "Óculos Addis",
-				price: 199.99,
-				color: "preto",
-				quantity: 10,
-				imgSrc:
-					"https://raw.githubusercontent.com/samueldbferreira/storeImages/main/uploads/addis.png",
-			},
-			{
-				id: 1,
-				name: "Óculos Addis",
-				price: 199.99,
-				color: "preto",
-				quantity: 10,
-				imgSrc:
-					"https://raw.githubusercontent.com/samueldbferreira/storeImages/main/uploads/addis.png",
-			},
-		],
-	},
-];
+import { GET_ORDERS } from "../../../services/Api";
 
 const Orders = () => {
+	const [orders, setOrders] = React.useState(null);
+
+	React.useEffect(() => {
+		const { url, options } = GET_ORDERS();
+
+		async function fetchOrders() {
+			const res = await fetch(url, options);
+			const json = await res.json();
+			setOrders(json);
+		}
+		fetchOrders();
+	}, []);
+
 	return (
-		<div>
-			<ul className={styles.orders}>
-				{ordersData.map((order) => {
-					return (
-						<li key={order.id}>
-							<Order data={order} />
-						</li>
-					);
-				})}
-			</ul>
-		</div>
+		orders && (
+			<div>
+				<ul className={styles.orders}>
+					{orders.map((order) => {
+						return (
+							<li key={order._id}>
+								<Order data={order} />
+							</li>
+						);
+					})}
+				</ul>
+			</div>
+		)
 	);
 };
 

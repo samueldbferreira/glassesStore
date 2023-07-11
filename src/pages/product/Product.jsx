@@ -21,9 +21,9 @@ const Product = () => {
   }, [id, request]);
 
   if (userData?.admin === true && data) {
-    return <ProductAdmin data={data[0]} />;
+    return <ProductAdmin data={data} />;
   } else if (data) {
-    return <ProductCustomer data={data[0]} />;
+    return <ProductCustomer data={data} />;
   } else {
     return null;
   }

@@ -19,6 +19,12 @@ export const UserStorage = ({ children }) => {
 
 		setUserData(json);
 		setLogin(true);
+
+		if (json.admin) {
+			navigate("/produtos");
+		} else {
+			navigate("/");
+		}
 	}
 
 	async function userLogin(email, password) {
@@ -30,7 +36,6 @@ export const UserStorage = ({ children }) => {
 		if (response.ok) {
 			window.localStorage.setItem("token", json.token);
 			await getUser(json.token);
-			navigate("/");
 		}
 	}
 

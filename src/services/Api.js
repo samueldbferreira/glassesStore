@@ -1,9 +1,21 @@
-export const API_URL = "http://localhost:3000";
 export const URL_BASE = "http://localhost:3333";
 
-export function GET_CUSTOMERS() {
+export function POST_PRODUCT(formData) {
 	return {
-		url: `${API_URL}/users?admin=false`,
+		url: `${URL_BASE}/produtos`,
+		options: {
+			method: "POST",
+			headers: {
+				Authorization: `Bearer ${window.localStorage.getItem("token")}`,
+			},
+			body: formData,
+		},
+	};
+}
+
+export function GET_PRODUCT(id) {
+	return {
+		url: `${URL_BASE}/produtos/${id}`,
 		options: {
 			method: "GET",
 		},
@@ -13,17 +25,8 @@ export function GET_CUSTOMERS() {
 export function GET_PRODUCTS(category) {
 	return {
 		url: category
-			? `${API_URL}/products?category=${category}`
-			: `${API_URL}/products`,
-		options: {
-			method: "GET",
-		},
-	};
-}
-
-export function GET_PRODUCT(id) {
-	return {
-		url: `${API_URL}/products?id=${id}`,
+			? `${URL_BASE}/produtos?categoria=${category}`
+			: `${URL_BASE}/produtos`,
 		options: {
 			method: "GET",
 		},
@@ -161,6 +164,35 @@ export function POST_ADDRESS(body) {
 export function GET_ADDRESSES() {
 	return {
 		url: `${URL_BASE}/enderecos`,
+		options: {
+			method: "GET",
+			headers: {
+				Authorization: `Bearer ${window.localStorage.getItem("token")}`,
+			},
+		},
+	};
+}
+
+export function POST_ORDER(total, items) {
+	return {
+		url: `${URL_BASE}/pedidos`,
+		options: {
+			method: "POST",
+			headers: {
+				Authorization: `Bearer ${window.localStorage.getItem("token")}`,
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify({
+				total,
+				items,
+			}),
+		},
+	};
+}
+
+export function GET_ORDERS() {
+	return {
+		url: `${URL_BASE}/pedidos`,
 		options: {
 			method: "GET",
 			headers: {

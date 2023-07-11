@@ -3,38 +3,39 @@ import TitleSearch from "../../components/titleSearch/TitleSearch";
 import Filter from "../../components/filter/Filter";
 import ProductsGrid from "../../components/productsGrid/ProductsGrid";
 import { GET_PRODUCTS } from "../../services/Api";
-import useFetch from "../../customHooks/useFetch";
 
 const Products = () => {
-  const { data, request } = useFetch();
-  const [products, setProducts] = React.useState(null);
+	const [initial, setInitial] = React.useState(null);
+	const [products, setProducts] = React.useState(null);
 
-  React.useEffect(() => {
-    const { url, options } = GET_PRODUCTS();
+	React.useEffect(() => {
+		const { url, options } = GET_PRODUCTS();
 
-    async function fetchProducts() {
-      const json = await request(url, options);
-      setProducts(json);
-    }
-    fetchProducts();
-  }, [request]);
+		async function fetchProducts() {
+			const response = await fetch(url, options);
+			const json = await response.json();
+			setInitial(json);
+			setProducts(json);
+		}
+		fetchProducts();
+	}, []);
 
-  return (
-    data && (
-      <>
-        <TitleSearch
-          title="Produtos"
-          initial={data}
-          setData={setProducts}
-          searchAttributes={['nome', 'id']}
-        />
+	return (
+		products && (
+			<>
+				<TitleSearch
+					title="Produtos"
+					initial={initial}
+					setData={setProducts}
+					searchAttributes={["name", "_id"]}
+				/>
 
-        <Filter initial={data} data={products} setData={setProducts} />
+				<Filter initial={initial} data={products} setData={setProducts} />
 
-        <ProductsGrid data={products} />
-      </>
-    )
-  );
+				<ProductsGrid data={products} />
+			</>
+		)
+	);
 };
 
 export default Products;

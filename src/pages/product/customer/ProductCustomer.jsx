@@ -1,5 +1,5 @@
 import React from "react";
-import { UserContext } from "../../../context/UserContext";
+import { CartContext } from "../../../context/CartContext";
 import Quantity from "../../../components/quantity/Quantity";
 import RadioColor from "../../../components/radioColor/RadioColor";
 import ImagesGrid from "../../../components/imagesGrid/ImagesGrid";
@@ -8,117 +8,121 @@ import bagSVG from "../../../assets/product/shopping_bag.svg";
 import styles from "./ProductCustomer.module.css";
 
 const ProductCustomer = ({ data }) => {
-  const { cartItems, setCartItems, storeCart } = React.useContext(UserContext);
-  const [quantity, setQuantity] = React.useState(1);
-  const [color, setColor] = React.useState("");
+	const { cartItems, setCartItems, storeCart } = React.useContext(CartContext);
+	const [quantity, setQuantity] = React.useState(1);
+	const [color, setColor] = React.useState("");
 
-  function addToCart(e) {
-    e.preventDefault();
+	function addToCart(e) {
+		e.preventDefault();
 
-    if (!quantity || !color) return;
+		if (!quantity || !color) {
+			return window.alert("Selecione uma cor e uma quantidade.");
+		}
 
-    const idx = `${data.id},${color}`;
+		const idx = `${data._id},${color}`;
 
-    const item = {
-      id: data.id,
-      imgSrc: data.images[0],
-      name: data.nome,
-      color: color,
-      price: data.preco,
-      quantity:
-        idx in cartItems ? (cartItems[idx].quantity += quantity) : quantity,
-      stock: data.stock,
-    };
+		const item = {
+			id: idx,
+			imgSrc: data.images[0],
+			name: data.name,
+			color: color,
+			price: data.price,
+			quantity:
+				idx in cartItems ? (cartItems[idx].quantity += quantity) : quantity,
+			stock: data.stock,
+		};
 
-    const newCart = { ...cartItems, [idx]: item };
+		const newCart = { ...cartItems, [idx]: item };
 
-    setCartItems(newCart);
-    storeCart(newCart);
-    setQuantity(1);
-  }
+		setCartItems(newCart);
+		storeCart(newCart);
+		setQuantity(1);
 
-  return (
-    data && (
-      <>
-        <div className={styles.gridProduct}>
-          <ImagesGrid images={data.images} />
+		return window.alert("Produto adicionado à sacola.");
+	}
 
-          <form className={styles.details} onSubmit={addToCart}>
-            <div className={styles.header}>
-              <h1 className={`${styles.titulo}`}>{data.nome}</h1>
-              <p className={`${styles.stock}`}>{data.stock} disponíveis</p>
-            </div>
+	return (
+		data && (
+			<>
+				<div className={styles.gridProduct}>
+					<ImagesGrid images={data.images} />
 
-            <hr className={`${styles.separator}`} />
+					<form className={styles.details} onSubmit={addToCart}>
+						<div className={styles.header}>
+							<h1 className={`${styles.titulo}`}>{data.name}</h1>
+							<p className={`${styles.stock}`}>{data.stock} disponíveis</p>
+						</div>
 
-            <div className={`${styles.valores}`}>
-              <p className={styles.total}>R$ {data.preco}</p>
-              {data.parcelas > 0 && (
-                <span className={styles.parcelamento}>
-                  <i className={styles.cardIcon} />
-                  <p className={styles.parcelas}>
-                    {data.parcelas}X de R${" "}
-                    {(data.preco / data.parcelas).toFixed(2)}
-                  </p>
-                </span>
-              )}
-            </div>
+						<hr className={`${styles.separator}`} />
 
-            <div className={styles.form}>
-              <div className={styles.colorsContainer}>
-                <h2 className={`${styles.label}`}>Cor:</h2>
+						<div className={`${styles.valores}`}>
+							<p className={styles.total}>R$ {data.price}</p>
+							{data.installments > 0 && (
+								<span className={styles.parcelamento}>
+									<i className={styles.cardIcon} />
+									<p className={styles.parcelas}>
+										{data.installments}X de R${" "}
+										{(data.price / data.installments).toFixed(2)}
+									</p>
+								</span>
+							)}
+						</div>
 
-                <RadioColor
-                  colors={data.colors}
-                  value={color}
-                  setValue={setColor}
-                />
-              </div>
+						<div className={styles.form}>
+							<div className={styles.colorsContainer}>
+								<h2 className={`${styles.label}`}>Cor:</h2>
 
-              <div className={styles.quantityContainer}>
-                <h2 className={`${styles.label}`}>Quantidade:</h2>
+								<RadioColor
+									colors={data.colors}
+									value={color}
+									setValue={setColor}
+								/>
+							</div>
 
-                <Quantity
-                  min={1}
-                  max={data.stock}
-                  quantity={quantity}
-                  setQuantity={setQuantity}
-                />
-              </div>
-            </div>
+							<div className={styles.quantityContainer}>
+								<h2 className={`${styles.label}`}>Quantidade:</h2>
 
-            <span className={styles.btn}>
-              <Button value="ADICIONAR À SACOLA" icon={bagSVG} color="red" />
-            </span>
-          </form>
-        </div>
+								<Quantity
+									min={1}
+									max={data.stock}
+									quantity={quantity}
+									setQuantity={setQuantity}
+								/>
+							</div>
+						</div>
 
-        <section className={styles.info}>
-          <h2 className={`${styles.subtitulo}`}>Sobre o produto</h2>
-          <p className={`${styles.texto}`}>{data.description}</p>
+						<span className={styles.btn}>
+							<Button value="ADICIONAR À SACOLA" icon={bagSVG} color="red" />
+						</span>
+					</form>
+				</div>
 
-          <h2 className={`${styles.subtitulo}`}>Especificações técnicas</h2>
-          <ul className={styles.lista}>
-            <li>
-              comprimento: <strong>{data.comprimento}mm</strong>
-            </li>
-            <li>
-              altura: <strong>{data.altura}mm</strong>
-            </li>
-            <li>
-              haste: <strong>{data.haste}mm</strong>
-            </li>
-            <li>
-              espaço nariz: <strong>{data.espacoNariz}mm</strong>
-            </li>
-            <li>
-              material: <strong>{data.material}</strong>
-            </li>
-          </ul>
-        </section>
-      </>
-    )
-  );
+				<section className={styles.info}>
+					<h2 className={`${styles.subtitulo}`}>Sobre o produto</h2>
+					<p className={`${styles.texto}`}>{data.description}</p>
+
+					<h2 className={`${styles.subtitulo}`}>Especificações técnicas</h2>
+					<ul className={styles.lista}>
+						<li>
+							comprimento: <strong>{data.width}mm</strong>
+						</li>
+						<li>
+							altura: <strong>{data.height}mm</strong>
+						</li>
+						<li>
+							haste: <strong>{data.stem}mm</strong>
+						</li>
+						<li>
+							espaço nariz: <strong>{data.noseSpace}mm</strong>
+						</li>
+						<li>
+							material: <strong>{data.material}</strong>
+						</li>
+					</ul>
+				</section>
+			</>
+		)
+	);
 };
 
 export default ProductCustomer;

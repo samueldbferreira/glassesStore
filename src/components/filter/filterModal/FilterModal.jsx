@@ -39,11 +39,11 @@ const FilterModal = ({
 		setData((d) => {
 			return d.filter((product) => {
 				if (min && max) {
-					return product.preco >= min && product.preco <= max;
+					return product.price >= min && product.price <= max;
 				} else if (max) {
-					return product.preco <= max;
+					return product.price <= max;
 				} else {
-					return product.preco >= min;
+					return product.price >= min;
 				}
 			});
 		});

@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./SortModal.module.css";
 
-const SortModal = ({ setActive, options, setOption, data, setData }) => {
+const SortModal = ({ setActive, options, setOption, initial, setData }) => {
 	const modal = React.useRef();
 
 	let ignore = true;
@@ -29,18 +29,18 @@ const SortModal = ({ setActive, options, setOption, data, setData }) => {
 
 			if (option === "maior preço") {
 				setData(
-					[...data].sort((a, b) => {
-						return a.preco < b.preco ? 1 : -1;
+					[...initial].sort((a, b) => {
+						return a.price < b.price ? 1 : -1;
 					})
 				);
 			} else if (option === "menor preço") {
 				setData(
-					[...data].sort((a, b) => {
-						return a.preco > b.preco ? 1 : -1;
+					[...initial].sort((a, b) => {
+						return a.price > b.price ? 1 : -1;
 					})
 				);
 			} else {
-				console.log(option);
+				setData(initial);
 			}
 
 			setActive(false);

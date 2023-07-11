@@ -19,7 +19,7 @@ const Bag = () => {
 				<ul className={`${styles.items} ${styles.content}`}>
 					{Object.values(cartItems).map((item) => {
 						return (
-							<li key={`${item.id},${item.color}`} className={styles.item}>
+							<li key={item.id} className={styles.item}>
 								<CartItem
 									changeQuantity={true}
 									remove={true}

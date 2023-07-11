@@ -38,7 +38,7 @@ const CartModal = ({ setCartModal }) => {
 				<ul className={styles.items}>
 					{Object.values(cartItems).map((item) => {
 						return (
-							<li key={`${item.id},${item.color}`}>
+							<li key={item.id}>
 								<CartItem
 									changeQuantity={false}
 									remove={true}

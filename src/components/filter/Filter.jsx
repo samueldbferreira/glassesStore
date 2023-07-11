@@ -56,7 +56,7 @@ const Filter = ({ initial, data, setData }) => {
 								setActive={setSortModal}
 								options={["lançamentos", "menor preço", "maior preço"]}
 								setOption={setSortParam}
-								data={data}
+								initial={initial}
 								setData={setData}
 							/>
 						)}

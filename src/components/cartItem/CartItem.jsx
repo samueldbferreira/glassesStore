@@ -8,7 +8,7 @@ const CartItem = ({ remove, changeQuantity, data, cart, setCart }) => {
 
 	function removeItem() {
 		let newCart = { ...cart };
-		delete newCart[`${data.id},${data.color}`];
+		delete newCart[data.id];
 		setCart(newCart);
 	}
 
@@ -16,7 +16,7 @@ const CartItem = ({ remove, changeQuantity, data, cart, setCart }) => {
 		if (!cart || !setCart) return;
 
 		let newCart = { ...cart };
-		newCart[`${data.id},${data.color}`].quantity = quantity;
+		newCart[data.id].quantity = quantity;
 		setCart(newCart);
 	}, [quantity]);
 
