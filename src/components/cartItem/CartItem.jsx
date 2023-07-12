@@ -1,4 +1,5 @@
 import React from "react";
+import { URL_BASE } from "../../services/Api";
 import Quantity from "../quantity/Quantity";
 import styles from "./CartItem.module.css";
 import deleteSVG from "../../assets/cart/delete_forever.svg";
@@ -23,7 +24,7 @@ const CartItem = ({ remove, changeQuantity, data, cart, setCart }) => {
 	return (
 		<div className={styles.item}>
 			<div className={styles.image}>
-				<img src={data.imgSrc} />
+				<img src={`${URL_BASE}/${data.imgSrc}`} />
 			</div>
 
 			<span className={styles.info}>

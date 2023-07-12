@@ -22,6 +22,10 @@
   object-fit: contain;
 }
 
+.imgPrincipal img {
+  max-height: 460px;
+}
+
 .imgsec {
   background-color: #fff;
   height: 112px;
