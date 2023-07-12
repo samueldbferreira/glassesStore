@@ -18,21 +18,6 @@
 	margin-bottom: 20px;
 }
 
-.removeIcon {
-	display: block;
-	width: 32px;
-	height: 32px;
-	background: url("../../assets/admin/person_remove.svg") no-repeat center
-		center;
-}
-
-.info {
-	display: flex;
-	justify-content: space-between;
-	align-items: start;
-	margin-bottom: 52px;
-}
-
 .remove {
 	display: flex;
 	align-items: center;
@@ -43,17 +28,16 @@
 	color: var(--r5);
 }
 
+.info {
+	display: flex;
+	justify-content: space-between;
+	align-items: start;
+	margin-bottom: 52px;
+}
+
 @media (max-width: 840px) {
 	.remove {
 		font-size: 16px;
-	}
-
-	.removeIcon {
-		display: block;
-		width: 28px;
-		height: 28px;
-		background: url("../../assets/admin/person_remove_small.svg") no-repeat
-			center center;
 	}
 }
 
@@ -71,9 +55,5 @@
 	.subtitle {
 		font-size: 24px;
 		margin-bottom: 16px;
-	}
-
-	.remove p {
-		display: none;
 	}
 }

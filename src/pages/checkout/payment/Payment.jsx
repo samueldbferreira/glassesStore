@@ -45,6 +45,7 @@ const Payment = () => {
 		window.alert(json.msg);
 
 		if (res.ok) {
+			setCartItems({});
 			return navigate("/conta/pedidos");
 		}
 	}

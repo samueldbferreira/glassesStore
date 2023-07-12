@@ -1,29 +1,46 @@
 import React from "react";
-import { GET_ME, POST_LOGIN, POST_USER } from "../services/Api";
 import { useNavigate } from "react-router-dom";
+import { CartContext } from "./CartContext";
+import { GET_ADDRESSES, GET_ME, POST_LOGIN, POST_USER } from "../services/Api";
 
 export const UserContext = React.createContext();
 
 export const UserStorage = ({ children }) => {
+	const { onPayment, setOnPayment } = React.useContext(CartContext);
 	const navigate = useNavigate();
 
 	const [login, setLogin] = React.useState(false);
 	const [userData, setUserData] = React.useState(null);
+	const [addresses, setAddresses] = React.useState(null);
 
 	async function getUser(token) {
 		const { url, options } = GET_ME(token);
 
-		const response = await fetch(url, options);
-
-		const json = await response.json();
+		let response = await fetch(url, options);
+		let json = await response.json();
 
 		setUserData(json);
 		setLogin(true);
 
 		if (json.admin) {
-			navigate("/produtos");
+			return navigate("/produtos");
 		} else {
-			navigate("/");
+			if (onPayment) {
+				const fetchAdresses = GET_ADDRESSES();
+
+				response = await fetch(fetchAdresses.url, fetchAdresses.options);
+				json = await response.json();
+
+				setAddresses(json);
+
+				if (json.length > 0) {
+					return navigate("/checkout/pagamento");
+				} else {
+					return navigate("/novo-endereco");
+				}
+			}
+
+			return navigate("/");
 		}
 	}
 
@@ -43,9 +60,12 @@ export const UserStorage = ({ children }) => {
 		const { url, options } = POST_USER(body);
 
 		const response = await fetch(url, options);
+		const json = await response.json();
 
 		if (response.ok) {
 			userLogin(body.email, body.password);
+		} else {
+			return window.alert(json.msg);
 		}
 	}
 
@@ -54,6 +74,7 @@ export const UserStorage = ({ children }) => {
 
 		setLogin(false);
 		setUserData(null);
+		setOnPayment(false);
 		window.localStorage.removeItem("token");
 
 		navigate("/");
@@ -64,6 +85,8 @@ export const UserStorage = ({ children }) => {
 		if (savedToken) {
 			getUser(savedToken);
 		}
+
+		return () => setOnPayment(false);
 	}, []);
 
 	return (
@@ -75,6 +98,8 @@ export const UserStorage = ({ children }) => {
 				userPost,
 				userLogin,
 				logout,
+				addresses,
+				setAddresses,
 			}}
 		>
 			{children}

@@ -15,12 +15,14 @@ const Signup = () => {
 	const [password, setPassword] = React.useState("");
 	const [terms, setTerms] = React.useState(false);
 
-	function postUser(e) {
+	async function postUser(e) {
 		e.preventDefault();
 
-		if (!firstName || !lastName || !email || !password || !terms) return;
+		if (!firstName || !lastName || !email || !password || !terms) {
+			return window.alert("Preencha os dados necessários.");
+		}
 
-		userPost({ firstName, lastName, email, password });
+		await userPost({ firstName, lastName, email, password });
 	}
 
 	return (

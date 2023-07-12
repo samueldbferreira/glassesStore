@@ -8,7 +8,8 @@ import bagSVG from "../../../assets/product/shopping_bag.svg";
 import styles from "./ProductCustomer.module.css";
 
 const ProductCustomer = ({ data }) => {
-	const { cartItems, setCartItems, storeCart } = React.useContext(CartContext);
+	const { cartItems, setCartItems, storeCart, setOnPayment } =
+		React.useContext(CartContext);
 	const [quantity, setQuantity] = React.useState(1);
 	const [color, setColor] = React.useState("");
 
@@ -18,6 +19,8 @@ const ProductCustomer = ({ data }) => {
 		if (!quantity || !color) {
 			return window.alert("Selecione uma cor e uma quantidade.");
 		}
+
+		setOnPayment(false);
 
 		const idx = `${data._id},${color}`;
 

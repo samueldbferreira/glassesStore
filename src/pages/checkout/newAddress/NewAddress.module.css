@@ -1,0 +1,9 @@
+.inputs {
+  margin-bottom: 52px;
+}
+
+@media (max-width: 540px) {
+  .inputs {
+    margin-bottom: 28px;
+  }
+}

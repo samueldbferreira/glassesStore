@@ -10,8 +10,8 @@ function App() {
 	return (
 		<div className="App">
 			<BrowserRouter>
-				<UserStorage>
-					<CartProvider>
+				<CartProvider>
+					<UserStorage>
 						<Header />
 
 						<main className="container">
@@ -19,8 +19,8 @@ function App() {
 						</main>
 
 						<Footer />
-					</CartProvider>
-				</UserStorage>
+					</UserStorage>
+				</CartProvider>
 			</BrowserRouter>
 		</div>
 	);

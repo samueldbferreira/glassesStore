@@ -33,6 +33,31 @@ export function GET_PRODUCTS(category) {
 	};
 }
 
+export function PATCH_PRODUCT(id, formData) {
+	return {
+		url: `${URL_BASE}/produtos/${id}`,
+		options: {
+			method: "PATCH",
+			headers: {
+				Authorization: `Bearer ${window.localStorage.getItem("token")}`,
+			},
+			body: formData,
+		},
+	};
+}
+
+export function DELETE_PRODUCT(id) {
+	return {
+		url: `${URL_BASE}/produtos/${id}`,
+		options: {
+			method: "DELETE",
+			headers: {
+				Authorization: `Bearer ${window.localStorage.getItem("token")}`,
+			},
+		},
+	};
+}
+
 export function POST_LOGIN(body) {
 	return {
 		url: `${URL_BASE}/auth/entrar`,

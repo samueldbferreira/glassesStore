@@ -17,6 +17,7 @@ import Account from "../pages/account/Account";
 import Checkout from "../pages/checkout/Checkout";
 import User from "../pages/user/User";
 import ProtectedRoute from "../util/protectedRoute/ProtectedRoute";
+import NewAddress from "../pages/checkout/newAddress/NewAddress";
 
 const RoutesComponent = () => {
 	return (
@@ -78,6 +79,8 @@ const RoutesComponent = () => {
 			<Route path="/login/*" element={<Login />} />
 
 			<Route path="/checkout/*" element={<Checkout />} />
+
+			<Route path="/novo-endereco" element={<NewAddress />} />
 
 			<Route path="/perguntas" element={<Faq />} />
 

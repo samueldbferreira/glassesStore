@@ -1,13 +1,16 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { CartContext } from "../../../context/CartContext";
+import { UserContext } from "../../../context/UserContext";
 import Button from "../../../components/button/Button";
 import CartItem from "../../../components/cartItem/CartItem";
 import rightSVG from "../../../assets/cart/arrow_forward_ios.svg";
 import styles from "./Bag.module.css";
 
 const Bag = () => {
-	const { cartItems, setCartItems, subtotal } = React.useContext(CartContext);
+	const { cartItems, setCartItems, subtotal, setOnPayment } =
+		React.useContext(CartContext);
+	const { login, addresses } = React.useContext(UserContext);
 
 	const navigate = useNavigate();
 
@@ -48,7 +51,15 @@ const Bag = () => {
 					icon={rightSVG}
 					onClick={() => {
 						if (Object.values(cartItems).length > 0) {
-							navigate("/checkout/pagamento");
+							setOnPayment(true);
+
+							if (login && addresses) {
+								navigate("/checkout/pagamento");
+							} else if (login) {
+								navigate("/novo-endereco");
+							} else {
+								navigate("/login");
+							}
 						}
 					}}
 				/>

@@ -11,7 +11,7 @@ const Checkout = () => {
 			<Route
 				path="/pagamento"
 				element={
-					<ProtectedRoute alternativeRoute="/" >
+					<ProtectedRoute alternativeRoute="/">
 						<Payment />
 					</ProtectedRoute>
 				}

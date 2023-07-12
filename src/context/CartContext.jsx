@@ -4,6 +4,7 @@ export const CartContext = React.createContext();
 
 export const CartProvider = ({ children }) => {
 	const [cartItems, setCartItems] = React.useState({});
+	const [onPayment, setOnPayment] = React.useState(false);
 
 	function loadCart() {
 		const savedCart = window.localStorage.getItem("cart");
@@ -26,6 +27,10 @@ export const CartProvider = ({ children }) => {
 
 	React.useEffect(() => {
 		loadCart();
+
+		return () => {
+			setOnPayment(false);
+		};
 	}, []);
 
 	return (
@@ -35,6 +40,8 @@ export const CartProvider = ({ children }) => {
 				setCartItems,
 				storeCart,
 				subtotal,
+				onPayment,
+				setOnPayment,
 			}}
 		>
 			{children}
