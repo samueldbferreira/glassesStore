@@ -215,6 +215,18 @@ export function POST_ORDER(total, items) {
 	};
 }
 
+export function GET_USER_ORDERS(id) {
+	return {
+		url: `${URL_BASE}/pedidos/${id}`,
+		options: {
+			method: "GET",
+			headers: {
+				Authorization: `Bearer ${window.localStorage.getItem("token")}`,
+			},
+		},
+	};
+}
+
 export function GET_ORDERS() {
 	return {
 		url: `${URL_BASE}/pedidos`,

@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./FilterModal.module.css";
 
 const FilterModal = ({
@@ -10,24 +9,6 @@ const FilterModal = ({
 	setData,
 	setActive,
 }) => {
-	const modal = React.useRef(null);
-	let ignore = true;
-
-	React.useEffect(() => {
-		function closeModal(e) {
-			if (!ignore && !modal.current.contains(e.target)) {
-				setActive(false);
-			}
-			ignore = false;
-		}
-
-		document.body.addEventListener("click", closeModal);
-
-		return () => {
-			document.body.removeEventListener("click", closeModal);
-		};
-	});
-
 	function filterProducts(e) {
 		e.preventDefault();
 
@@ -36,8 +17,8 @@ const FilterModal = ({
 			return;
 		}
 
-		setData((d) => {
-			return d.filter((product) => {
+		setData(
+			initial.filter((product) => {
 				if (min && max) {
 					return product.price >= min && product.price <= max;
 				} else if (max) {
@@ -45,8 +26,8 @@ const FilterModal = ({
 				} else {
 					return product.price >= min;
 				}
-			});
-		});
+			})
+		);
 
 		setActive(false);
 	}
@@ -59,7 +40,7 @@ const FilterModal = ({
 	}
 
 	return (
-		<form className={styles.modal} ref={modal} onSubmit={filterProducts}>
+		<form className={styles.modal} onSubmit={filterProducts}>
 			<h3 className={styles.title}>Preço</h3>
 
 			<label className={styles.label} htmlFor="min">

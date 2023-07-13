@@ -13,14 +13,15 @@ const Filter = ({ initial, data, setData }) => {
 	return (
 		<>
 			<div className={styles.filterBar}>
-				<a
-					className={styles.filter}
-					onClick={() => {
-						setFilterModal(!filterModal);
-						setSortModal(false);
-					}}
-				>
-					<p>filtrar</p>
+				<a className={styles.filter}>
+					<p
+						onClick={() => {
+							setFilterModal(!filterModal);
+							setSortModal(false);
+						}}
+					>
+						filtrar
+					</p>
 					<i className={styles.filterIcon} />
 					<div className={styles.filterModal}>
 						{filterModal && (

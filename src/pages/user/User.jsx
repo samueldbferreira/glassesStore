@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { DELETE_USER, GET_USER } from "../../services/Api";
+import { DELETE_USER, GET_USER, GET_USER_ORDERS } from "../../services/Api";
+import Order from "../../components/order/Order";
 import TitleID from "../../components/titleID/TitleID";
 import UserCard from "../../components/userCard/UserCard";
 import styles from "./User.module.css";
@@ -9,16 +10,25 @@ const User = () => {
 	const { id } = useParams();
 	const navigate = useNavigate();
 	const [userData, setUserData] = React.useState(null);
+	const [orders, setOrders] = React.useState(null);
 
 	React.useEffect(() => {
-		const { url, options } = GET_USER(id);
-
 		async function fetchData() {
+			const { url, options } = GET_USER(id);
 			const response = await fetch(url, options);
 			const data = await response.json();
 			setUserData(data);
 		}
+
+		async function fetchOrders() {
+			const { url, options } = GET_USER_ORDERS(id);
+			const response = await fetch(url, options);
+			const data = await response.json();
+			setOrders(data);
+		}
+
 		fetchData();
+		fetchOrders();
 	}, [id]);
 
 	async function handleDelete(e) {
@@ -59,7 +69,15 @@ const User = () => {
 					<div>
 						<h2 className={`${styles.subtitle}`}>Pedidos</h2>
 
-						<ul className={styles.orders}></ul>
+						<ul className={styles.orders}>
+							{orders.map((order) => {
+								return (
+									<li key={order._id}>
+										<Order data={order} />
+									</li>
+								);
+							})}
+						</ul>
 					</div>
 				</div>
 			</section>

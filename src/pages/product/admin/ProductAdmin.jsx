@@ -55,7 +55,6 @@ const ProductAdmin = ({ data }) => {
 		formData.append("stock", Number(estoque));
 		formData.append("price", Number(preco));
 		formData.append("installments", Number(parcelas));
-		formData.append("images", images);
 		formData.append("colors", JSON.stringify(cores));
 		formData.append("description", descricao);
 		formData.append("width", largura);
@@ -63,6 +62,9 @@ const ProductAdmin = ({ data }) => {
 		formData.append("stem", haste);
 		formData.append("noseSpace", espacoNariz);
 		formData.append("material", material);
+		for (let i = 0; i < images.length; i++) {
+			formData.append(`images[${i}]`, images[i]);
+		}
 
 		const { url, options } = PATCH_PRODUCT(data._id, formData);
 
@@ -157,12 +159,12 @@ const ProductAdmin = ({ data }) => {
 								id="images"
 								multiple
 								onChange={(e) => {
-									setImages([...e.target.files]);
+									setImages(e.target.files);
 								}}
 							/>
 
 							<div className={styles.submitedImages}>
-								{images.map((img, i) => {
+								{[...images].map((img, i) => {
 									return (
 										<div className={styles.containerPreview} key={i}>
 											<img src={URL.createObjectURL(img)} />

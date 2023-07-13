@@ -1,0 +1,25 @@
+.banner {
+	position: relative;
+	text-align: center;
+}
+
+.banner img {
+	width: 100%;
+	height: auto;
+}
+
+.text {
+	position: absolute;
+	top: 25%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 28px; /* Adjust the font-size as per your requirements */
+	color: black;
+}
+
+@media (max-width: 768px) {
+	.text {
+		top: 40%; /* Adjust the top value for mobile devices */
+		font-size: 18px; /* Adjust the font-size for mobile devices */
+	}
+}
