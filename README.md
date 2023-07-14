@@ -98,16 +98,16 @@ https://miro.com/app/board/uXjVMLKnbQs=/?share_link_id=761055462924
 
 
 ## Test Plan
-It was not a functional delivery that allows navigating between pages, so it is not possible to perform any testing yet.
+Login: admin@admin.com
+password: admin
+--------------------------
+Login as an admin.
+  Go to the account settings to view the user editing options.
 
-
-
-
-## Test Results
-It was not a functional delivery that allows navigating between pages, so it is not possible to perform any testing yet.
-
-
-
+As a user, use the filters.
+  Select a product and quantity.
+  Add it to the cart.
+  Complete the purchase.
 
 ## Build Procedures
 Open the HTML files, including the files in the 'OculosDeSol' folder. 'OculosDeSol' is inside the 'HTMLs' folfer.
