@@ -11,11 +11,11 @@ Gabriel dos Santos Brito        Nº USP: 10284250
 
 ## How to Run the Code:
 
-download and run the API https://github.com/samueldbferreira/glassesStore-API
+* download and run the API https://github.com/samueldbferreira/glassesStore-API
 
-"npm install" to install
+* "npm install" to install
 
-"npm run dev" to run the react app script
+* "npm run dev" to run the react app script
 
 
 ## Mockup
