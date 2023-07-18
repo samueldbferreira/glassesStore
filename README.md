@@ -3,9 +3,7 @@
 # Project Report
 
 Bruna Azevedo Garcia 		N° USP:  11381789
-
 Samuel de Assunção Ferreira	Nº USP: 12543565
-
 Gabriel dos Santos Brito        Nº USP: 10284250
 
 
@@ -13,11 +11,12 @@ Gabriel dos Santos Brito        Nº USP: 10284250
 
 "npm install" to install
 
-"npm run mock" and "npm run dev" simultaneously
-
-"npm run mock" to start json server
-
 "npm run dev" to run the react app script
+
+
+## Mockup
+https://www.figma.com/file/34UUtssIUTS8EVjNKBXPKz/mockup?type=design&t=xeenbYgZbPp7wCJR-1
+
 
 ## Requirements
 
@@ -53,8 +52,6 @@ Each customer record includes: id, first name, last name, phone, address, email 
 * The store sells glasses.
 
 
-
-
 ## Project Description
 
 * This project involves creating an online store that sells a variety of glasses. The website will have a simple and user-friendly interface, secure payment options, and reliable shipping methods. The store will feature a comprehensive product catalog with detailed descriptions and high-quality images. The goal is to provide customers with a hassle-free shopping experience and increase sales through targeted marketing techniques and promotions.
@@ -76,18 +73,8 @@ Each customer record includes: id, first name, last name, phone, address, email 
 * Managing a product: When a admin is logged in and chooses a product, instead of going to the purchase screen, they are presented with the “manage product” screen, which lets them edit the information and picture initially provided.
 
 
-
-
-## Mockup
-https://www.figma.com/file/34UUtssIUTS8EVjNKBXPKz/mockup?type=design&t=xeenbYgZbPp7wCJR-1
-
-
-
-
 ## Navigation diagram
 https://miro.com/app/board/uXjVMLKnbQs=/?share_link_id=761055462924
-
-
 
 
 ## Comments About the Code
@@ -97,27 +84,13 @@ https://miro.com/app/board/uXjVMLKnbQs=/?share_link_id=761055462924
 * Difficulty using react.
 
 
-
-
 ## Test Plan
 It was not a functional delivery that allows navigating between pages, so it is not possible to perform any testing yet.
-
-
 
 
 ## Test Results
 It was not a functional delivery that allows navigating between pages, so it is not possible to perform any testing yet.
 
-
-
-
-## Build Procedures
-Open the HTML files, including the files in the 'OculosDeSol' folder. 'OculosDeSol' is inside the 'HTMLs' folfer.
-Build Procedures
-Open the HTML files, including the files in the 'OculosDeSol' folder. 'OculosDeSol' is inside the 'HTMLs' folfer.
-
-Problems: List any major problems you had.
-Using Figma for creating HTML5 files was challenging as it may not be the most suitable tool for this purpose. However, it was still useful in establishing a project foundation and served its intended purpose well.
 
 ## Comments
 N/A
