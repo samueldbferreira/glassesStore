@@ -3,7 +3,9 @@
 # Project Report
 
 Bruna Azevedo Garcia 		N° USP:  11381789
+
 Samuel de Assunção Ferreira	Nº USP: 12543565
+
 Gabriel dos Santos Brito        Nº USP: 10284250
 
 
